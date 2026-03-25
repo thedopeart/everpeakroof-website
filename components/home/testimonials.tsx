@@ -35,8 +35,8 @@ export default function Testimonials() {
         <div className="max-w-xl mb-12">
           <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-2">Customer Reviews</p>
           <h2
-            className="font-black text-[#1E3D30] leading-tight tracking-tight"
-            style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)" }}
+            className="text-[#1E3D30] leading-tight"
+            style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", fontFamily: "var(--font-display)" }}
           >
             What Homeowners Say
           </h2>

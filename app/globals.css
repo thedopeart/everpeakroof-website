@@ -16,6 +16,7 @@
   --color-muted:         #6B7280;
 
   --font-sans: var(--font-plus-jakarta), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-dm-serif), Georgia, serif;
 }
 
 /* ─── Reset / Base ──────────────────────────────────────────────── */

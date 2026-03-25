@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Hero            from "@/components/home/hero";
 import StatsBar        from "@/components/home/stats-bar";
+import TrustBadges     from "@/components/home/trust-badges";
 import ServicesPreview from "@/components/home/services-preview";
 import WhyUs           from "@/components/home/why-us";
+import HowItWorks      from "@/components/home/how-it-works";
 import ServiceAreas    from "@/components/home/service-areas";
 import Testimonials    from "@/components/home/testimonials";
 import CtaBanner       from "@/components/home/cta-banner";
@@ -19,8 +21,10 @@ export default function HomePage() {
     <>
       <Hero />
       <StatsBar />
+      <TrustBadges />
       <ServicesPreview />
       <WhyUs />
+      <HowItWorks />
       <ServiceAreas />
       <Testimonials />
       <CtaBanner />

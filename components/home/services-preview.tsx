@@ -63,8 +63,8 @@ export default function ServicesPreview() {
           <div>
             <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-2">What We Do</p>
             <h2
-              className="font-black text-[#1E3D30] leading-tight tracking-tight"
-              style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)" }}
+              className="text-[#1E3D30] leading-tight"
+              style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", fontFamily: "var(--font-display)" }}
             >
               Every Roofing Service<br />
               <span className="text-[#2D5A47]">Under One Roof</span>

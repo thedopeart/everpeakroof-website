@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/cn";
+import UtilityBar from "./utility-bar";
 
 const PHONE = "(206) 555-0180";
 const PHONE_HREF = "tel:+12065550180";
@@ -40,9 +41,16 @@ export default function Header() {
   }, []);
 
   return (
-    <header
+    <header className="fixed top-0 inset-x-0 z-50">
+      {/* Utility bar — hidden when scrolled */}
+      <div className={cn("transition-all duration-300 overflow-hidden", scrolled ? "max-h-0 opacity-0" : "max-h-12 opacity-100")}>
+        <UtilityBar />
+      </div>
+
+      {/* Main nav bar */}
+      <div
       className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-all duration-300",
+        "transition-all duration-300",
         scrolled
           ? "bg-white/95 backdrop-blur-md shadow-[0_2px_16px_rgba(45,90,71,0.10)] border-b border-[#E5DDD3]"
           : "bg-transparent"
@@ -203,6 +211,7 @@ export default function Header() {
           </div>
         </div>
       )}
+    </div>
     </header>
   );
 }

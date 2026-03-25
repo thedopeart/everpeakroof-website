@@ -56,7 +56,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-5 md:px-8 pt-32 pb-20 md:pt-36 md:pb-24">
+      <div className="relative max-w-7xl mx-auto px-5 md:px-8 pt-36 pb-20 md:pt-44 md:pb-24">
         <div className="max-w-3xl">
 
           {/* Label */}
@@ -70,13 +70,15 @@ export default function Hero() {
           {/* Headline */}
           <motion.h1
             {...fade(0.2)}
-            className="text-white font-black leading-[1.07] tracking-tight mb-6"
-            style={{ fontSize: "clamp(2.6rem, 6vw, 4.2rem)" }}
+            className="text-white leading-[1.08] mb-6"
+            style={{
+              fontSize: "clamp(2.8rem, 6.5vw, 4.6rem)",
+              fontFamily: "var(--font-display)",
+            }}
           >
-            Roof Repair &amp; Replacement{" "}
-            <span className="text-[#D4883E]">Done Right</span>
-            <br />
-            <span className="text-white/75">Across the Puget Sound.</span>
+            Seattle&apos;s Roof Repair &amp;{" "}
+            <span className="text-[#D4883E]">Replacement</span>{" "}
+            Experts.
           </motion.h1>
 
           {/* Subhead */}
@@ -84,8 +86,8 @@ export default function Hero() {
             {...fade(0.3)}
             className="text-white/65 text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
           >
-            From a single leak to a full replacement, we&apos;ve got it covered.
-            Licensed, insured, honest pricing — free estimates on every job.
+            Licensed, insured, and up on roofs across the Puget Sound.
+            Free estimates, honest pricing — no pressure, no upsells.
           </motion.p>
 
           {/* CTAs */}
@@ -94,7 +96,7 @@ export default function Hero() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 bg-[#D4883E] hover:bg-[#B86E2A] text-white font-bold text-base px-8 py-4 rounded-xl transition-all duration-200 shadow-[0_4px_20px_rgba(212,136,62,0.4)] hover:shadow-[0_6px_28px_rgba(212,136,62,0.55)] hover:-translate-y-0.5"
             >
-              Get a Free Estimate
+              Book a Free Roof Assessment
               <ChevronRight size={18} />
             </Link>
             <a
