@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, ChevronRight, ShieldCheck, Star, MapPin, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -17,17 +18,27 @@ const fade = (delay = 0) => ({
 
 const TRUST_BADGES = [
   { icon: ShieldCheck, label: "Licensed & Insured" },
-  { icon: Star,        label: "5-Star Rated" },
-  { icon: MapPin,      label: "18 Cities Served" },
-  { icon: Clock,       label: "24-Hr Emergency" },
+  { icon: Star,        label: "Free Estimates" },
+  { icon: MapPin,      label: "20 Cities Served" },
+  { icon: Clock,       label: "7 Days a Week" },
 ];
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
 
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1a3528] via-[#2D5A47] to-[#1a3528]" />
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/roofer-installing.jpg"
+          alt="Roofer installing shingles on a Seattle home"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a3528]/90 via-[#2D5A47]/80 to-[#1a3528]/90" />
+      </div>
 
       {/* Decorative roofline shape */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

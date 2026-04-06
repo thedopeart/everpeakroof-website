@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Everpeak Roof",
   },
   description:
-    "Licensed roofing contractor serving Seattle, Bellevue, Tacoma, and 15+ Puget Sound cities. Roof repair, replacement, metal roofing, emergency service, and free estimates.",
+    "Licensed roofing contractor serving Seattle, Bellevue, Tacoma, and 17+ Puget Sound cities. Roof repair, replacement, emergency service, and free estimates.",
   keywords: [
     "roofing seattle",
     "roof repair seattle",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Everpeak Roof | Seattle Roofing",
-    description: "Roof repair, replacement, and emergency service across 18 Puget Sound cities.",
+    description: "Roof repair, replacement, and emergency service across 20 Puget Sound cities.",
   },
   robots: {
     index: true,

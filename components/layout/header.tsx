@@ -17,11 +17,10 @@ const NAV = [
       { label: "Roof Repair",          href: "/services/roof-repair" },
       { label: "Roof Replacement",     href: "/services/roof-replacement" },
       { label: "Emergency Repair",     href: "/services/emergency-roof-repair" },
-      { label: "Metal Roofing",        href: "/services/metal-roofing" },
-      { label: "Flat Roofing",         href: "/services/flat-roofing" },
       { label: "Roof Inspection",      href: "/services/roof-inspection" },
-      { label: "Gutters",              href: "/services/gutter-installation" },
-      { label: "Siding",               href: "/services/siding" },
+      { label: "Shingle Installation", href: "/services/shingle-installation" },
+      { label: "Commercial Roofing",   href: "/services/commercial-roofing" },
+      { label: "Insurance Claims",     href: "/services/insurance-restoration" },
     ],
   },
   { label: "Service Areas", href: "/#service-areas" },
@@ -53,7 +52,7 @@ export default function Header() {
         "transition-all duration-300",
         scrolled
           ? "bg-white/95 backdrop-blur-md shadow-[0_2px_16px_rgba(45,90,71,0.10)] border-b border-[#E5DDD3]"
-          : "bg-transparent"
+          : "bg-white border-b border-[#E5DDD3]"
       )}
     >
       <div className="max-w-7xl mx-auto px-5 md:px-8 h-18 flex items-center justify-between gap-6" style={{ height: "72px" }}>
@@ -64,7 +63,7 @@ export default function Header() {
             <span
               className={cn(
                 "font-black text-xl tracking-tight transition-colors",
-                scrolled ? "text-[#1E3D30]" : "text-white"
+                "text-[#1E3D30]"
               )}
             >
               EVERPEAK
@@ -83,9 +82,7 @@ export default function Header() {
                 <button
                   className={cn(
                     "flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors",
-                    scrolled
-                      ? "text-[#2C2C2C] hover:text-[#2D5A47] hover:bg-[#FAF3EB]"
-                      : "text-white/80 hover:text-white hover:bg-white/10"
+                    "text-[#2C2C2C] hover:text-[#2D5A47] hover:bg-[#FAF3EB]"
                   )}
                 >
                   {item.label}
@@ -112,9 +109,7 @@ export default function Header() {
                 href={item.href}
                 className={cn(
                   "px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors",
-                  scrolled
-                    ? "text-[#2C2C2C] hover:text-[#2D5A47] hover:bg-[#FAF3EB]"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
+                  "text-[#2C2C2C] hover:text-[#2D5A47] hover:bg-[#FAF3EB]"
                 )}
               >
                 {item.label}
@@ -129,7 +124,7 @@ export default function Header() {
             href={PHONE_HREF}
             className={cn(
               "flex items-center gap-1.5 text-sm font-semibold transition-colors",
-              scrolled ? "text-[#2D5A47]" : "text-white/90 hover:text-white"
+              "text-[#2D5A47]"
             )}
           >
             <Phone size={14} />
@@ -147,7 +142,7 @@ export default function Header() {
         <button
           className={cn(
             "md:hidden p-2 rounded-lg transition-colors",
-            scrolled ? "text-[#2C2C2C]" : "text-white"
+            "text-[#2C2C2C]"
           )}
           onClick={() => setMenuOpen((v) => !v)}
           aria-label="Toggle menu"
@@ -175,7 +170,7 @@ export default function Header() {
                     key={child.href}
                     href={child.href}
                     onClick={() => setMenuOpen(false)}
-                    className="px-3 py-2.5 rounded-lg text-sm text-[#4A5568] hover:text-[#2D5A47] hover:bg-[#FAF3EB] transition-colors"
+                    className="px-3 py-2.5 rounded-lg text-sm text-[#374151] hover:text-[#2D5A47] hover:bg-[#FAF3EB] transition-colors"
                   >
                     {child.label}
                   </Link>

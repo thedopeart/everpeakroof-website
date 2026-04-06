@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Wrench, Home, Zap, Shield, Layers, Search } from "lucide-react";
+import { ArrowRight, Wrench, Home, Zap, Search, Grid3x3, Building2 } from "lucide-react";
 
 const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: string; style?: React.CSSProperties }>> = {
-  Wrench, Home, Zap, Shield, Layers, Search,
+  Wrench, Home, Zap, Search, Grid3x3, Building2,
 };
 
 const SERVICES = [
@@ -15,34 +16,23 @@ const SERVICES = [
     icon: "Wrench",
     desc: "Leaks, storm damage, flashing failures, missing shingles. We diagnose fast and fix it right.",
     accent: "#2D5A47",
+    image: "/images/roof-repair-progress.jpg",
   },
   {
     slug: "roof-replacement",
     name: "Roof Replacement",
     icon: "Home",
-    desc: "Full tear-off and replacement for shingle, metal, flat, and cedar shake roofs.",
+    desc: "Full tear-off and replacement for shingle and cedar shake roofs across the Puget Sound.",
     accent: "#2D5A47",
+    image: "/images/shingle-replacement.jpg",
   },
   {
     slug: "emergency-roof-repair",
     name: "Emergency Repair",
     icon: "Zap",
-    desc: "24-hour response for active leaks, storm damage, fallen trees, and emergency tarping.",
+    desc: "Fast response for active leaks, storm damage, fallen trees, and emergency tarping. 7 days a week.",
     accent: "#B86E2A",
-  },
-  {
-    slug: "metal-roofing",
-    name: "Metal Roofing",
-    icon: "Shield",
-    desc: "Standing seam metal and corrugated panels. Built to last 40–70 years in PNW weather.",
-    accent: "#2D5A47",
-  },
-  {
-    slug: "flat-roofing",
-    name: "Flat Roofing",
-    icon: "Layers",
-    desc: "TPO, EPDM, and torch-down systems for residential and commercial flat roofs.",
-    accent: "#2D5A47",
+    image: "/images/worker-on-roof.jpg",
   },
   {
     slug: "roof-inspection",
@@ -50,6 +40,23 @@ const SERVICES = [
     icon: "Search",
     desc: "Free inspections for homeowners, buyers, and insurance. Full condition report included.",
     accent: "#2D5A47",
+    image: "/images/craftsman-tile.jpg",
+  },
+  {
+    slug: "shingle-installation",
+    name: "Shingle Installation",
+    icon: "Grid3x3",
+    desc: "Architectural, 3-tab, designer, and impact-resistant shingles for every budget.",
+    accent: "#2D5A47",
+    image: "/images/shingle-closeup.jpg",
+  },
+  {
+    slug: "commercial-roofing",
+    name: "Commercial Roofing",
+    icon: "Building2",
+    desc: "TPO, PVC, and metal panel systems for offices, warehouses, and multi-unit buildings.",
+    accent: "#2D5A47",
+    image: "/images/craftsman-roof-build.jpg",
   },
 ];
 
@@ -93,20 +100,35 @@ export default function ServicesPreview() {
               >
                 <Link
                   href={`/services/${svc.slug}`}
-                  className="group flex flex-col h-full bg-white rounded-2xl border border-[#E5DDD3] p-7 shadow-[0_1px_4px_rgba(45,90,71,0.06)] hover:shadow-[0_8px_28px_rgba(45,90,71,0.12)] hover:-translate-y-1 transition-all duration-200"
+                  className="group flex flex-col h-full bg-white rounded-2xl border border-[#E5DDD3] overflow-hidden shadow-[0_1px_4px_rgba(45,90,71,0.06)] hover:shadow-[0_8px_28px_rgba(45,90,71,0.12)] hover:-translate-y-1 transition-all duration-200"
                 >
-                  <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-5 shrink-0 transition-colors duration-200"
-                    style={{ background: `${svc.accent}15` }}
-                  >
-                    <Icon size={20} className="transition-colors" style={{ color: svc.accent }} />
+                  {/* Image */}
+                  <div className="relative h-44 overflow-hidden">
+                    <Image
+                      src={svc.image}
+                      alt={`${svc.name} service`}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   </div>
-                  <h3 className="font-bold text-[#1E3D30] text-lg mb-2 group-hover:text-[#2D5A47] transition-colors">
-                    {svc.name}
-                  </h3>
-                  <p className="text-[#6B7280] text-sm leading-relaxed flex-1">{svc.desc}</p>
-                  <div className="mt-5 flex items-center gap-1 text-sm font-bold text-[#D4883E] opacity-0 group-hover:opacity-100 transition-opacity">
-                    Learn more <ArrowRight size={13} />
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div
+                        className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+                        style={{ background: `${svc.accent}15` }}
+                      >
+                        <Icon size={17} style={{ color: svc.accent }} />
+                      </div>
+                      <h3 className="font-bold text-[#1E3D30] text-lg group-hover:text-[#2D5A47] transition-colors">
+                        {svc.name}
+                      </h3>
+                    </div>
+                    <p className="text-[#374151] text-sm leading-relaxed flex-1">{svc.desc}</p>
+                    <div className="mt-4 flex items-center gap-1 text-sm font-bold text-[#D4883E] opacity-0 group-hover:opacity-100 transition-opacity">
+                      Learn more <ArrowRight size={13} />
+                    </div>
                   </div>
                 </Link>
               </motion.div>
@@ -117,17 +139,13 @@ export default function ServicesPreview() {
         {/* Extra services row */}
         <div className="mt-6 flex flex-wrap gap-3 justify-center">
           {[
-            { slug: "gutter-installation",   name: "Gutters" },
-            { slug: "siding",                 name: "Siding" },
-            { slug: "shingle-installation",   name: "Shingles" },
-            { slug: "commercial-roofing",     name: "Commercial" },
             { slug: "insurance-restoration",  name: "Insurance Claims" },
             { slug: "maintenance-program",    name: "Maintenance Plans" },
           ].map((s) => (
             <Link
               key={s.slug}
               href={`/services/${s.slug}`}
-              className="px-4 py-2 bg-white border border-[#E5DDD3] rounded-full text-sm font-semibold text-[#4A5568] hover:text-[#2D5A47] hover:border-[#2D5A47] transition-colors"
+              className="px-4 py-2 bg-white border border-[#E5DDD3] rounded-full text-sm font-semibold text-[#374151] hover:text-[#2D5A47] hover:border-[#2D5A47] transition-colors"
             >
               {s.name}
             </Link>

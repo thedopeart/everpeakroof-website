@@ -12,7 +12,7 @@ import CtaBanner       from "@/components/home/cta-banner";
 export const metadata: Metadata = {
   title: "Everpeak Roof | Seattle Roofing Repair & Replacement",
   description:
-    "Licensed roofing contractor serving Seattle, Bellevue, Tacoma, and 15+ Puget Sound cities. Roof repair, replacement, metal roofing, emergency service. Free estimates.",
+    "Licensed roofing contractor serving Seattle, Bellevue, Tacoma, and 17+ Puget Sound cities. Roof repair, replacement, emergency service. Free estimates.",
   alternates: { canonical: "https://everpeakroof.com" },
 };
 

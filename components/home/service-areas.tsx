@@ -18,14 +18,14 @@ export default function ServiceAreas() {
               className="text-[#1E3D30] leading-tight"
               style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", fontFamily: "var(--font-display)" }}
             >
-              18 Cities Across<br />
+              20 Cities Across<br />
               <span className="text-[#2D5A47]">Greater Puget Sound</span>
             </h2>
-            <p className="mt-3 text-[#6B7280] text-base max-w-md">
+            <p className="mt-3 text-[#374151] text-base max-w-md">
               From Seattle proper to the Eastside, South Sound, and everything in between. If you&apos;re within 50 miles of downtown Seattle, we serve your area.
             </p>
           </div>
-          <div className="flex items-center gap-1.5 text-sm text-[#6B7280] shrink-0">
+          <div className="flex items-center gap-1.5 text-sm text-[#374151] shrink-0">
             <MapPin size={15} className="text-[#2D5A47]" />
             Greater Seattle, WA
           </div>
@@ -50,7 +50,7 @@ export default function ServiceAreas() {
                     ? "bg-[#2D5A47] text-white border-[#2D5A47] hover:bg-[#1E3D30]"
                     : city.tier === 2
                     ? "bg-white text-[#2D5A47] border-[#2D5A47]/30 hover:border-[#2D5A47] hover:bg-[#2D5A47]/5"
-                    : "bg-white text-[#4A5568] border-[#E5DDD3] hover:border-[#2D5A47]/40 hover:text-[#2D5A47]"
+                    : "bg-white text-[#374151] border-[#E5DDD3] hover:border-[#2D5A47]/40 hover:text-[#2D5A47]"
                   }
                 `}
               >
@@ -62,7 +62,7 @@ export default function ServiceAreas() {
         </div>
 
         {/* Note */}
-        <p className="mt-6 text-xs text-[#9CA3AF] text-center">
+        <p className="mt-6 text-xs text-[#374151] text-center">
           Don&apos;t see your city? Call us — we likely serve your area.
         </p>
       </div>

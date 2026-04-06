@@ -12,7 +12,7 @@ const REASONS = [
   {
     icon: Clock,
     title: "Same-Day Response",
-    desc: "We call back fast. Most estimates are scheduled within 24 hours. Emergency calls answered around the clock.",
+    desc: "We call back fast. Most estimates are scheduled within a day or two. Emergency calls answered 7 days a week.",
   },
   {
     icon: DollarSign,
@@ -50,7 +50,7 @@ export default function WhyUs() {
             We&apos;re Not the Cheapest.<br />
             <span className="text-[#2D5A47]">We&apos;re the Most Reliable.</span>
           </h2>
-          <p className="mt-4 text-[#6B7280] text-base leading-relaxed">
+          <p className="mt-4 text-[#374151] text-base leading-relaxed">
             There&apos;s no shortage of roofers in the Puget Sound. Here&apos;s what makes the difference between a job you feel good about and one you regret.
           </p>
         </div>
@@ -72,7 +72,7 @@ export default function WhyUs() {
                 </div>
                 <div>
                   <h3 className="font-bold text-[#1E3D30] mb-1">{r.title}</h3>
-                  <p className="text-sm text-[#6B7280] leading-relaxed">{r.desc}</p>
+                  <p className="text-sm text-[#374151] leading-relaxed">{r.desc}</p>
                 </div>
               </motion.div>
             );

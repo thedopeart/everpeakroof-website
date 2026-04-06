@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ShieldCheck, Award, Users, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Everpeak Roof | Seattle Roofing Contractor",
   description:
-    "Everpeak LLC is a licensed Washington state roofing contractor serving 18 cities across the Puget Sound. Learn about our team, values, and service area.",
+    "Everpeak LLC is a licensed Washington state roofing contractor serving 20 cities across the Puget Sound. Learn about our team, values, and service area.",
   alternates: { canonical: "https://everpeakroof.com/about" },
 };
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#FAF3EB] pt-24 pb-20">
+    <div className="min-h-screen bg-[#FAF3EB] pt-32 pb-20">
       <div className="max-w-5xl mx-auto px-5 md:px-8">
 
         {/* Header */}
@@ -21,9 +22,21 @@ export default function AboutPage() {
             style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
             We Know Seattle Roofs
           </h1>
-          <p className="text-[#6B7280] text-lg leading-relaxed max-w-2xl">
+          <p className="text-[#374151] text-lg leading-relaxed max-w-2xl">
             Everpeak LLC is a licensed and insured roofing contractor based in the greater Seattle area. We handle everything from single-leak repairs to full tear-off replacements for homeowners and commercial property owners across the Puget Sound.
           </p>
+        </div>
+
+        {/* Team photo */}
+        <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden mb-14">
+          <Image
+            src="/images/worker-on-roof.jpg"
+            alt="Everpeak crew working on a roof"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 1024px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1E3D30]/40 to-transparent" />
         </div>
 
         {/* Values grid */}
@@ -57,7 +70,7 @@ export default function AboutPage() {
                   <Icon size={19} className="text-[#2D5A47]" />
                 </div>
                 <h3 className="font-bold text-[#1E3D30] mb-2">{item.title}</h3>
-                <p className="text-sm text-[#6B7280] leading-relaxed">{item.desc}</p>
+                <p className="text-sm text-[#374151] leading-relaxed">{item.desc}</p>
               </div>
             );
           })}
@@ -70,7 +83,7 @@ export default function AboutPage() {
             <div><span className="text-white font-semibold">Business:</span> Everpeak LLC</div>
             <div><span className="text-white font-semibold">License:</span> Washington State Contractor #EVERPRL123XX</div>
             <div><span className="text-white font-semibold">Coverage:</span> General Liability + Workers&apos; Compensation</div>
-            <div><span className="text-white font-semibold">Service Area:</span> 18 cities, greater Seattle metro</div>
+            <div><span className="text-white font-semibold">Service Area:</span> 20 cities, greater Seattle metro</div>
           </div>
         </div>
 

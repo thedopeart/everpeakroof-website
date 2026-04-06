@@ -14,7 +14,7 @@ const EMAIL = "info@everpeakroof.com";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-[#FAF3EB] pt-24 pb-20">
+    <div className="min-h-screen bg-[#FAF3EB] pt-32 pb-20">
       <div className="max-w-6xl mx-auto px-5 md:px-8">
 
         {/* Header */}
@@ -24,8 +24,8 @@ export default function ContactPage() {
             style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
             Get in Touch
           </h1>
-          <p className="text-[#6B7280] text-lg max-w-lg">
-            Most estimates are scheduled within 24 hours. Emergency calls answered around the clock.
+          <p className="text-[#374151] text-lg max-w-lg">
+            Most estimates are scheduled within a day or two. We answer the phone 7 days a week.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export default function ContactPage() {
                 <label className="block text-sm font-semibold text-[#2C2C2C] mb-1.5">Service Needed</label>
                 <select
                   name="service"
-                  className="w-full px-4 py-3 rounded-xl border border-[#E5DDD3] bg-[#FAF3EB] text-sm outline-none focus:border-[#2D5A47] focus:ring-2 focus:ring-[#2D5A47]/10 transition-colors text-[#4A5568]"
+                  className="w-full px-4 py-3 rounded-xl border border-[#E5DDD3] bg-[#FAF3EB] text-sm outline-none focus:border-[#2D5A47] focus:ring-2 focus:ring-[#2D5A47]/10 transition-colors text-[#374151]"
                 >
                   <option value="">Select a service…</option>
                   <option>Roof Repair</option>
@@ -101,7 +101,7 @@ export default function ContactPage() {
               >
                 Get My Free Estimate
               </button>
-              <p className="text-xs text-[#9CA3AF] text-center">
+              <p className="text-xs text-[#374151] text-center">
                 No spam. We&apos;ll only use this to schedule your estimate.
               </p>
             </form>
@@ -117,7 +117,7 @@ export default function ContactPage() {
                     <Phone size={17} className="text-[#2D5A47]" />
                   </div>
                   <div>
-                    <div className="text-xs text-[#9CA3AF] font-semibold uppercase tracking-wide">Phone</div>
+                    <div className="text-xs text-[#374151] font-semibold uppercase tracking-wide">Phone</div>
                     <div className="font-bold text-[#1E3D30] group-hover:text-[#2D5A47] transition-colors">{PHONE}</div>
                   </div>
                 </a>
@@ -126,7 +126,7 @@ export default function ContactPage() {
                     <Mail size={17} className="text-[#2D5A47]" />
                   </div>
                   <div>
-                    <div className="text-xs text-[#9CA3AF] font-semibold uppercase tracking-wide">Email</div>
+                    <div className="text-xs text-[#374151] font-semibold uppercase tracking-wide">Email</div>
                     <div className="font-bold text-[#1E3D30] group-hover:text-[#2D5A47] transition-colors">{EMAIL}</div>
                   </div>
                 </a>
@@ -135,7 +135,7 @@ export default function ContactPage() {
                     <MapPin size={17} className="text-[#2D5A47]" />
                   </div>
                   <div>
-                    <div className="text-xs text-[#9CA3AF] font-semibold uppercase tracking-wide">Service Area</div>
+                    <div className="text-xs text-[#374151] font-semibold uppercase tracking-wide">Service Area</div>
                     <div className="font-bold text-[#1E3D30]">Greater Seattle, WA</div>
                   </div>
                 </div>
@@ -144,8 +144,8 @@ export default function ContactPage() {
                     <Clock size={17} className="text-[#D4883E]" />
                   </div>
                   <div>
-                    <div className="text-xs text-[#9CA3AF] font-semibold uppercase tracking-wide">Emergency Line</div>
-                    <div className="font-bold text-[#1E3D30]">24 hours, 7 days a week</div>
+                    <div className="text-xs text-[#374151] font-semibold uppercase tracking-wide">Emergency Line</div>
+                    <div className="font-bold text-[#1E3D30]">7 days a week</div>
                   </div>
                 </div>
               </div>
@@ -154,7 +154,7 @@ export default function ContactPage() {
             <div className="bg-[#2D5A47] rounded-2xl p-7 text-white">
               <h3 className="font-bold text-lg mb-2">Need emergency help?</h3>
               <p className="text-white/70 text-sm mb-4">
-                Active leak, storm damage, or a tree through your roof — call now. We answer emergency calls around the clock.
+                Active leak, storm damage, or a tree through your roof? Call us. We answer emergency calls 7 days a week.
               </p>
               <a
                 href={PHONE_HREF}

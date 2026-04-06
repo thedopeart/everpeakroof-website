@@ -27,7 +27,7 @@ export default function CtaBanner() {
           Roof problem? Let&apos;s take a look.
         </h2>
         <p className="text-white/60 text-lg mb-10 max-w-lg mx-auto">
-          Most estimates are scheduled within 24 hours. Emergency calls answered around the clock.
+          Most estimates are scheduled within a day or two. We answer the phone 7 days a week.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

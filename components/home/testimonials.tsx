@@ -5,24 +5,24 @@ import { Star, Quote } from "lucide-react";
 
 const REVIEWS = [
   {
-    name: "Marcus T.",
+    name: "James Whitfield",
     location: "Kirkland, WA",
     rating: 5,
-    text: "Had a slow leak that two other companies quoted me $4,000 to fix. Everpeak came out the same day, found the real issue — bad flashing around a vent boot — and fixed it for $380. Honest, fast, and didn't try to upsell me on a full replacement I didn't need.",
+    text: "Two other companies told me I needed a full replacement. Everpeak came out, spent about 20 minutes up there, and showed me photos of what was actually wrong. Turned out it was flashing around a vent boot. Fixed it that afternoon for under $400. I'll call them first from now on.",
     service: "Roof Repair",
   },
   {
-    name: "Sarah K.",
+    name: "Priya Nair",
     location: "Seattle, WA",
     rating: 5,
-    text: "Full roof replacement on a 1940s Capitol Hill house with steep pitch and old cedar shake. They handled the permit, tear-off, decking repairs, and installed architectural shingles. Crew was professional and cleaned up every day. Finished on schedule.",
+    text: "We had the original cedar shake from 1947 on our Capitol Hill house. Everpeak handled the whole thing: permits, tear-off, new decking where it was rotted, and architectural shingles. Took about a week. Crew showed up on time every morning and swept the driveway before they left.",
     service: "Roof Replacement",
   },
   {
-    name: "David R.",
+    name: "Carlos Medina",
     location: "Bellevue, WA",
     rating: 5,
-    text: "Wind storm knocked a tree branch through my roof at 11pm. Called Everpeak and someone actually answered. They had it tarped within two hours and came back the next morning to do the repair. Handled the insurance claim documentation too.",
+    text: "A branch came through our roof during that big windstorm in November. Called Everpeak around 11pm and someone picked up, which surprised me. They had a crew out to tarp it within a couple hours. Came back Monday to do the full repair and helped us file the insurance paperwork.",
     service: "Emergency Repair",
   },
 ];
@@ -61,13 +61,13 @@ export default function Testimonials() {
 
               {/* Quote */}
               <Quote size={20} className="text-[#D4883E]/30 mb-3 -mt-1" />
-              <p className="text-[#4A5568] text-sm leading-relaxed flex-1">{r.text}</p>
+              <p className="text-[#374151] text-sm leading-relaxed flex-1">{r.text}</p>
 
               {/* Author */}
               <div className="mt-6 pt-5 border-t border-[#E5DDD3]">
                 <p className="font-bold text-[#1E3D30] text-sm">{r.name}</p>
                 <div className="flex items-center justify-between mt-0.5">
-                  <span className="text-xs text-[#9CA3AF]">{r.location}</span>
+                  <span className="text-xs text-[#374151]">{r.location}</span>
                   <span className="text-xs font-semibold text-[#2D5A47] bg-[#2D5A47]/10 px-2 py-0.5 rounded-full">
                     {r.service}
                   </span>
@@ -77,16 +77,6 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Google rating */}
-        <div className="mt-8 flex items-center justify-center gap-3 text-sm text-[#6B7280]">
-          <div className="flex gap-0.5">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} size={14} className="fill-[#D4883E] text-[#D4883E]" />
-            ))}
-          </div>
-          <span className="font-bold text-[#2C2C2C]">5.0</span>
-          <span>on Google</span>
-        </div>
       </div>
     </section>
   );
