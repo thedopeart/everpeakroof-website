@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/services";
+import JsonLd from "@/components/shared/json-ld";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Roofing Services | Seattle Repair, Replacement & More",
@@ -12,8 +14,14 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "https://everpeakroof.com" },
+    { name: "Services", url: "https://everpeakroof.com/services" },
+  ]);
+
   return (
     <div className="min-h-screen bg-[#FAF3EB] pt-32 pb-20">
+      <JsonLd data={breadcrumbs} />
       <div className="max-w-6xl mx-auto px-5 md:px-8">
 
         <div className="mb-12">

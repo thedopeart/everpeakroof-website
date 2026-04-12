@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import JsonLd from "@/components/shared/json-ld";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Contact | Free Roofing Estimate",
@@ -13,8 +15,14 @@ const PHONE_HREF = "tel:+14255057142";
 const EMAIL = "info@everpeakroof.com";
 
 export default function ContactPage() {
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "https://everpeakroof.com" },
+    { name: "Contact", url: "https://everpeakroof.com/contact" },
+  ]);
+
   return (
     <div className="min-h-screen bg-[#FAF3EB] pt-32 pb-20">
+      <JsonLd data={breadcrumbs} />
       <div className="max-w-6xl mx-auto px-5 md:px-8">
 
         {/* Header */}

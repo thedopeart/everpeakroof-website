@@ -8,6 +8,8 @@ import {
 } from "lucide-react";
 import { cities } from "@/lib/cities";
 import { featuredServices } from "@/lib/services";
+import JsonLd from "@/components/shared/json-ld";
+import { breadcrumbSchema, cityServiceSchema } from "@/lib/schema";
 
 const PHONE = "(425) 505-7142";
 const PHONE_HREF = "tel:+14255057142";
@@ -52,8 +54,37 @@ export default async function CityPage({ params }: Props) {
   const heroImage = HERO_IMAGES[cityIndex % HERO_IMAGES.length];
   const otherCities = cities.filter((c) => c.slug !== citySlug).slice(0, 8);
 
+  const cityLd = cityServiceSchema(name);
+  const cityServiceLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `Roofing in ${name}`,
+    description,
+    serviceType: "Roofing",
+    url: `https://everpeakroof.com/${citySlug}`,
+    provider: {
+      "@type": "RoofingContractor",
+      "@id": "https://everpeakroof.com/#business",
+      name: "Everpeak Roofing",
+      url: "https://everpeakroof.com",
+      telephone: "+1-425-505-7142",
+    },
+    areaServed: {
+      "@type": "City",
+      name,
+      containedInPlace: { "@type": "State", name: "Washington" },
+    },
+  };
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "https://everpeakroof.com" },
+    { name: `Roofing in ${name}`, url: `https://everpeakroof.com/${citySlug}` },
+  ]);
+
   return (
     <div className="min-h-screen bg-[#FAF3EB]">
+      <JsonLd data={cityLd} />
+      <JsonLd data={cityServiceLd} />
+      <JsonLd data={breadcrumbs} />
 
       {/* ── Hero ──────────────────────────────────────────── */}
       <section className="relative h-[420px] md:h-[480px] flex items-end overflow-hidden">

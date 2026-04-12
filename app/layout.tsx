@@ -3,6 +3,8 @@ import { Plus_Jakarta_Sans, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import JsonLd from "@/components/shared/json-ld";
+import { localBusinessSchema } from "@/lib/schema";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -63,6 +65,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${plusJakarta.variable} ${dmSerif.variable} h-full`}>
       <body className="min-h-full flex flex-col">
+        <JsonLd data={localBusinessSchema()} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

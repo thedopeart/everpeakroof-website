@@ -107,8 +107,9 @@ export default function Footer() {
               { href: "/about",                 label: "About Us" },
               { href: "/reviews",               label: "Reviews" },
               { href: "/contact",               label: "Contact" },
-              { href: "/services/insurance-restoration", label: "Insurance Help" },
-              { href: "/services/maintenance-program",   label: "Maintenance Plans" },
+              { href: "/instant-roof-quote",    label: "Free Quote" },
+              { href: "/tools/roof-cost-estimator", label: "Cost Estimator" },
+              { href: "/tools/roof-pitch-calculator", label: "Pitch Calculator" },
               { href: "/blog",                  label: "Roofing Blog" },
             ].map((l) => (
               <li key={l.href}>

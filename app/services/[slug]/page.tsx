@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { ChevronRight, Phone, CheckCircle2, ArrowRight, AlertTriangle } from "lucide-react";
+import { ChevronRight, Phone, CheckCircle2, ArrowRight, AlertTriangle, Plus } from "lucide-react";
 import { services } from "@/lib/services";
+import JsonLd from "@/components/shared/json-ld";
+import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/lib/schema";
 
 const PHONE = "(425) 505-7142";
 const PHONE_HREF = "tel:+14255057142";
@@ -34,8 +36,27 @@ export default async function ServicePage({ params }: Props) {
 
   const otherServices = services.filter((s) => s.slug !== slug).slice(0, 5);
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "https://everpeakroof.com" },
+    { name: "Services", url: "https://everpeakroof.com/services" },
+    { name: svc.name, url: `https://everpeakroof.com/services/${svc.slug}` },
+  ]);
+
+  const serviceLd = serviceSchema({
+    name: svc.name,
+    description: svc.longDesc,
+    slug: svc.slug,
+  });
+
+  const faqLd = faqPageSchema(
+    svc.faqs.map((f) => ({ question: f.question, answer: f.answer }))
+  );
+
   return (
     <div className="min-h-screen bg-[#FAF3EB] pt-32 pb-20">
+      <JsonLd data={breadcrumbs} />
+      <JsonLd data={serviceLd} />
+      <JsonLd data={faqLd} />
       <div className="max-w-5xl mx-auto px-5 md:px-8">
 
         {/* Breadcrumb */}
@@ -113,6 +134,33 @@ export default async function ServicePage({ params }: Props) {
                       </div>
                       <p className="text-sm text-[#374151] leading-relaxed pt-1">{problem}</p>
                     </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* FAQ */}
+            {svc.faqs && svc.faqs.length > 0 && (
+              <div className="mb-10">
+                <h2 className="font-black text-[#1E3D30] text-xl mb-5">Frequently Asked Questions</h2>
+                <div className="flex flex-col gap-3">
+                  {svc.faqs.map((faq, i) => (
+                    <details
+                      key={i}
+                      className="group bg-white rounded-xl border border-[#E5DDD3] p-5 open:shadow-[0_4px_16px_rgba(45,90,71,0.08)]"
+                    >
+                      <summary className="flex items-start justify-between gap-4 cursor-pointer list-none">
+                        <span className="font-bold text-[#1E3D30] text-sm md:text-base leading-snug pt-0.5">
+                          {faq.question}
+                        </span>
+                        <span className="w-7 h-7 rounded-lg bg-[#D4883E]/10 flex items-center justify-center shrink-0 transition-transform group-open:rotate-45">
+                          <Plus size={15} className="text-[#D4883E]" />
+                        </span>
+                      </summary>
+                      <p className="text-sm text-[#374151] leading-relaxed mt-4">
+                        {faq.answer}
+                      </p>
+                    </details>
                   ))}
                 </div>
               </div>

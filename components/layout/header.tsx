@@ -19,13 +19,23 @@ const NAV = [
       { label: "Emergency Repair",     href: "/services/emergency-roof-repair" },
       { label: "Roof Inspection",      href: "/services/roof-inspection" },
       { label: "Shingle Installation", href: "/services/shingle-installation" },
+      { label: "Soft Washing",         href: "/services/soft-washing" },
       { label: "Commercial Roofing",   href: "/services/commercial-roofing" },
       { label: "Insurance Claims",     href: "/services/insurance-restoration" },
     ],
   },
-  { label: "Service Areas", href: "/#service-areas" },
-  { label: "About",         href: "/about" },
-  { label: "Contact",       href: "/contact" },
+  {
+    label: "Free Tools",
+    href: "/tools/roof-cost-estimator",
+    children: [
+      { label: "Roof Cost Estimator",   href: "/tools/roof-cost-estimator" },
+      { label: "Roof Pitch Calculator", href: "/tools/roof-pitch-calculator" },
+      { label: "Instant Quote",         href: "/instant-roof-quote" },
+    ],
+  },
+  { label: "Blog",    href: "/blog" },
+  { label: "About",   href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {

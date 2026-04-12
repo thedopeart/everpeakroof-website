@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ShieldCheck, Award, Users, MapPin } from "lucide-react";
+import JsonLd from "@/components/shared/json-ld";
+import { breadcrumbSchema, organizationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "About Everpeak Roofing | Seattle Roofing Company",
@@ -11,8 +13,15 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "https://everpeakroof.com" },
+    { name: "About", url: "https://everpeakroof.com/about" },
+  ]);
+
   return (
     <div className="min-h-screen bg-[#FAF3EB] pt-32 pb-20">
+      <JsonLd data={organizationSchema()} />
+      <JsonLd data={breadcrumbs} />
       <div className="max-w-5xl mx-auto px-5 md:px-8">
 
         {/* Header */}
