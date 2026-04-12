@@ -4,9 +4,55 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ChevronRight, Clock, Calendar, User, ArrowRight, Phone } from "lucide-react";
 import { getAllPosts, getPost } from "@/lib/posts";
+import type { ReactNode } from "react";
 
 const PHONE = "(425) 505-7142";
 const PHONE_HREF = "tel:+14255057142";
+
+// Parses `[text](url)` markdown-style inline links inside a paragraph.
+// Internal URLs (starting with `/`) render as Next <Link> for SEO equity.
+// Everything else renders as plain <a rel="noopener">.
+function renderParagraph(text: string): ReactNode[] {
+  const parts: ReactNode[] = [];
+  const pattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let key = 0;
+
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    const [, label, href] = match;
+    if (href.startsWith("/")) {
+      parts.push(
+        <Link
+          key={`l-${key++}`}
+          href={href}
+          className="text-[#2D5A47] font-semibold underline decoration-[#D4883E]/40 decoration-2 underline-offset-4 hover:decoration-[#D4883E] transition-colors"
+        >
+          {label}
+        </Link>
+      );
+    } else {
+      parts.push(
+        <a
+          key={`l-${key++}`}
+          href={href}
+          rel="noopener noreferrer"
+          className="text-[#2D5A47] font-semibold underline decoration-[#D4883E]/40 decoration-2 underline-offset-4 hover:decoration-[#D4883E] transition-colors"
+        >
+          {label}
+        </a>
+      );
+    }
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+  return parts.length > 0 ? parts : [text];
+}
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -50,7 +96,7 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   const paragraphs = post.body.split(/\n\n+/).map((p) => p.trim()).filter(Boolean);
-  const related = getAllPosts().filter((p) => p.slug !== slug).slice(0, 2);
+  const related = getAllPosts().filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
     <div className="min-h-screen bg-[#FAF3EB] pt-32 pb-20">
@@ -116,7 +162,7 @@ export default async function BlogPostPage({ params }: Props) {
               key={i}
               className="text-[#374151] text-lg leading-relaxed mb-5 last:mb-0"
             >
-              {para}
+              {renderParagraph(para)}
             </p>
           ))}
         </article>

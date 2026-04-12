@@ -13,7 +13,32 @@ export interface BlogPost {
   tags: string[];
 }
 
-export const posts: BlogPost[] = [
+// Imported post modules (one BlogPost per file) ----------------------------
+import kirklandRepair   from "./posts/roof-repair-kirkland";
+import bellevueRepair   from "./posts/roof-repair-bellevue";
+import rentonRepair     from "./posts/roof-repair-renton";
+import everettRepair    from "./posts/roof-repair-everett";
+import seattleCost2026  from "./posts/seattle-roof-replacement-cost-2026";
+import seattleEmergency from "./posts/emergency-roof-repair-seattle";
+import metalVsShingles  from "./posts/metal-roof-vs-shingles-seattle";
+import archVs3Tab       from "./posts/architectural-shingles-vs-3-tab";
+import fallRainPrep     from "./posts/seattle-fall-rain-roof-prep";
+import pnwWindstorm     from "./posts/windstorm-roof-damage-pnw";
+
+const importedPosts: BlogPost[] = [
+  kirklandRepair,
+  bellevueRepair,
+  rentonRepair,
+  everettRepair,
+  seattleCost2026,
+  seattleEmergency,
+  metalVsShingles,
+  archVs3Tab,
+  fallRainPrep,
+  pnwWindstorm,
+];
+
+const inlinePosts: BlogPost[] = [
   {
     slug: "seattle-roof-moss-what-to-do",
     title: "Why Seattle Roofs Grow Moss (and What to Actually Do About It)",
@@ -73,6 +98,8 @@ One last thing worth mentioning. Insurance can change the math. If a windstorm t
 If you're on the fence, get two honest opinions. Not three, not five. Two good roofers looking at the same roof will usually tell you roughly the same thing. If one says repair and one says replace, ask both of them to walk you through the reasoning. Whoever can show you photos and explain exactly why is the one you want to hire.`,
   },
 ];
+
+export const posts: BlogPost[] = [...inlinePosts, ...importedPosts];
 
 export function getAllPosts(): BlogPost[] {
   return [...posts].sort(
