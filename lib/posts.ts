@@ -24,6 +24,17 @@ import metalVsShingles  from "./posts/metal-roof-vs-shingles-seattle";
 import archVs3Tab       from "./posts/architectural-shingles-vs-3-tab";
 import fallRainPrep     from "./posts/seattle-fall-rain-roof-prep";
 import pnwWindstorm     from "./posts/windstorm-roof-damage-pnw";
+// Round 2
+import roofInspection   from "./posts/roof-inspection-checklist";
+import bestMaterials    from "./posts/best-roofing-materials-pnw";
+import flatVsPitched    from "./posts/flat-roof-vs-pitched";
+import roofCoating      from "./posts/roof-coating-guide";
+import findFixLeak      from "./posts/find-fix-roof-leak";
+import insuranceCover   from "./posts/insurance-cover-roof-replacement";
+import fileInsuranceClaim from "./posts/file-roof-insurance-claim-wa";
+import cedarShake       from "./posts/cedar-shake-replacement-seattle";
+import capitolHill      from "./posts/capitol-hill-roofing-seattle";
+import queenAnne        from "./posts/queen-anne-roofing-seattle";
 
 const importedPosts: BlogPost[] = [
   kirklandRepair,
@@ -36,6 +47,16 @@ const importedPosts: BlogPost[] = [
   archVs3Tab,
   fallRainPrep,
   pnwWindstorm,
+  roofInspection,
+  bestMaterials,
+  flatVsPitched,
+  roofCoating,
+  findFixLeak,
+  insuranceCover,
+  fileInsuranceClaim,
+  cedarShake,
+  capitolHill,
+  queenAnne,
 ];
 
 const inlinePosts: BlogPost[] = [
