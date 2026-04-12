@@ -7,7 +7,7 @@ import Footer from "@/components/layout/footer";
 import JsonLd from "@/components/shared/json-ld";
 import { localBusinessSchema } from "@/lib/schema";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "G-M6EY8LTNGF";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
