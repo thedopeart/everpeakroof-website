@@ -46,6 +46,11 @@ import replaceDecking   from "./posts/replace-roof-decking";
 import howToTarp        from "./posts/how-to-tarp-roof";
 import ballardWallingford from "./posts/ballard-fremont-wallingford-roofing";
 import westSeattle      from "./posts/west-seattle-roof-replacement";
+// Round 4 (final Pillar 7 queue)
+import solarPanels      from "./posts/new-roof-before-solar-panels";
+import homeBuyer        from "./posts/home-buyer-roof-checklist-wa";
+import leakLocations    from "./posts/common-roof-leak-locations";
+import insurancePremiums from "./posts/roof-materials-insurance-premiums";
 
 const importedPosts: BlogPost[] = [
   kirklandRepair,
@@ -78,6 +83,10 @@ const importedPosts: BlogPost[] = [
   howToTarp,
   ballardWallingford,
   westSeattle,
+  solarPanels,
+  homeBuyer,
+  leakLocations,
+  insurancePremiums,
 ];
 
 const inlinePosts: BlogPost[] = [
