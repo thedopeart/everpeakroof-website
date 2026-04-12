@@ -35,6 +35,17 @@ import fileInsuranceClaim from "./posts/file-roof-insurance-claim-wa";
 import cedarShake       from "./posts/cedar-shake-replacement-seattle";
 import capitolHill      from "./posts/capitol-hill-roofing-seattle";
 import queenAnne        from "./posts/queen-anne-roofing-seattle";
+// Round 3
+import tpoGuide         from "./posts/tpo-roofing-guide";
+import metalCostWA      from "./posts/metal-roof-cost-washington";
+import atticVent        from "./posts/attic-ventilation-signs";
+import diyVsPro         from "./posts/diy-vs-pro-roof-repair";
+import flashingGuide    from "./posts/roof-flashing-guide";
+import modBitumen       from "./posts/modified-bitumen-roofing";
+import replaceDecking   from "./posts/replace-roof-decking";
+import howToTarp        from "./posts/how-to-tarp-roof";
+import ballardWallingford from "./posts/ballard-fremont-wallingford-roofing";
+import westSeattle      from "./posts/west-seattle-roof-replacement";
 
 const importedPosts: BlogPost[] = [
   kirklandRepair,
@@ -57,6 +68,16 @@ const importedPosts: BlogPost[] = [
   cedarShake,
   capitolHill,
   queenAnne,
+  tpoGuide,
+  metalCostWA,
+  atticVent,
+  diyVsPro,
+  flashingGuide,
+  modBitumen,
+  replaceDecking,
+  howToTarp,
+  ballardWallingford,
+  westSeattle,
 ];
 
 const inlinePosts: BlogPost[] = [
