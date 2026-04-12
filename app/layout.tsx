@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, DM_Serif_Display } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import JsonLd from "@/components/shared/json-ld";
 import { localBusinessSchema } from "@/lib/schema";
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -73,6 +76,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
+      {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
     </html>
   );
 }
