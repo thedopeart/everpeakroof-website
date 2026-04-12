@@ -5,8 +5,8 @@ import Image from "next/image";
 import { ChevronRight, Phone, CheckCircle2, ArrowRight, AlertTriangle } from "lucide-react";
 import { services } from "@/lib/services";
 
-const PHONE = "(206) 555-0180";
-const PHONE_HREF = "tel:+12065550180";
+const PHONE = "(425) 505-7142";
+const PHONE_HREF = "tel:+14255057142";
 
 interface Props {
   params: Promise<{ slug: string }>;

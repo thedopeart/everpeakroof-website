@@ -3,8 +3,8 @@ import { Phone, Mail, MapPin, Shield, Award, Clock } from "lucide-react";
 import { featuredServices, services } from "@/lib/services";
 import { tier1Cities, tier2Cities } from "@/lib/cities";
 
-const PHONE = "(206) 555-0180";
-const PHONE_HREF = "tel:+12065550180";
+const PHONE = "(425) 505-7142";
+const PHONE_HREF = "tel:+14255057142";
 const EMAIL = "info@everpeakroof.com";
 
 export default function Footer() {

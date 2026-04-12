@@ -4,9 +4,9 @@ import Image from "next/image";
 import { ShieldCheck, Award, Users, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Everpeak Roof | Seattle Roofing Contractor",
+  title: "About Everpeak Roofing | Seattle Roofing Company",
   description:
-    "Everpeak LLC is a licensed Washington state roofing contractor serving 20 cities across the Puget Sound. Learn about our team, values, and service area.",
+    "Everpeak Roofing is a Seattle based roofing company delivering reliable roof inspections, repairs, and replacements built for the Pacific Northwest.",
   alternates: { canonical: "https://everpeakroof.com/about" },
 };
 
@@ -20,11 +20,19 @@ export default function AboutPage() {
           <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-2">About Us</p>
           <h1 className="font-black text-[#1E3D30] leading-tight tracking-tight mb-5"
             style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-            We Know Seattle Roofs
+            Seattle Roofing, Built for the PNW
           </h1>
-          <p className="text-[#374151] text-lg leading-relaxed max-w-2xl">
-            Everpeak LLC is a licensed and insured roofing contractor based in the greater Seattle area. We handle everything from single-leak repairs to full tear-off replacements for homeowners and commercial property owners across the Puget Sound.
-          </p>
+          <div className="text-[#374151] text-lg leading-relaxed max-w-2xl flex flex-col gap-5">
+            <p>
+              Everpeak Roofing is a Seattle based roofing company committed to delivering reliable, high-quality roofing solutions with a customer-first approach. We specialize in roof inspections, repairs, and full replacements, helping homeowners protect their investment with durable materials and expert craftsmanship.
+            </p>
+            <p>
+              We understand the challenges of the Pacific Northwest climate, and our team focuses on providing long-lasting solutions designed to withstand heavy rain, wind, and moisture. From the initial inspection to project completion, we prioritize clear communication, transparency, and attention to detail so you always know what to expect.
+            </p>
+            <p>
+              At Everpeak Roofing, our goal is simple: to provide honest service, dependable work, and peace of mind for every homeowner we serve.
+            </p>
+          </div>
         </div>
 
         {/* Team photo */}

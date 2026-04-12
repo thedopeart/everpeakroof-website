@@ -5,8 +5,8 @@ import Image from "next/image";
 import { Phone, ChevronRight, ShieldCheck, Star, MapPin, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 
-const PHONE = "(206) 555-0180";
-const PHONE_HREF = "tel:+12065550180";
+const PHONE = "(425) 505-7142";
+const PHONE_HREF = "tel:+14255057142";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 

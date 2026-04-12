@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://everpeakroof.com/contact" },
 };
 
-const PHONE = "(206) 555-0180";
-const PHONE_HREF = "tel:+12065550180";
+const PHONE = "(425) 505-7142";
+const PHONE_HREF = "tel:+14255057142";
 const EMAIL = "info@everpeakroof.com";
 
 export default function ContactPage() {
@@ -48,7 +48,7 @@ export default function ContactPage() {
                   <input
                     type="tel" name="phone" required
                     className="w-full px-4 py-3 rounded-xl border border-[#E5DDD3] bg-[#FAF3EB] text-sm outline-none focus:border-[#2D5A47] focus:ring-2 focus:ring-[#2D5A47]/10 transition-colors"
-                    placeholder="(206) 000-0000"
+                    placeholder="(425) 000-0000"
                   />
                 </div>
               </div>

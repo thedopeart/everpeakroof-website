@@ -6,8 +6,8 @@ import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/cn";
 import UtilityBar from "./utility-bar";
 
-const PHONE = "(206) 555-0180";
-const PHONE_HREF = "tel:+12065550180";
+const PHONE = "(425) 505-7142";
+const PHONE_HREF = "tel:+14255057142";
 
 const NAV = [
   {

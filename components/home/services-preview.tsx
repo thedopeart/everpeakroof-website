@@ -139,6 +139,7 @@ export default function ServicesPreview() {
         {/* Extra services row */}
         <div className="mt-6 flex flex-wrap gap-3 justify-center">
           {[
+            { slug: "soft-washing",           name: "Soft Washing" },
             { slug: "insurance-restoration",  name: "Insurance Claims" },
             { slug: "maintenance-program",    name: "Maintenance Plans" },
           ].map((s) => (

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Phone, ChevronRight } from "lucide-react";
 
-const PHONE = "(206) 555-0180";
-const PHONE_HREF = "tel:+12065550180";
+const PHONE = "(425) 505-7142";
+const PHONE_HREF = "tel:+14255057142";
 
 export default function CtaBanner() {
   return (

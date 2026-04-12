@@ -206,6 +206,37 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "soft-washing",
+    name: "Soft Washing",
+    shortDesc: "Low-pressure roof cleaning that removes moss, algae, and stains without damaging shingles.",
+    icon: "Droplets",
+    featured: true,
+    image: "/images/craftsman-tile.jpg",
+    longDesc:
+      "PNW roofs take a beating from constant moisture, shade, and organic growth. Moss and algae hold water against your shingles, which speeds up rot and shortens the life of the roof. Our soft wash system uses a low-pressure approach with cleaning solutions that lift moss, algae, and black streaks without tearing up the granules on your shingles. It cleans the roof you have and slows down how fast the growth comes back.",
+    process: [
+      "Free inspection so we can see how bad the moss and staining actually are",
+      "We protect landscaping and gutters before we start",
+      "Low-pressure soft wash application across the full roof surface",
+      "Treatment that kills moss at the root to slow regrowth",
+      "Final walkthrough and honest recommendations on next steps",
+    ],
+    includes: [
+      "Full roof moss and algae removal",
+      "Black streak and stain treatment",
+      "Low-pressure soft wash, safe for shingles and cedar",
+      "Root-level moss treatment to slow future growth",
+      "Gutter and landscape protection during the clean",
+      "Free roof inspection with the service",
+    ],
+    commonProblems: [
+      "Green moss patches holding moisture against the shingles",
+      "Black algae streaks making a roof look aged before its time",
+      "Shaded or damp sections of the roof where growth keeps coming back",
+      "Early shingle wear caused by organic buildup that was never addressed",
+    ],
+  },
+  {
     slug: "maintenance-program",
     name: "Maintenance Program",
     shortDesc: "Annual maintenance plans to extend your roof's life and prevent costly repairs.",
