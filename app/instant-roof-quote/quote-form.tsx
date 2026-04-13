@@ -14,6 +14,7 @@ import {
   Home,
 } from "lucide-react";
 import { tier1Cities, tier2Cities } from "@/lib/cities";
+import { submitLead } from "@/app/actions/submit-lead";
 
 const PHONE = "(425) 505-7142";
 const PHONE_HREF = "tel:+14255057142";
@@ -77,6 +78,8 @@ const initialState: FormState = {
 export default function QuoteForm() {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState<FormState>(initialState);
 
   const update = <K extends keyof FormState>(key: K, value: FormState[K]) => {
@@ -90,10 +93,32 @@ export default function QuoteForm() {
 
   const cities = [...tier1Cities, ...tier2Cities];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!step3Valid) return;
-    setSubmitted(true);
+    setSubmitting(true);
+    setError(null);
+
+    const result = await submitLead("instant-quote", {
+      name: form.name,
+      phone: form.phone,
+      email: form.email,
+      service: form.service,
+      propertyType: form.propertyType,
+      city: form.city,
+      zip: form.zip,
+      roofAge: form.roofAge,
+      roofMaterial: form.roofMaterial,
+      bestTime: form.bestTime,
+      notes: form.notes,
+    });
+
+    if (result.success) {
+      setSubmitted(true);
+    } else {
+      setError(result.error ?? "Something went wrong.");
+    }
+    setSubmitting(false);
   };
 
   return (
@@ -152,6 +177,8 @@ export default function QuoteForm() {
                       update={update}
                       onBack={() => setStep(2)}
                       valid={step3Valid}
+                      submitting={submitting}
+                      error={error}
                     />
                   )}
                 </form>
@@ -470,11 +497,15 @@ function StepThree({
   update,
   onBack,
   valid,
+  submitting,
+  error,
 }: {
   form: FormState;
   update: <K extends keyof FormState>(key: K, value: FormState[K]) => void;
   onBack: () => void;
   valid: boolean;
+  submitting: boolean;
+  error: string | null;
 }) {
   return (
     <>
@@ -545,21 +576,28 @@ function StepThree({
         />
       </div>
 
+      {error && (
+        <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+          {error}
+        </p>
+      )}
+
       <div className="flex justify-between items-center mt-2">
         <button
           type="button"
           onClick={onBack}
-          className="inline-flex items-center gap-1 px-4 py-3 text-sm font-semibold text-[#374151] hover:text-[#1E3D30] transition-colors"
+          disabled={submitting}
+          className="inline-flex items-center gap-1 px-4 py-3 text-sm font-semibold text-[#374151] hover:text-[#1E3D30] transition-colors disabled:opacity-50"
         >
           <ChevronLeft size={16} />
           Back
         </button>
         <button
           type="submit"
-          disabled={!valid}
+          disabled={!valid || submitting}
           className="px-6 py-4 bg-[#D4883E] hover:bg-[#B86E2A] disabled:bg-[#E5DDD3] disabled:text-[#374151]/60 disabled:cursor-not-allowed text-white font-bold rounded-xl transition-colors shadow-[0_4px_16px_rgba(212,136,62,0.35)] text-sm"
         >
-          Send My Quote Request
+          {submitting ? "Sending..." : "Send My Quote Request"}
         </button>
       </div>
     </>

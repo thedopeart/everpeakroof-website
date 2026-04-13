@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import JsonLd from "@/components/shared/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
+import ContactForm from "./contact-form";
 
 export const metadata: Metadata = {
   title: "Contact | Free Roofing Estimate",
@@ -41,78 +42,7 @@ export default function ContactPage() {
           {/* Form */}
           <div className="bg-white rounded-2xl border border-[#E5DDD3] p-8 shadow-[0_1px_4px_rgba(45,90,71,0.06)]">
             <h2 className="font-bold text-[#1E3D30] text-xl mb-6">Request a Free Estimate</h2>
-            <form className="flex flex-col gap-4">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-semibold text-[#2C2C2C] mb-1.5">Name</label>
-                  <input
-                    type="text" name="name" required
-                    className="w-full px-4 py-3 rounded-xl border border-[#E5DDD3] bg-[#FAF3EB] text-sm outline-none focus:border-[#2D5A47] focus:ring-2 focus:ring-[#2D5A47]/10 transition-colors"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-[#2C2C2C] mb-1.5">Phone</label>
-                  <input
-                    type="tel" name="phone" required
-                    className="w-full px-4 py-3 rounded-xl border border-[#E5DDD3] bg-[#FAF3EB] text-sm outline-none focus:border-[#2D5A47] focus:ring-2 focus:ring-[#2D5A47]/10 transition-colors"
-                    placeholder="(425) 000-0000"
-                  />
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-[#2C2C2C] mb-1.5">Email</label>
-                <input
-                  type="email" name="email" required
-                  className="w-full px-4 py-3 rounded-xl border border-[#E5DDD3] bg-[#FAF3EB] text-sm outline-none focus:border-[#2D5A47] focus:ring-2 focus:ring-[#2D5A47]/10 transition-colors"
-                  placeholder="you@email.com"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-[#2C2C2C] mb-1.5">Service Needed</label>
-                <select
-                  name="service"
-                  className="w-full px-4 py-3 rounded-xl border border-[#E5DDD3] bg-[#FAF3EB] text-sm outline-none focus:border-[#2D5A47] focus:ring-2 focus:ring-[#2D5A47]/10 transition-colors text-[#374151]"
-                >
-                  <option value="">Select a service…</option>
-                  <option>Roof Repair</option>
-                  <option>Roof Replacement</option>
-                  <option>Emergency Repair</option>
-                  <option>Metal Roofing</option>
-                  <option>Flat Roofing</option>
-                  <option>Roof Inspection</option>
-                  <option>Gutters</option>
-                  <option>Siding</option>
-                  <option>Insurance Claim Help</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-[#2C2C2C] mb-1.5">Zip Code</label>
-                <input
-                  type="text" name="zip"
-                  className="w-full px-4 py-3 rounded-xl border border-[#E5DDD3] bg-[#FAF3EB] text-sm outline-none focus:border-[#2D5A47] focus:ring-2 focus:ring-[#2D5A47]/10 transition-colors"
-                  placeholder="98101"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-[#2C2C2C] mb-1.5">Describe the Issue</label>
-                <textarea
-                  name="message" rows={4}
-                  className="w-full px-4 py-3 rounded-xl border border-[#E5DDD3] bg-[#FAF3EB] text-sm outline-none focus:border-[#2D5A47] focus:ring-2 focus:ring-[#2D5A47]/10 transition-colors resize-none"
-                  placeholder="Tell us what's going on with your roof…"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full py-4 bg-[#D4883E] hover:bg-[#B86E2A] text-white font-bold rounded-xl transition-colors shadow-[0_4px_16px_rgba(212,136,62,0.35)] mt-1"
-              >
-                Get My Free Estimate
-              </button>
-              <p className="text-xs text-[#374151] text-center">
-                No spam. We&apos;ll only use this to schedule your estimate.
-              </p>
-            </form>
+            <ContactForm />
           </div>
 
           {/* Contact info */}
