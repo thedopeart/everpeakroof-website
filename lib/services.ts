@@ -321,12 +321,12 @@ export const services: Service[] = [
   {
     slug: "commercial-roofing",
     name: "Commercial Roofing",
-    shortDesc: "TPO, PVC, and commercial maintenance contracts for offices and warehouses.",
+    shortDesc: "Flat roof repair, maintenance, and membrane systems for commercial buildings up to 40' x 25'.",
     icon: "Building2",
     featured: true,
-    image: "/images/craftsman-roof-build.jpg",
+    image: "/images/flat-roof-work-1.jpg",
     longDesc:
-      "Commercial roofs are a different animal. Larger square footage, different materials, stricter code requirements, and building owners who need the work done without disrupting tenants or operations. We handle TPO and PVC membrane systems, commercial maintenance contracts, and roof coatings. We work around your business schedule and provide detailed proposals with clear timelines.",
+      "At Everpeak Roofing, we have over 10 years of experience working with commercial flat roofing systems. Our team understands the unique demands of flat roofs, including drainage, waterproofing, and long-term durability in varying weather conditions. We specialize in providing reliable repair and maintenance solutions that help extend the life of commercial roofing systems.\n\nAt this time, we are focusing on smaller-scale projects, specifically roofs up to 40' x 25', allowing us to provide more detailed, high-quality workmanship and efficient service for each client.",
     process: [
       "Site visit to assess the roof system, drainage, and any existing issues",
       "Detailed proposal with material specs, timeline, and phasing plan",
