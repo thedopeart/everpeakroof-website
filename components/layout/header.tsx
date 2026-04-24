@@ -19,7 +19,7 @@ const NAV = [
       { label: "Emergency Repair",     href: "/services/emergency-roof-repair" },
       { label: "Roof Inspection",      href: "/services/roof-inspection" },
       { label: "Shingle Installation", href: "/services/shingle-installation" },
-      { label: "Soft Washing",         href: "/services/soft-washing" },
+      { label: "Soft Wash & Moss Removal", href: "/services/soft-washing" },
       { label: "Commercial Roofing",   href: "/services/commercial-roofing" },
       { label: "Insurance Claims",     href: "/services/insurance-restoration" },
     ],

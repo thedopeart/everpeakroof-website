@@ -437,13 +437,13 @@ export const services: Service[] = [
   },
   {
     slug: "soft-washing",
-    name: "Soft Washing",
-    shortDesc: "Low-pressure roof cleaning that removes moss, algae, and stains without damaging shingles.",
+    name: "Roof Soft Wash & Moss Removal",
+    shortDesc: "Safe, low-pressure roof cleaning that removes moss, algae, and stains without causing damage.",
     icon: "Droplets",
     featured: true,
     image: "/images/craftsman-tile.jpg",
     longDesc:
-      "PNW roofs take a beating from constant moisture, shade, and organic growth. Moss and algae hold water against your shingles, which speeds up rot and shortens the life of the roof. Our soft wash system uses a low-pressure approach with cleaning solutions that lift moss, algae, and black streaks without tearing up the granules on your shingles. It cleans the roof you have and slows down how fast the growth comes back.",
+      "Your roof is constantly exposed to moisture, debris, and organic growth like moss and algae. Over time, this buildup can damage your shingles and shorten the life of your roof. At Everpeak Roofing, we use a safe, low-pressure soft wash system to remove moss, algae, and stains without causing damage. Our process not only cleans your roof but also helps prevent future growth, protecting your home and your investment.",
     process: [
       "Free inspection so we can see how bad the moss and staining actually are",
       "We protect landscaping and gutters before we start",
