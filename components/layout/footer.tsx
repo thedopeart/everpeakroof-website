@@ -21,7 +21,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-2.5 text-sm text-white/70">
               <Award size={16} className="text-[#D4883E] shrink-0" />
-              Free Estimates — No Obligation
+              Free Estimates, No Obligation
             </div>
             <div className="flex items-center gap-2.5 text-sm text-white/70">
               <Clock size={16} className="text-[#D4883E] shrink-0" />
@@ -47,7 +47,7 @@ export default function Footer() {
             <div className="font-semibold text-[0.65rem] tracking-[0.2em] text-[#D4883E] uppercase mt-0.5">ROOF</div>
           </div>
           <p className="text-sm text-white/60 leading-relaxed mb-5">
-            Seattle metro roofing — repairs, replacements, inspections, and emergency work across 20 cities in the Puget Sound.
+            Seattle metro roofing. Repairs, replacements, inspections, and emergency work across 20 cities in the Puget Sound.
           </p>
           <div className="flex flex-col gap-2.5">
             <a href={PHONE_HREF} className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors">

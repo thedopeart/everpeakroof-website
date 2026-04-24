@@ -7,7 +7,7 @@ import ContactForm from "./contact-form";
 export const metadata: Metadata = {
   title: "Contact | Free Roofing Estimate",
   description:
-    "Get a free roofing estimate from Everpeak Roof. Serving Seattle, Bellevue, Tacoma, and 15+ Puget Sound cities. Call or fill out the form — we respond fast.",
+    "Get a free roofing estimate from Everpeak Roof. Serving Seattle, Bellevue, Tacoma, and 15+ Puget Sound cities. Call or fill out the form. We respond fast.",
   alternates: { canonical: "https://everpeakroof.com/contact" },
 };
 

@@ -63,7 +63,7 @@ export default function ServiceAreas() {
 
         {/* Note */}
         <p className="mt-6 text-xs text-[#374151] text-center">
-          Don&apos;t see your city? Call us — we likely serve your area.
+          Don&apos;t see your city? Call us. We likely serve your area.
         </p>
       </div>
     </section>

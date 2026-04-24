@@ -209,7 +209,7 @@ export const services: Service[] = [
     featured: true,
     image: "/images/craftsman-tile.jpg",
     longDesc:
-      "Whether you're buying a house, filing an insurance claim, or just want to know how much life your roof has left, we'll give you an honest assessment. We go up on the roof, check every component (shingles, flashing, vents, gutters, deck condition), take photos, and give you a written report with our findings. If nothing needs fixing, we'll tell you. If something does, you'll know exactly what and roughly how much.",
+      "Buying a house, dealing with storm damage, or just wondering how much life your roof has left? We'll give you an honest answer. We go up on the roof, check every component (shingles, flashing, vents, gutters, deck condition), take photos, and put together a written report with what we found. If nothing needs fixing, we'll tell you that. If something does, you'll know exactly what and roughly how much.",
     process: [
       "Schedule a time that works for you, usually within a day or two",
       "We inspect the roof from the ground, the ladder, and on top",

@@ -98,7 +98,7 @@ export default function Hero() {
             className="text-white/65 text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
           >
             Licensed, insured, and up on roofs across the Puget Sound.
-            Free estimates, honest pricing — no pressure, no upsells.
+            Free estimates, honest pricing. No pressure, no upsells.
           </motion.p>
 
           {/* CTAs */}

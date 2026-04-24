@@ -67,7 +67,7 @@ export default function AboutPage() {
             {
               icon: Award,
               title: "No Pressure, No Upsells",
-              desc: "We show you what's there, tell you what it'll take to fix it, and give you a straight price. A repair is a repair — we won't push you into a replacement you don't need.",
+              desc: "We show you what's there, tell you what it'll take to fix it, and give you a straight price. A repair is a repair. We won't push you into a replacement you don't need.",
             },
             {
               icon: Users,
@@ -77,7 +77,7 @@ export default function AboutPage() {
             {
               icon: MapPin,
               title: "Built for the PNW",
-              desc: "Seattle weather is specific — moss, constant rain, wind storms, older housing stock. We've seen every variation of it and know what holds up here.",
+              desc: "Seattle weather is specific: moss, constant rain, wind storms, older housing stock. We've seen every variation of it and know what holds up here.",
             },
           ].map((item) => {
             const Icon = item.icon;

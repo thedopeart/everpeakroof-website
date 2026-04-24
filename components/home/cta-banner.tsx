@@ -18,7 +18,7 @@ export default function CtaBanner() {
 
       <div className="max-w-4xl mx-auto text-center relative">
         <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-3">
-          Free Estimates — No Obligation
+          Free Estimates, No Obligation
         </p>
         <h2
           className="font-black text-white leading-tight tracking-tight mb-5"
