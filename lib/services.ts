@@ -441,7 +441,7 @@ export const services: Service[] = [
     shortDesc: "Safe, low-pressure roof cleaning that removes moss, algae, and stains without causing damage.",
     icon: "Droplets",
     featured: true,
-    image: "/images/craftsman-tile.jpg",
+    image: "/images/roof-washing.jpg",
     longDesc:
       "Your roof is constantly exposed to moisture, debris, and organic growth like moss and algae. Over time, this buildup can damage your shingles and shorten the life of your roof. At Everpeak Roofing, we use a safe, low-pressure soft wash system to remove moss, algae, and stains without causing damage. Our process not only cleans your roof but also helps prevent future growth, protecting your home and your investment.",
     process: [
