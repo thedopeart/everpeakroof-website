@@ -55,7 +55,7 @@ export async function submitLead(
 
   try {
     const { error } = await resend.emails.send({
-      from: "Everpeak Roof <onboarding@resend.dev>",
+      from: "Everpeak Roof <leads@everpeakroof.com>",
       to: LEAD_EMAIL,
       replyTo: email || undefined,
       subject: subjectMap[source],
