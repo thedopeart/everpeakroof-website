@@ -10,41 +10,55 @@ import type { ReactNode } from "react";
 const PHONE = "(425) 505-7142";
 const PHONE_HREF = "tel:+14255057142";
 
+const LINK_CLASS =
+  "text-[#2D5A47] font-semibold underline decoration-[#D4883E]/40 decoration-2 underline-offset-4 hover:decoration-[#D4883E] transition-colors";
+
+// Parses **bold** and [text](url) inline markdown
 function renderInline(text: string): ReactNode[] {
   const parts: ReactNode[] = [];
-  const pattern = /\[([^\]]+)\]\(([^)]+)\)/g;
-  let lastIndex = 0;
-  let match: RegExpExecArray | null;
+  let rest = text;
   let key = 0;
 
-  while ((match = pattern.exec(text)) !== null) {
-    if (match.index > lastIndex) parts.push(text.slice(lastIndex, match.index));
-    const [, label, href] = match;
-    if (href.startsWith("/")) {
-      parts.push(
-        <Link
-          key={`l-${key++}`}
-          href={href}
-          className="text-[#2D5A47] font-semibold underline decoration-[#D4883E]/40 decoration-2 underline-offset-4 hover:decoration-[#D4883E] transition-colors"
-        >
-          {label}
-        </Link>
-      );
-    } else {
-      parts.push(
-        <a
-          key={`l-${key++}`}
-          href={href}
-          rel="noopener noreferrer"
-          className="text-[#2D5A47] font-semibold underline decoration-[#D4883E]/40 decoration-2 underline-offset-4 hover:decoration-[#D4883E] transition-colors"
-        >
-          {label}
-        </a>
-      );
+  while (rest.length > 0) {
+    const boldM = /\*\*([^*]+)\*\*/.exec(rest);
+    const linkM = /\[([^\]]+)\]\(([^)]+)\)/.exec(rest);
+
+    const boldIdx = boldM ? boldM.index : Infinity;
+    const linkIdx = linkM ? linkM.index : Infinity;
+
+    if (boldIdx === Infinity && linkIdx === Infinity) {
+      parts.push(rest);
+      break;
     }
-    lastIndex = match.index + match[0].length;
+
+    if (boldIdx < linkIdx) {
+      if (boldM!.index > 0) parts.push(rest.slice(0, boldM!.index));
+      parts.push(
+        <strong key={`b-${key++}`} className="font-semibold text-[#1E3D30]">
+          {boldM![1]}
+        </strong>
+      );
+      rest = rest.slice(boldM!.index + boldM![0].length);
+    } else {
+      if (linkM!.index > 0) parts.push(rest.slice(0, linkM!.index));
+      const [, label, href] = linkM!;
+      if (href.startsWith("/")) {
+        parts.push(
+          <Link key={`l-${key++}`} href={href} className={LINK_CLASS}>
+            {label}
+          </Link>
+        );
+      } else {
+        parts.push(
+          <a key={`l-${key++}`} href={href} rel="noopener noreferrer" className={LINK_CLASS}>
+            {label}
+          </a>
+        );
+      }
+      rest = rest.slice(linkM!.index + linkM![0].length);
+    }
   }
-  if (lastIndex < text.length) parts.push(text.slice(lastIndex));
+
   return parts.length > 0 ? parts : [text];
 }
 
@@ -67,7 +81,7 @@ const calloutConfig = {
     bg: "bg-[#EFF6FF]",
     border: "border-[#3B82F6]",
     icon: Info,
-    iconColor: "text-[#3B82F6]",
+    iconColor: "text-[#2563EB]",
     titleColor: "text-[#1D4ED8]",
   },
 };
@@ -76,7 +90,7 @@ const badgeStyles: Record<string, string> = {
   green: "bg-[#2D5A47]/10 text-[#1E3D30] border border-[#2D5A47]/25",
   amber: "bg-[#D4883E]/10 text-[#7A4010] border border-[#D4883E]/25",
   red:   "bg-red-50 text-red-700 border border-red-200",
-  gray:  "bg-[#374151]/8 text-[#374151] border border-[#374151]/15",
+  gray:  "bg-[#374151]/10 text-[#1F2937] border border-[#374151]/20",
 };
 
 function renderBlocks(blocks: Block[]): ReactNode {
@@ -84,7 +98,7 @@ function renderBlocks(blocks: Block[]): ReactNode {
     switch (block.type) {
       case "paragraph":
         return (
-          <p key={i} className="text-[#374151] text-lg leading-relaxed mb-6">
+          <p key={i} className="text-[#1F2937] text-lg leading-relaxed mb-6">
             {renderInline(block.text)}
           </p>
         );
@@ -92,10 +106,7 @@ function renderBlocks(blocks: Block[]): ReactNode {
       case "heading": {
         if (block.level === 3) {
           return (
-            <h3
-              key={i}
-              className="font-bold text-[#1E3D30] text-xl mt-10 mb-4"
-            >
+            <h3 key={i} className="font-bold text-[#1E3D30] text-xl mt-10 mb-4">
               {block.text}
             </h3>
           );
@@ -125,7 +136,7 @@ function renderBlocks(blocks: Block[]): ReactNode {
                 >
                   {stat.value}
                 </div>
-                <div className="text-xs text-[#374151] leading-snug">{stat.label}</div>
+                <div className="text-xs text-[#4B5563] leading-snug">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -145,7 +156,7 @@ function renderBlocks(blocks: Block[]): ReactNode {
                 {block.title && (
                   <p className={`font-bold text-sm ${cfg.titleColor} mb-1.5`}>{block.title}</p>
                 )}
-                <p className="text-[#374151] text-sm leading-relaxed">
+                <p className="text-[#1F2937] text-sm leading-relaxed">
                   {renderInline(block.body)}
                 </p>
               </div>
@@ -172,23 +183,16 @@ function renderBlocks(blocks: Block[]): ReactNode {
               </thead>
               <tbody>
                 {block.rows.map((row, j) => (
-                  <tr
-                    key={j}
-                    className={j % 2 === 0 ? "bg-white" : "bg-[#FAF3EB]/60"}
-                  >
+                  <tr key={j} className={j % 2 === 0 ? "bg-white" : "bg-[#FAF3EB]/60"}>
                     {row.cells.map((cell, k) => (
-                      <td key={k} className="px-4 py-3 text-[#374151]">
+                      <td key={k} className="px-4 py-3 text-[#1F2937]">
                         {cell.badge ? (
-                          <span
-                            className={`inline-block px-2.5 py-1 rounded-full text-xs font-semibold ${badgeStyles[cell.badge]}`}
-                          >
+                          <span className={`inline-block px-2.5 py-1 rounded-full text-xs font-semibold ${badgeStyles[cell.badge]}`}>
                             {cell.text}
                           </span>
-                        ) : (
-                          k === 0 ? (
-                            <span className="font-medium text-[#2C2C2C]">{cell.text}</span>
-                          ) : cell.text
-                        )}
+                        ) : k === 0 ? (
+                          <span className="font-semibold text-[#1E3D30]">{cell.text}</span>
+                        ) : cell.text}
                       </td>
                     ))}
                   </tr>
@@ -207,6 +211,7 @@ function renderBlocks(blocks: Block[]): ReactNode {
   });
 }
 
+// Fallback renderer for plain-text body posts — parses ## headings and **bold**
 function renderBody(body: string): ReactNode[] {
   return body
     .split(/\n\n+/)
@@ -232,7 +237,7 @@ function renderBody(body: string): ReactNode[] {
         );
       }
       return (
-        <p key={i} className="text-[#374151] text-lg leading-relaxed mb-6 last:mb-0">
+        <p key={i} className="text-[#1F2937] text-lg leading-relaxed mb-6 last:mb-0">
           {renderInline(para)}
         </p>
       );
@@ -280,22 +285,20 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPost(slug);
   if (!post) notFound();
 
-  const related = getAllPosts()
-    .filter((p) => p.slug !== slug)
-    .slice(0, 3);
+  const related = getAllPosts().filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
     <div className="min-h-screen bg-white pt-28 pb-20">
 
-      {/* Narrow header: breadcrumb → title → meta */}
-      <div className="max-w-3xl mx-auto px-5 md:px-8">
+      {/* Narrow header section */}
+      <div className="max-w-4xl mx-auto px-5 md:px-8">
 
-        <nav className="flex items-center gap-1.5 text-sm text-[#374151] mb-7 flex-wrap">
+        <nav className="flex items-center gap-1.5 text-sm text-[#4B5563] mb-7 flex-wrap">
           <Link href="/" className="hover:text-[#2D5A47] transition-colors">Home</Link>
-          <ChevronRight size={13} className="text-[#374151]/40" />
+          <ChevronRight size={13} className="text-[#9CA3AF]" />
           <Link href="/blog" className="hover:text-[#2D5A47] transition-colors">Blog</Link>
-          <ChevronRight size={13} className="text-[#374151]/40" />
-          <span className="text-[#2C2C2C] font-semibold line-clamp-1">{post.title}</span>
+          <ChevronRight size={13} className="text-[#9CA3AF]" />
+          <span className="text-[#1F2937] font-semibold line-clamp-1">{post.title}</span>
         </nav>
 
         <div className="mb-4">
@@ -311,7 +314,7 @@ export default async function BlogPostPage({ params }: Props) {
           {post.title}
         </h1>
 
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-[#374151]/70 pb-8 border-b border-[#E5DDD3]">
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-[#6B7280] pb-8 border-b border-[#E5DDD3]">
           <span className="flex items-center gap-1.5">
             <User size={13} />
             {post.author}
@@ -328,14 +331,14 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       {/* Wider hero image */}
-      <div className="max-w-5xl mx-auto px-5 md:px-8 my-10">
-        <div className="relative h-72 md:h-[460px] rounded-3xl overflow-hidden shadow-[0_8px_40px_rgba(30,61,48,0.18)]">
+      <div className="max-w-6xl mx-auto px-5 md:px-8 my-10">
+        <div className="relative h-72 md:h-[500px] rounded-3xl overflow-hidden shadow-[0_8px_40px_rgba(30,61,48,0.18)]">
           <Image
             src={post.heroImage}
             alt={post.heroImageAlt}
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 100vw, 1024px"
+            sizes="(max-width: 768px) 100vw, 1200px"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
@@ -343,11 +346,11 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       {/* Article content */}
-      <div className="max-w-3xl mx-auto px-5 md:px-8">
+      <div className="max-w-4xl mx-auto px-5 md:px-8">
 
         {/* Excerpt intro callout */}
         <div className="bg-[#FAF3EB] border-l-4 border-[#D4883E] rounded-r-2xl px-6 py-5 mb-10">
-          <p className="text-[#2C2C2C] text-base leading-relaxed font-medium">{post.excerpt}</p>
+          <p className="text-[#1C1C1C] text-base leading-relaxed font-medium">{post.excerpt}</p>
         </div>
 
         {/* Body */}
@@ -365,7 +368,7 @@ export default async function BlogPostPage({ params }: Props) {
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs font-semibold bg-[#FAF3EB] border border-[#E5DDD3] text-[#374151] px-3 py-1.5 rounded-full"
+                className="text-xs font-semibold bg-[#FAF3EB] border border-[#E5DDD3] text-[#4B5563] px-3 py-1.5 rounded-full"
               >
                 #{tag}
               </span>
@@ -381,7 +384,7 @@ export default async function BlogPostPage({ params }: Props) {
           >
             Got a roof question of your own?
           </h3>
-          <p className="text-white/65 text-sm mb-6 max-w-lg leading-relaxed">
+          <p className="text-white/75 text-sm mb-6 max-w-lg leading-relaxed">
             We offer free inspections across Seattle and the Puget Sound. We'll take a look, show you photos, and give you a straight answer. No pressure.
           </p>
           <div className="flex flex-wrap gap-3">
@@ -394,7 +397,7 @@ export default async function BlogPostPage({ params }: Props) {
             </Link>
             <a
               href={PHONE_HREF}
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white font-bold px-6 py-3 rounded-xl transition-colors text-sm"
+              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-3 rounded-xl transition-colors text-sm"
             >
               <Phone size={14} />
               {PHONE}
@@ -406,13 +409,13 @@ export default async function BlogPostPage({ params }: Props) {
         {related.length > 0 && (
           <div>
             <h2 className="font-bold text-[#1E3D30] text-xl mb-1">Keep Reading</h2>
-            <p className="text-sm text-[#374151]/60 mb-5">More from the Everpeak blog</p>
+            <p className="text-sm text-[#6B7280] mb-5">More from the Everpeak blog</p>
             <div className="flex flex-col divide-y divide-[#E5DDD3]">
               {related.map((rp) => (
                 <Link
                   key={rp.slug}
                   href={`/blog/${rp.slug}`}
-                  className="group py-5 flex items-start justify-between gap-4 hover:text-[#2D5A47] transition-colors"
+                  className="group py-5 flex items-start justify-between gap-4"
                 >
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-bold text-[#D4883E] uppercase tracking-wider mb-1.5">
@@ -421,7 +424,7 @@ export default async function BlogPostPage({ params }: Props) {
                     <h3 className="font-bold text-[#1E3D30] leading-snug group-hover:text-[#2D5A47] transition-colors mb-1.5">
                       {rp.title}
                     </h3>
-                    <p className="text-xs text-[#374151]/60 flex items-center gap-1">
+                    <p className="text-xs text-[#6B7280] flex items-center gap-1">
                       <Clock size={11} />
                       {rp.readingTimeMin} min read
                     </p>
