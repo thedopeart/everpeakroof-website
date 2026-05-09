@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { Info } from "lucide-react";
 
 type Pitch = "low" | "medium" | "steep";
-type Material = "asphalt3" | "architectural" | "cedar" | "metal" | "tpo";
+type Material = "asphalt3" | "architectural";
 type JobType = "replacement" | "major" | "minor";
 
 const PITCH_MULTIPLIER: Record<Pitch, number> = {
@@ -13,20 +13,22 @@ const PITCH_MULTIPLIER: Record<Pitch, number> = {
   steep: 1.4,
 };
 
+// Access/labor surcharge per story. More stories = harder to work on.
+// 1 story: base rate. 2 stories: +35%. 3 stories: +65%.
+const STORY_RATE_MULTIPLIER: Record<1 | 2 | 3, number> = {
+  1: 1.0,
+  2: 1.35,
+  3: 1.65,
+};
+
 const MATERIAL_RATE: Record<Material, number> = {
   asphalt3: 5.5,
   architectural: 7.5,
-  cedar: 14.0,
-  metal: 13.0,
-  tpo: 10.0,
 };
 
 const MATERIAL_LABEL: Record<Material, string> = {
   asphalt3: "Asphalt 3-tab shingle",
   architectural: "Architectural shingle",
-  cedar: "Cedar shake",
-  metal: "Metal (standing seam)",
-  tpo: "TPO / flat roof",
 };
 
 const JOB_FACTOR: Record<JobType, number> = {
@@ -59,20 +61,27 @@ export default function RoofCostCalculator() {
   const result = useMemo(() => {
     const safeSqft = Number.isFinite(homeSqft) && homeSqft > 0 ? homeSqft : 0;
 
-    // Footprint shrinks as stories go up (same total sqft stacked).
+    // Roof sits on the top floor — footprint equals home sq ft for a 1-story,
+    // roughly half for 2-story, etc. But more stories means harder access, so
+    // we apply a rate surcharge instead of shrinking the area. Net effect: cost
+    // correctly goes UP with more stories even though the footprint is smaller.
     const footprint = safeSqft / stories;
     const roofArea = footprint * PITCH_MULTIPLIER[pitch];
 
-    const materialRate = MATERIAL_RATE[material];
+    const baseRate = MATERIAL_RATE[material];
+    const storyMultiplier = STORY_RATE_MULTIPLIER[stories];
+    const effectiveRate = baseRate * storyMultiplier;
     const jobFactor = JOB_FACTOR[jobType];
 
-    const midpoint = roofArea * materialRate * jobFactor;
+    const midpoint = roofArea * effectiveRate * jobFactor;
     const low = midpoint * 0.85;
     const high = midpoint * 1.2;
 
     return {
       roofArea,
-      materialRate,
+      baseRate,
+      storyMultiplier,
+      effectiveRate,
       jobFactor,
       low,
       high,
@@ -245,15 +254,29 @@ export default function RoofCostCalculator() {
                     </dd>
                   </div>
                   <div className="flex justify-between gap-4">
-                    <dt className="text-[#374151]">Rate per sq ft</dt>
+                    <dt className="text-[#374151]">Base rate per sq ft</dt>
                     <dd className="font-bold text-[#1E3D30]">
-                      ${result.materialRate.toFixed(2)}
+                      ${result.baseRate.toFixed(2)}
+                    </dd>
+                  </div>
+                  {stories > 1 && (
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-[#374151]">{stories}-story access surcharge</dt>
+                      <dd className="font-bold text-[#D4883E]">
+                        +{Math.round((result.storyMultiplier - 1) * 100)}%
+                      </dd>
+                    </div>
+                  )}
+                  <div className="flex justify-between gap-4 pt-2 border-t border-[#E5DDD3]">
+                    <dt className="text-[#374151]">Effective rate per sq ft</dt>
+                    <dd className="font-bold text-[#1E3D30]">
+                      ${result.effectiveRate.toFixed(2)}
                     </dd>
                   </div>
                   <div className="flex justify-between gap-4">
                     <dt className="text-[#374151]">Job type</dt>
                     <dd className="font-bold text-[#1E3D30]">
-                      {JOB_LABEL[jobType]} ({Math.round(result.jobFactor * 100)}%)
+                      {JOB_LABEL[jobType]}
                     </dd>
                   </div>
                 </dl>
