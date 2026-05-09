@@ -1,8 +1,22 @@
+// Rich content block types for structured blog posts
+export type StatItem = { value: string; label: string };
+export type TableCell = { text: string; badge?: "green" | "amber" | "red" | "gray" };
+export type TableRow = { cells: TableCell[] };
+
+export type Block =
+  | { type: "paragraph"; text: string }
+  | { type: "heading"; level?: 2 | 3; text: string }
+  | { type: "stat-row"; stats: StatItem[] }
+  | { type: "callout"; variant: "tip" | "warning" | "info"; title?: string; body: string }
+  | { type: "table"; headers: string[]; rows: TableRow[] }
+  | { type: "divider" };
+
 export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
-  body: string;
+  body?: string;
+  blocks?: Block[];
   category: string;
   author: string;
   publishedAt: string;

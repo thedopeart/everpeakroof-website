@@ -33,13 +33,13 @@ export default function AboutPage() {
           </h1>
           <div className="text-[#374151] text-lg leading-relaxed max-w-2xl flex flex-col gap-5">
             <p>
-              Everpeak Roofing is a Seattle based roofing company committed to delivering reliable, high-quality roofing solutions with a customer-first approach. We specialize in roof inspections, repairs, and full replacements, helping homeowners protect their investment with durable materials and expert craftsmanship.
+              Everpeak is a Washington state roofing company working across 20 cities in the Seattle metro and Puget Sound. We do inspections, repairs, and full replacements. No subcontractors. The crew that quotes your job is the same crew that shows up.
             </p>
             <p>
-              We understand the challenges of the Pacific Northwest climate, and our team focuses on providing long-lasting solutions designed to withstand heavy rain, wind, and moisture. From the initial inspection to project completion, we prioritize clear communication, transparency, and attention to detail so you always know what to expect.
+              PNW roofs take a beating: moss buildup, six months of rain, wind storms off the Sound, older housing stock with deferred maintenance baked in. We've worked on composition shingles, metal, cedar shake, flat membrane, TPO, and everything in between. Capitol Hill Craftsmans, new construction in Sammamish, commercial buildings in SoDo. The material and the pitch change, the process doesn't.
             </p>
             <p>
-              At Everpeak Roofing, our goal is simple: to provide honest service, dependable work, and peace of mind for every homeowner we serve.
+              Our job is to tell you what's actually wrong, fix it correctly, and give you a straight price. That's it.
             </p>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function AboutPage() {
           <h2 className="font-bold text-xl mb-2">Credentials</h2>
           <div className="flex flex-col gap-2 text-white/70 text-sm">
             <div><span className="text-white font-semibold">Business:</span> Everpeak LLC</div>
-            <div><span className="text-white font-semibold">License:</span> Washington State Contractor #EVERPRL123XX</div>
+            <div><span className="text-white font-semibold">License:</span> Washington State Contractor #EVERPRL743KE</div>
             <div><span className="text-white font-semibold">Coverage:</span> General Liability + Workers&apos; Compensation</div>
             <div><span className="text-white font-semibold">Service Area:</span> 20 cities, greater Seattle metro</div>
           </div>

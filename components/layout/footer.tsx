@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Shield, Award, Clock } from "lucide-react";
 import { featuredServices, services } from "@/lib/services";
 import { tier1Cities, tier2Cities } from "@/lib/cities";
@@ -43,22 +44,27 @@ export default function Footer() {
         {/* Brand */}
         <div className="col-span-2 md:col-span-1">
           <div className="mb-4">
-            <div className="font-black text-xl tracking-tight text-white leading-none">EVERPEAK</div>
-            <div className="font-semibold text-[0.65rem] tracking-[0.2em] text-[#D4883E] uppercase mt-0.5">ROOF</div>
+            <Image
+              src="/images/logo/everpeak-roofing-white.png"
+              alt="Everpeak Roof"
+              width={160}
+              height={48}
+              className="h-12 w-auto"
+            />
           </div>
-          <p className="text-sm text-white/60 leading-relaxed mb-5">
+          <p className="text-sm text-white/75 leading-relaxed mb-5">
             Seattle metro roofing. Repairs, replacements, inspections, and emergency work across 20 cities in the Puget Sound.
           </p>
           <div className="flex flex-col gap-2.5">
-            <a href={PHONE_HREF} className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors">
+            <a href={PHONE_HREF} className="flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white transition-colors">
               <Phone size={14} className="text-[#D4883E]" />
               {PHONE}
             </a>
-            <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors">
+            <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white transition-colors">
               <Mail size={14} className="text-[#D4883E]" />
               {EMAIL}
             </a>
-            <div className="flex items-start gap-2 text-sm text-white/70">
+            <div className="flex items-start gap-2 text-sm font-semibold text-white/80">
               <MapPin size={14} className="text-[#D4883E] mt-0.5 shrink-0" />
               Greater Seattle, WA
             </div>
@@ -73,7 +79,7 @@ export default function Footer() {
               <li key={s.slug}>
                 <Link
                   href={`/services/${s.slug}`}
-                  className="text-sm text-white/65 hover:text-white transition-colors"
+                  className="text-sm font-semibold text-white/80 hover:text-white transition-colors"
                 >
                   {s.name}
                 </Link>
@@ -90,7 +96,7 @@ export default function Footer() {
               <li key={c.slug}>
                 <Link
                   href={`/${c.slug}`}
-                  className="text-sm text-white/65 hover:text-white transition-colors"
+                  className="text-sm font-semibold text-white/80 hover:text-white transition-colors"
                 >
                   {c.name}
                 </Link>
@@ -107,13 +113,12 @@ export default function Footer() {
               { href: "/about",                 label: "About Us" },
               { href: "/reviews",               label: "Reviews" },
               { href: "/contact",               label: "Contact" },
-              { href: "/instant-roof-quote",    label: "Free Quote" },
               { href: "/tools/roof-cost-estimator", label: "Cost Estimator" },
               { href: "/tools/roof-pitch-calculator", label: "Pitch Calculator" },
               { href: "/blog",                  label: "Roofing Blog" },
             ].map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="text-sm text-white/65 hover:text-white transition-colors">
+                <Link href={l.href} className="text-sm font-semibold text-white/80 hover:text-white transition-colors">
                   {l.label}
                 </Link>
               </li>
@@ -124,8 +129,8 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-5 md:px-8 py-5 flex flex-wrap gap-3 items-center justify-between text-xs text-white/40">
-          <span>© {year} Everpeak LLC. All rights reserved. Washington State Contractor License #EVERPRL123XX.</span>
+        <div className="max-w-7xl mx-auto px-5 md:px-8 py-5 flex flex-wrap gap-3 items-center justify-between text-xs font-medium text-white/65">
+          <span>© {year} Everpeak LLC. All rights reserved. Washington State Contractor License #EVERPRL743KE.</span>
           <div className="flex gap-5">
             <Link href="/privacy" className="hover:text-white/70 transition-colors">Privacy</Link>
             <Link href="/terms"   className="hover:text-white/70 transition-colors">Terms</Link>

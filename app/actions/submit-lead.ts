@@ -4,7 +4,7 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const LEAD_EMAIL = process.env.LEAD_EMAIL ?? "al.a.andrad@gmail.com";
+const LEAD_EMAIL = process.env.LEAD_EMAIL ?? "info@everpeakroof.com";
 
 export type LeadSource = "contact" | "instant-quote";
 
@@ -55,7 +55,7 @@ export async function submitLead(
 
   try {
     const { error } = await resend.emails.send({
-      from: "Everpeak Leads <onboarding@resend.dev>",
+      from: "Everpeak Roof <onboarding@resend.dev>",
       to: LEAD_EMAIL,
       replyTo: email || undefined,
       subject: subjectMap[source],

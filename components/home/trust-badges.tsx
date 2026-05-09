@@ -1,36 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, Award, Scale } from "lucide-react";
+import { ShieldCheck, FileText, Clock } from "lucide-react";
 
 const BADGES = [
   {
     icon: ShieldCheck,
     name: "Licensed & Insured",
-    detail: "WA State Contractor License",
+    detail: "WA Contractor Lic. #EVERPRL743KE",
     color: "#2D5A47",
   },
   {
-    icon: Award,
-    name: "GAF Certified",
-    detail: "Factory-Certified Installer",
-    color: "#B86E2A",
+    icon: FileText,
+    name: "Free Written Estimates",
+    detail: "Detailed quote before any work begins",
+    color: "#2D5A47",
   },
   {
-    icon: Scale,
-    name: "BBB Accredited",
-    detail: "Better Business Bureau",
+    icon: Clock,
+    name: "7-Day Service",
+    detail: "Emergency calls answered any day",
     color: "#2D5A47",
   },
 ];
 
 export default function TrustBadges() {
   return (
-    <section className="bg-[#FAF3EB] border-y border-[#E5DDD3]">
-      <div className="max-w-4xl mx-auto px-5 md:px-8 py-10">
-        <p className="text-center text-xs font-bold uppercase tracking-widest text-[#374151] mb-8">
-          Credentials
-        </p>
+    <section className="bg-[#FAF3EB] border-b border-[#E5DDD3]">
+      <div className="max-w-4xl mx-auto px-5 md:px-8 py-7">
         <div className="flex flex-wrap justify-center items-stretch gap-5 md:gap-8">
           {BADGES.map((badge, i) => {
             const Icon = badge.icon;
@@ -43,11 +40,8 @@ export default function TrustBadges() {
                 transition={{ delay: i * 0.1, duration: 0.4 }}
                 className="flex items-center gap-3 bg-white rounded-xl border border-[#E5DDD3] px-5 py-4 shadow-[0_1px_4px_rgba(45,90,71,0.06)]"
               >
-                <div
-                  className="w-11 h-11 rounded-lg flex items-center justify-center shrink-0"
-                  style={{ background: `${badge.color}12` }}
-                >
-                  <Icon size={20} style={{ color: badge.color }} />
+                <div className="w-11 h-11 rounded-lg flex items-center justify-center shrink-0 bg-[#2D5A47]/10">
+                  <Icon size={20} className="text-[#2D5A47]" />
                 </div>
                 <div>
                   <div className="text-sm font-bold text-[#1E3D30] leading-tight">{badge.name}</div>

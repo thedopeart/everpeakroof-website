@@ -2,17 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ChevronRight, Clock, Calendar, User, ArrowRight, Phone } from "lucide-react";
+import { ChevronRight, Clock, Calendar, User, ArrowRight, Phone, Lightbulb, AlertTriangle, Info } from "lucide-react";
 import { getAllPosts, getPost } from "@/lib/posts";
+import type { Block } from "@/lib/posts";
 import type { ReactNode } from "react";
 
 const PHONE = "(425) 505-7142";
 const PHONE_HREF = "tel:+14255057142";
 
-// Parses `[text](url)` markdown-style inline links inside a paragraph.
-// Internal URLs (starting with `/`) render as Next <Link> for SEO equity.
-// Everything else renders as plain <a rel="noopener">.
-function renderParagraph(text: string): ReactNode[] {
+function renderInline(text: string): ReactNode[] {
   const parts: ReactNode[] = [];
   const pattern = /\[([^\]]+)\]\(([^)]+)\)/g;
   let lastIndex = 0;
@@ -20,9 +18,7 @@ function renderParagraph(text: string): ReactNode[] {
   let key = 0;
 
   while ((match = pattern.exec(text)) !== null) {
-    if (match.index > lastIndex) {
-      parts.push(text.slice(lastIndex, match.index));
-    }
+    if (match.index > lastIndex) parts.push(text.slice(lastIndex, match.index));
     const [, label, href] = match;
     if (href.startsWith("/")) {
       parts.push(
@@ -48,10 +44,199 @@ function renderParagraph(text: string): ReactNode[] {
     }
     lastIndex = match.index + match[0].length;
   }
-  if (lastIndex < text.length) {
-    parts.push(text.slice(lastIndex));
-  }
+  if (lastIndex < text.length) parts.push(text.slice(lastIndex));
   return parts.length > 0 ? parts : [text];
+}
+
+const calloutConfig = {
+  tip: {
+    bg: "bg-[#EEF6F1]",
+    border: "border-[#2D5A47]",
+    icon: Lightbulb,
+    iconColor: "text-[#2D5A47]",
+    titleColor: "text-[#1E3D30]",
+  },
+  warning: {
+    bg: "bg-[#FEF3E8]",
+    border: "border-[#D4883E]",
+    icon: AlertTriangle,
+    iconColor: "text-[#D4883E]",
+    titleColor: "text-[#7A4010]",
+  },
+  info: {
+    bg: "bg-[#EFF6FF]",
+    border: "border-[#3B82F6]",
+    icon: Info,
+    iconColor: "text-[#3B82F6]",
+    titleColor: "text-[#1D4ED8]",
+  },
+};
+
+const badgeStyles: Record<string, string> = {
+  green: "bg-[#2D5A47]/10 text-[#1E3D30] border border-[#2D5A47]/25",
+  amber: "bg-[#D4883E]/10 text-[#7A4010] border border-[#D4883E]/25",
+  red:   "bg-red-50 text-red-700 border border-red-200",
+  gray:  "bg-[#374151]/8 text-[#374151] border border-[#374151]/15",
+};
+
+function renderBlocks(blocks: Block[]): ReactNode {
+  return blocks.map((block, i) => {
+    switch (block.type) {
+      case "paragraph":
+        return (
+          <p key={i} className="text-[#374151] text-lg leading-relaxed mb-6">
+            {renderInline(block.text)}
+          </p>
+        );
+
+      case "heading": {
+        if (block.level === 3) {
+          return (
+            <h3
+              key={i}
+              className="font-bold text-[#1E3D30] text-xl mt-10 mb-4"
+            >
+              {block.text}
+            </h3>
+          );
+        }
+        return (
+          <h2
+            key={i}
+            className="text-[#1E3D30] text-2xl font-bold border-b border-[#E5DDD3] pb-3 mt-12 mb-6"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            {block.text}
+          </h2>
+        );
+      }
+
+      case "stat-row":
+        return (
+          <div key={i} className="grid grid-cols-3 gap-3 my-8">
+            {block.stats.map((stat, j) => (
+              <div
+                key={j}
+                className="bg-[#FAF3EB] border border-[#E5DDD3] rounded-xl p-4 text-center"
+              >
+                <div
+                  className="font-black text-[#2D5A47] mb-1.5 leading-none"
+                  style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", fontFamily: "var(--font-display)" }}
+                >
+                  {stat.value}
+                </div>
+                <div className="text-xs text-[#374151] leading-snug">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        );
+
+      case "callout": {
+        const cfg = calloutConfig[block.variant];
+        const Icon = cfg.icon;
+        return (
+          <div
+            key={i}
+            className={`${cfg.bg} border-l-4 ${cfg.border} rounded-r-xl px-5 py-5 my-8`}
+          >
+            <div className="flex items-start gap-3">
+              <Icon size={18} className={`${cfg.iconColor} shrink-0 mt-0.5`} />
+              <div>
+                {block.title && (
+                  <p className={`font-bold text-sm ${cfg.titleColor} mb-1.5`}>{block.title}</p>
+                )}
+                <p className="text-[#374151] text-sm leading-relaxed">
+                  {renderInline(block.body)}
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      case "table":
+        return (
+          <div key={i} className="overflow-x-auto my-8 rounded-xl border border-[#E5DDD3] shadow-sm">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-[#1E3D30]">
+                  {block.headers.map((h, j) => (
+                    <th
+                      key={j}
+                      className="text-left px-4 py-3 text-xs font-bold uppercase tracking-wider text-white/80"
+                    >
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {block.rows.map((row, j) => (
+                  <tr
+                    key={j}
+                    className={j % 2 === 0 ? "bg-white" : "bg-[#FAF3EB]/60"}
+                  >
+                    {row.cells.map((cell, k) => (
+                      <td key={k} className="px-4 py-3 text-[#374151]">
+                        {cell.badge ? (
+                          <span
+                            className={`inline-block px-2.5 py-1 rounded-full text-xs font-semibold ${badgeStyles[cell.badge]}`}
+                          >
+                            {cell.text}
+                          </span>
+                        ) : (
+                          k === 0 ? (
+                            <span className="font-medium text-[#2C2C2C]">{cell.text}</span>
+                          ) : cell.text
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
+
+      case "divider":
+        return <hr key={i} className="border-[#E5DDD3] my-10" />;
+
+      default:
+        return null;
+    }
+  });
+}
+
+function renderBody(body: string): ReactNode[] {
+  return body
+    .split(/\n\n+/)
+    .map((p) => p.trim())
+    .filter(Boolean)
+    .map((para, i) => {
+      if (para.startsWith("## ")) {
+        return (
+          <h2
+            key={i}
+            className="text-[#1E3D30] text-2xl font-bold border-b border-[#E5DDD3] pb-3 mt-12 mb-6"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            {para.slice(3)}
+          </h2>
+        );
+      }
+      if (para.startsWith("### ")) {
+        return (
+          <h3 key={i} className="font-bold text-[#1E3D30] text-xl mt-10 mb-4">
+            {para.slice(4)}
+          </h3>
+        );
+      }
+      return (
+        <p key={i} className="text-[#374151] text-lg leading-relaxed mb-6 last:mb-0">
+          {renderInline(para)}
+        </p>
+      );
+    });
 }
 
 interface Props {
@@ -95,39 +280,38 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPost(slug);
   if (!post) notFound();
 
-  const paragraphs = post.body.split(/\n\n+/).map((p) => p.trim()).filter(Boolean);
-  const related = getAllPosts().filter((p) => p.slug !== slug).slice(0, 3);
+  const related = getAllPosts()
+    .filter((p) => p.slug !== slug)
+    .slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-[#FAF3EB] pt-32 pb-20">
+    <div className="min-h-screen bg-white pt-28 pb-20">
+
+      {/* Narrow header: breadcrumb → title → meta */}
       <div className="max-w-3xl mx-auto px-5 md:px-8">
 
-        {/* Breadcrumb */}
-        <nav className="flex items-center gap-1.5 text-sm text-[#374151] mb-8 flex-wrap">
+        <nav className="flex items-center gap-1.5 text-sm text-[#374151] mb-7 flex-wrap">
           <Link href="/" className="hover:text-[#2D5A47] transition-colors">Home</Link>
-          <ChevronRight size={13} />
+          <ChevronRight size={13} className="text-[#374151]/40" />
           <Link href="/blog" className="hover:text-[#2D5A47] transition-colors">Blog</Link>
-          <ChevronRight size={13} />
+          <ChevronRight size={13} className="text-[#374151]/40" />
           <span className="text-[#2C2C2C] font-semibold line-clamp-1">{post.title}</span>
         </nav>
 
-        {/* Category */}
-        <div className="mb-5">
-          <span className="inline-block text-xs font-bold bg-[#2D5A47]/10 text-[#2D5A47] px-3 py-1.5 rounded-full">
+        <div className="mb-4">
+          <span className="inline-block text-xs font-bold bg-[#2D5A47]/10 text-[#2D5A47] px-3 py-1.5 rounded-full uppercase tracking-wide">
             {post.category}
           </span>
         </div>
 
-        {/* Title */}
         <h1
-          className="font-black text-[#1E3D30] leading-tight tracking-tight mb-6"
-          style={{ fontSize: "clamp(1.9rem, 4vw, 2.8rem)" }}
+          className="text-[#1E3D30] leading-tight tracking-tight mb-6"
+          style={{ fontSize: "clamp(2rem, 4.5vw, 3rem)", fontFamily: "var(--font-display)" }}
         >
           {post.title}
         </h1>
 
-        {/* Meta row */}
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-[#374151]/80 mb-8">
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-[#374151]/70 pb-8 border-b border-[#E5DDD3]">
           <span className="flex items-center gap-1.5">
             <User size={13} />
             {post.author}
@@ -141,38 +325,63 @@ export default async function BlogPostPage({ params }: Props) {
             {post.readingTimeMin} min read
           </span>
         </div>
+      </div>
 
-        {/* Hero image */}
-        <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden mb-10">
+      {/* Wider hero image */}
+      <div className="max-w-5xl mx-auto px-5 md:px-8 my-10">
+        <div className="relative h-72 md:h-[460px] rounded-3xl overflow-hidden shadow-[0_8px_40px_rgba(30,61,48,0.18)]">
           <Image
             src={post.heroImage}
             alt={post.heroImageAlt}
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 100vw, 768px"
+            sizes="(max-width: 768px) 100vw, 1024px"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+        </div>
+      </div>
+
+      {/* Article content */}
+      <div className="max-w-3xl mx-auto px-5 md:px-8">
+
+        {/* Excerpt intro callout */}
+        <div className="bg-[#FAF3EB] border-l-4 border-[#D4883E] rounded-r-2xl px-6 py-5 mb-10">
+          <p className="text-[#2C2C2C] text-base leading-relaxed font-medium">{post.excerpt}</p>
         </div>
 
         {/* Body */}
-        <article className="mb-12">
-          {paragraphs.map((para, i) => (
-            <p
-              key={i}
-              className="text-[#374151] text-lg leading-relaxed mb-5 last:mb-0"
-            >
-              {renderParagraph(para)}
-            </p>
-          ))}
+        <article className="mb-10">
+          {post.blocks
+            ? renderBlocks(post.blocks)
+            : post.body
+              ? renderBody(post.body)
+              : null}
         </article>
+
+        {/* Tags */}
+        {post.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-14 pt-6 border-t border-[#E5DDD3]">
+            {post.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-xs font-semibold bg-[#FAF3EB] border border-[#E5DDD3] text-[#374151] px-3 py-1.5 rounded-full"
+              >
+                #{tag}
+              </span>
+            ))}
+          </div>
+        )}
 
         {/* CTA card */}
         <div className="bg-gradient-to-br from-[#1E3D30] via-[#2D5A47] to-[#1E3D30] rounded-2xl p-8 mb-14">
-          <h3 className="font-bold text-white text-xl mb-2">
+          <h3
+            className="text-white text-xl font-bold mb-2"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
             Got a roof question of your own?
           </h3>
-          <p className="text-white/65 text-sm mb-6 max-w-lg">
+          <p className="text-white/65 text-sm mb-6 max-w-lg leading-relaxed">
             We offer free inspections across Seattle and the Puget Sound. We'll take a look, show you photos, and give you a straight answer. No pressure.
           </p>
           <div className="flex flex-wrap gap-3">
@@ -193,37 +402,31 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </div>
 
-        {/* Related posts */}
+        {/* Related posts — text-only */}
         {related.length > 0 && (
           <div>
-            <h2 className="font-black text-[#1E3D30] text-xl mb-5">Keep Reading</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <h2 className="font-bold text-[#1E3D30] text-xl mb-1">Keep Reading</h2>
+            <p className="text-sm text-[#374151]/60 mb-5">More from the Everpeak blog</p>
+            <div className="flex flex-col divide-y divide-[#E5DDD3]">
               {related.map((rp) => (
                 <Link
                   key={rp.slug}
                   href={`/blog/${rp.slug}`}
-                  className="group flex flex-col bg-white rounded-2xl border border-[#E5DDD3] overflow-hidden hover:shadow-[0_8px_28px_rgba(45,90,71,0.12)] hover:-translate-y-1 transition-all duration-200"
+                  className="group py-5 flex items-start justify-between gap-4 hover:text-[#2D5A47] transition-colors"
                 >
-                  <div className="relative h-40 overflow-hidden">
-                    <Image
-                      src={rp.heroImage}
-                      alt={rp.heroImageAlt}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 640px) 100vw, 50vw"
-                    />
-                  </div>
-                  <div className="p-5">
-                    <p className="text-xs font-bold text-[#D4883E] uppercase tracking-wider mb-2">
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-bold text-[#D4883E] uppercase tracking-wider mb-1.5">
                       {rp.category}
                     </p>
-                    <h3 className="font-bold text-[#1E3D30] text-base leading-snug mb-2 group-hover:text-[#2D5A47] transition-colors">
+                    <h3 className="font-bold text-[#1E3D30] leading-snug group-hover:text-[#2D5A47] transition-colors mb-1.5">
                       {rp.title}
                     </h3>
-                    <p className="text-xs text-[#374151]/70">
+                    <p className="text-xs text-[#374151]/60 flex items-center gap-1">
+                      <Clock size={11} />
                       {rp.readingTimeMin} min read
                     </p>
                   </div>
+                  <ArrowRight size={16} className="text-[#D4883E] shrink-0 mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               ))}
             </div>

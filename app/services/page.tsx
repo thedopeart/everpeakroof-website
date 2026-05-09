@@ -31,7 +31,7 @@ export default function ServicesPage() {
             Roofing Services
           </h1>
           <p className="text-[#374151] text-lg max-w-xl">
-            Every roofing service your home or building might need — from a single leak to a full replacement.
+            Every roofing service your home or building might need, from a single leak to a full replacement.
           </p>
         </div>
 

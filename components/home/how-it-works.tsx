@@ -32,7 +32,7 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section className="section-pad bg-[#1E3D30] relative overflow-hidden">
+    <section className="section-pad bg-[#2D5A47] relative overflow-hidden">
       {/* Subtle dot pattern */}
       <div
         className="absolute inset-0 opacity-[0.03]"

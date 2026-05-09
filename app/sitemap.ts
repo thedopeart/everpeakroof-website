@@ -13,7 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/about`,                     priority: 0.7, changeFrequency: "monthly" as const },
     { url: `${BASE}/contact`,                   priority: 0.9, changeFrequency: "monthly" as const },
     { url: `${BASE}/services`,                  priority: 0.9, changeFrequency: "weekly"  as const },
-    { url: `${BASE}/instant-roof-quote`,        priority: 0.95, changeFrequency: "weekly" as const },
     { url: `${BASE}/reviews`,                   priority: 0.6, changeFrequency: "monthly" as const },
     { url: `${BASE}/blog`,                      priority: 0.7, changeFrequency: "weekly"  as const },
     { url: `${BASE}/tools/roof-cost-estimator`, priority: 0.8, changeFrequency: "monthly" as const },

@@ -24,7 +24,6 @@ export const services: Service[] = [
     shortDesc: "Leak fixes, storm damage, flashing, shingle replacement. Fast turnaround.",
     icon: "Wrench",
     featured: true,
-    image: "/images/roof-repair-progress.jpg",
     longDesc:
       "Most roof problems don't need a full replacement. A cracked pipe boot, damaged flashing, or a handful of blown-off shingles can usually be fixed in a single visit. We figure out where the water is getting in, show you photos of the damage, and give you a straight price before we touch anything. If a repair makes sense, we'll do it right. If it doesn't, we'll tell you that too.",
     process: [
@@ -145,7 +144,7 @@ export const services: Service[] = [
     shortDesc: "Fast response for active leaks, storm damage, and fallen trees.",
     icon: "Zap",
     featured: true,
-    image: "/images/worker-on-roof.jpg",
+    image: "/images/Emergency Roof Repair.jpeg",
     longDesc:
       "When a tree branch goes through your roof at 10pm or you wake up to water pouring through the ceiling, waiting until Monday isn't an option. We pick up the phone 7 days a week and can usually have someone out to tarp and secure the damage within a few hours. Once the immediate threat is handled, we come back to do the permanent repair and help with insurance documentation if needed.",
     process: [
@@ -207,7 +206,7 @@ export const services: Service[] = [
     shortDesc: "Full condition reports for homeowners, buyers, and insurance documentation.",
     icon: "Search",
     featured: true,
-    image: "/images/craftsman-tile.jpg",
+    image: "/images/Roof inspector Juan.png",
     longDesc:
       "Buying a house, dealing with storm damage, or just wondering how much life your roof has left? We'll give you an honest answer. We go up on the roof, check every component (shingles, flashing, vents, gutters, deck condition), take photos, and put together a written report with what we found. If nothing needs fixing, we'll tell you that. If something does, you'll know exactly what and roughly how much.",
     process: [
@@ -380,7 +379,6 @@ export const services: Service[] = [
     shortDesc: "Full claims assistance from storm inspection through payout.",
     icon: "FileCheck",
     featured: false,
-    image: "/images/roofer-installing.jpg",
     longDesc:
       "Filing a roof insurance claim is confusing, and insurance companies aren't always eager to pay out. We handle the whole process: inspect the damage, document it properly, prepare Xactimate estimates that match what adjusters expect to see, and meet with your adjuster on-site. If your claim gets denied or underpaid, we can help challenge it with proper documentation. You shouldn't have to fight your insurance company alone.",
     process: [
