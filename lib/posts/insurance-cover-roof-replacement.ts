@@ -12,27 +12,68 @@ const post: BlogPost = {
   heroImage: "/images/shingle-replacement.jpg",
   heroImageAlt: "Shingle replacement in progress on a residential roof in Washington state",
   tags: ["insurance", "replacement", "claims", "washington"],
-  body: `Homeowners ask us this question constantly, and the answer is always the same: it depends on why the roof needs replacing. Insurance covers sudden, accidental damage. It does not cover a roof that wore out. The line between those two things is where most of the confusion lives.
-
-**What's almost always covered.** A windstorm blows off a section of shingles. A tree falls on your roof during a storm. Hail cracks the surface of your shingles across multiple slopes. These are the textbook covered events. They're sudden, they're accidental, and they're not your fault. If any of those things happened to your roof, file a claim. You'll likely get approved.
-
-**What's almost never covered.** Your roof is 25 years old and it's just worn out. Shingles are curling, granules are gone, and it leaks every winter. That's wear and tear, and no homeowner's policy in Washington covers it. Same goes for deferred maintenance. If moss has been eating your shingles for a decade and you never cleaned it, the carrier is going to call that neglect. This one surprises a lot of people in the Seattle area because moss damage is so common here. But from the insurance company's perspective, moss is a maintenance issue, not a storm event.
-
-**The gray area.** This is where things get interesting, and where most disputes happen. Say a windstorm rolls through and damages your shingles. But your roof is already 22 years old and showing its age. The adjuster comes out, sees storm damage on the south slope, but also sees worn-out shingles on the north slope that have nothing to do with the storm. Now you've got a fight. The carrier might approve a partial claim (just the storm-damaged section) or argue that the damage is mostly pre-existing. This is the scenario where having a roofer who knows the claims process makes a real difference.
-
-**How the process works in Washington.** You call your insurance company and file a claim. They send an adjuster to your property, usually within a week or two (longer after a major storm when every carrier is backed up). The adjuster walks the roof, takes photos, and writes a scope of work, which is basically their version of what needs to be repaired and how much it should cost. You get a copy of that scope along with the initial payout offer.
-
-Here's the thing. That initial offer is a starting point, not a final answer. Adjusters use a software program called Xactimate to price out the work, and the line items they include (or leave out) determine whether the payout actually covers the job. A lot of adjusters write lean scopes. They'll include the shingles but leave out the ice and water shield, or they'll price the labor below what any legitimate contractor in the Seattle market would charge. That's not necessarily bad faith. It's just how the system works. Your roofer needs to know how to read an Xactimate estimate and challenge it line by line.
-
-**Depreciation, ACV, and RCV.** These three letters trip people up. RCV stands for Replacement Cost Value, which means the policy pays to replace the damaged roof at today's prices. ACV stands for Actual Cash Value, which means they deduct depreciation based on the roof's age. If you've got an ACV policy and your roof is 18 years old, the carrier might only pay 40% of the replacement cost because they've depreciated 60% of the roof's value. RCV policies pay the full replacement cost, but they often hold back the depreciation until you complete the work. You get the first check up front, do the job, and then submit for the "recoverable depreciation" to get the rest. Check your policy. This detail alone can swing the payout by thousands of dollars.
-
-**The supplement process.** When the initial payout doesn't cover the actual cost of the work, your roofer files a supplement. That's a formal request to the carrier with documentation showing why the scope needs to be bigger or why certain line items were missed. We file supplements regularly. It's not adversarial. It's just part of the process. A good supplement includes photos, measurements, and Xactimate line items that map directly to the work being done. Most carriers respond within a couple of weeks.
-
-**What we do at Everpeak.** We offer a free [storm damage inspection](/services/roof-inspection). If we find legitimate damage, we document everything with photos, write the Xactimate estimate, and coordinate an on-site meeting with your adjuster so we can walk the roof together. If the claim gets underpaid, we handle the [supplement filing](/services/insurance-restoration) on your behalf. The goal is to get the claim paid fairly so the roof gets done right. We've walked through this process hundreds of times, and the homeowners who have a knowledgeable roofer involved from the start consistently get better outcomes.
-
-**One more thing, and this matters.** Don't let a roofer "find" damage that isn't there. We've heard the stories. A salesman knocks on your door after a storm, says he spotted damage from the street, and offers to file a claim for you. Then he gets on the roof and manufactures evidence. Scuffing shingles with his boot, prying up flashing, creating damage that didn't exist before. That's insurance fraud. If the carrier catches it (and they're getting better at it), you could lose your policy entirely. Your roofer should document what's already there, not create problems to bill for.
-
-If your roof took a hit during a recent storm, get it inspected before the next rain. And if the claim comes through and you're ready to move forward, here's what to expect from a full [roof replacement](/services/roof-replacement). The longer you wait, the harder it gets to prove the timeline. If you already know you need a full replacement and you're weighing the cost, our [Seattle roof replacement cost breakdown](/blog/seattle-roof-replacement-cost-2026) lays out real numbers. And if you had storm damage and aren't sure whether to file a claim or just pay out of pocket, we can help you think through that. [Reach out for a quote](/instant-roof-quote) or read about what to do right after a [windstorm hits](/blog/windstorm-roof-damage-pnw). For active emergencies where water is coming through, here's our guide on [emergency roof repair in Seattle](/blog/emergency-roof-repair-seattle).`,
+  blocks: [
+    {
+      type: "paragraph",
+      text: "Homeowners ask us this question constantly, and the answer is always the same: it depends on why the roof needs replacing. Insurance covers sudden, accidental damage. It does not cover a roof that wore out. The line between those two things is where most of the confusion lives.",
+    },
+    {
+      type: "stat-row",
+      stats: [
+        { value: "Sudden", label: "The key word in almost every homeowner policy — storm damage is covered, wear and tear is not" },
+        { value: "ACV vs RCV", label: "The policy type difference that can swing your payout by thousands of dollars — know which one you have" },
+        { value: "~2 wks", label: "Typical adjuster wait time after filing — longer after major storms when every carrier is backed up" },
+      ],
+    },
+    {
+      type: "heading",
+      text: "What's covered — and what isn't",
+    },
+    {
+      type: "table",
+      headers: ["Situation", "Covered?", "Why"],
+      rows: [
+        { cells: [{ text: "Windstorm blows off shingles" }, { text: "Yes", badge: "green" }, { text: "Sudden, accidental event" }] },
+        { cells: [{ text: "Tree falls on the roof" }, { text: "Yes", badge: "green" }, { text: "Sudden, accidental event" }] },
+        { cells: [{ text: "Hail cracks shingles across multiple slopes" }, { text: "Yes", badge: "green" }, { text: "Sudden, accidental event" }] },
+        { cells: [{ text: "25-year-old roof that's worn out" }, { text: "No", badge: "red" }, { text: "Wear and tear — not covered under any WA policy" }] },
+        { cells: [{ text: "Decade of moss damage" }, { text: "No", badge: "red" }, { text: "Deferred maintenance — treated as neglect" }] },
+        { cells: [{ text: "Storm damage on an already-aging roof" }, { text: "Partial — disputed", badge: "amber" }, { text: "Gray area: carrier may approve one slope, deny another" }] },
+      ],
+    },
+    {
+      type: "heading",
+      text: "How the payout process actually works in Washington",
+    },
+    {
+      type: "paragraph",
+      text: "You file a claim and get a claim number. The adjuster comes out (usually 1 to 2 weeks, longer after major storms) and writes a scope of work using software called Xactimate. That scope determines your payout. Here's the thing: the initial offer is a starting point, not a final answer. Adjusters write lean scopes — they'll include shingles but leave out the ice and water shield, or they'll price labor below what any legitimate contractor in Seattle charges. That's not necessarily bad faith. It's just how the system works. Your roofer needs to know how to read an Xactimate estimate and challenge it line by line.",
+    },
+    {
+      type: "heading",
+      text: "RCV vs ACV: this matters a lot",
+    },
+    {
+      type: "paragraph",
+      text: "**RCV (Replacement Cost Value):** Pays to replace the damaged roof at today's prices. Usually holds back the depreciation amount until work is completed. You get the first check up front, do the job, then submit for the 'recoverable depreciation' to get the rest. **ACV (Actual Cash Value):** Deducts depreciation based on roof age. If your roof is 18 years old, the carrier might only pay 40% of the replacement cost. Check your policy. This detail alone can swing the payout by thousands of dollars.",
+    },
+    {
+      type: "callout",
+      variant: "tip",
+      title: "The supplement process — and how we use it",
+      body: "When the initial payout doesn't cover the actual cost of the work, your roofer files a supplement. That's a formal request with documentation showing why the scope needs to be bigger or why certain line items were missed. We file supplements regularly. A good supplement includes photos, measurements, and Xactimate line items that map directly to the work. Most carriers respond within a couple of weeks, and we've recovered thousands for homeowners who would have eaten the difference. Our [insurance restoration](/services/insurance-restoration) service handles this on your behalf.",
+    },
+    {
+      type: "callout",
+      variant: "warning",
+      title: "One more thing — and this matters",
+      body: "Don't let a roofer 'find' damage that isn't there. We've heard the stories. A salesman knocks on your door after a storm, says he spotted damage from the street, gets on the roof, and creates damage that didn't exist. That's insurance fraud. If the carrier catches it (and they're getting better at it), you could lose your policy entirely. Your roofer should document what's already there, not create problems to bill for.",
+    },
+    {
+      type: "paragraph",
+      text: "If your roof took a hit during a recent storm, get it inspected before the next rain. Our [storm damage inspection](/services/roof-inspection) is free. If you already know you need a replacement and want context on what it should cost, our [Seattle roof replacement cost breakdown](/blog/seattle-roof-replacement-cost-2026) lays out real numbers. For active emergencies, here's our guide on [emergency roof repair in Seattle](/blog/emergency-roof-repair-seattle). [Contact us](/contact) if you want to talk through your specific situation.",
+    },
+  ],
 };
 
 export default post;
