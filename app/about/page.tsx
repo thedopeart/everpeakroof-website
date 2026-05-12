@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ShieldCheck, Award, Users, MapPin } from "lucide-react";
+import { ShieldCheck, Award, MapPin } from "lucide-react";
 import JsonLd from "@/components/shared/json-ld";
 import { breadcrumbSchema, organizationSchema } from "@/lib/schema";
 
@@ -73,18 +73,13 @@ export default function AboutPage() {
           {[
             {
               icon: ShieldCheck,
-              title: "Licensed & Fully Insured",
-              desc: "Washington State Contractor License active. Full liability and workers' comp on every job. If anything goes wrong, you're covered.",
+              title: "Licensed & Insured",
+              desc: "Washington State Contractor License #EVERPRL743KE. Fully insured on every job.",
             },
             {
               icon: Award,
               title: "No Pressure, No Upsells",
               desc: "We show you what's there, tell you what it'll take to fix it, and give you a straight price. A repair is a repair. We won't push you into a replacement you don't need.",
-            },
-            {
-              icon: Users,
-              title: "Your Crew, Your Job",
-              desc: "We don't subcontract. The team that quotes your job is the team that does it. Consistent quality, clear accountability.",
             },
             {
               icon: MapPin,
@@ -111,7 +106,7 @@ export default function AboutPage() {
           <div className="flex flex-col gap-2 text-white/70 text-sm">
             <div><span className="text-white font-semibold">Business:</span> Everpeak LLC</div>
             <div><span className="text-white font-semibold">License:</span> Washington State Contractor #EVERPRL743KE</div>
-            <div><span className="text-white font-semibold">Coverage:</span> General Liability + Workers&apos; Compensation</div>
+            <div><span className="text-white font-semibold">Coverage:</span> Fully Insured</div>
             <div><span className="text-white font-semibold">Service Area:</span> 20 cities, greater Seattle metro</div>
           </div>
         </div>

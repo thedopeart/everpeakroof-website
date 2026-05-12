@@ -282,7 +282,7 @@ export default async function CityPage({ params }: Props) {
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { icon: ShieldCheck, title: "Licensed & Insured", desc: "WA State contractor license, full liability and workers' comp coverage on every job.", color: "#2D5A47" },
+              { icon: ShieldCheck, title: "Licensed & Insured", desc: "WA State Contractor License #EVERPRL743KE. Fully insured on every job.", color: "#2D5A47" },
               { icon: Clock, title: "Fast Response", desc: "We respond fast. No commitment required. We don't leave you waiting.", color: "#D4883E" },
               { icon: CloudRain, title: "PNW Specialists", desc: `We know ${name}'s weather, building styles, and what roofing materials hold up here.`, color: "#2563EB" },
               { icon: Star, title: "Honest Pricing", desc: "Detailed written quotes. No hidden fees, no pressure to upgrade what you don't need.", color: "#7C3AED" },

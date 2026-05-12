@@ -222,7 +222,7 @@ export default function QuoteForm() {
                 </li>
                 <li className="flex items-start gap-3">
                   <Users size={16} className="text-[#2D5A47] mt-0.5 shrink-0" />
-                  <span>Crew-run jobs, not subcontracted out.</span>
+                  <span>Quality workmanship on every job.</span>
                 </li>
               </ul>
             </div>

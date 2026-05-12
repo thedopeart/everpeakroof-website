@@ -7,7 +7,7 @@ const REASONS = [
   {
     icon: CheckCircle2,
     title: "Licensed & Insured",
-    desc: "We carry full liability and workers' comp coverage. You're protected on every job, no exceptions.",
+    desc: "WA State Contractor License #EVERPRL743KE. Fully insured on every job.",
   },
   {
     icon: Clock,
