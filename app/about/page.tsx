@@ -26,20 +26,32 @@ export default function AboutPage() {
 
         {/* Header */}
         <div className="mb-14">
-          <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-2">About Us</p>
+          <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-2">About Everpeak</p>
           <h1 className="font-black text-[#1E3D30] leading-tight tracking-tight mb-5"
             style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
             Seattle Roofing, Built for the PNW
           </h1>
           <div className="text-[#374151] text-lg leading-relaxed max-w-2xl flex flex-col gap-5">
             <p>
-              Everpeak is a Washington state roofing company working across 20 cities in the Seattle metro and Puget Sound. We do inspections, repairs, and full replacements. No subcontractors. The crew that quotes your job is the same crew that shows up.
+              Growing up in a family involved in construction, I was introduced to the industry at an early age. Starting in middle school, I spent weekends and summers helping my uncle at his construction company, where I learned the value of hard work, craftsmanship, and treating customers the right way.
             </p>
             <p>
-              PNW roofs take a beating: moss buildup, six months of rain, wind storms off the Sound, older housing stock with deferred maintenance baked in. We've worked on composition shingles, metal, cedar shake, flat membrane, TPO, and everything in between. Capitol Hill Craftsmans, new construction in Sammamish, commercial buildings in SoDo. The material and the pitch change, the process doesn't.
+              After high school, I continued working in construction before deciding to pursue higher education. During college, I worked for a roofing company where I started in the field installing shingles and learning the trade firsthand. After gaining hands-on experience, I transitioned into an estimator role, helping homeowners through the roof replacement process from inspections and estimates to project planning and customer communication.
             </p>
             <p>
-              Our job is to tell you what's actually wrong, fix it correctly, and give you a straight price. That's it.
+              Working both on the roof and directly with homeowners gave me a deeper understanding of what matters most in this industry: quality workmanship, honest communication, and treating customers with respect throughout the entire process.
+            </p>
+            <p>
+              After graduating with a double major in Accounting and Finance, I spent several years working in business, financial analysis, and client-focused roles that strengthened my professional and operational experience. But throughout that time, I always knew I wanted to build something of my own, a company centered around trust, professionalism, and doing right by homeowners.
+            </p>
+            <p>
+              That vision led to the creation of Everpeak Roofing.
+            </p>
+            <p>
+              Today, Everpeak Roofing is built on the same values I learned early on: honest service, dependable communication, quality workmanship, and treating every home with care and respect. Living and working in the Pacific Northwest, we understand the unique roofing challenges our climate brings, and we take pride in helping homeowners protect their homes year-round.
+            </p>
+            <p>
+              Our goal is simple: provide high-quality roofing solutions with transparent pricing and a customer experience homeowners can feel confident about from start to finish.
             </p>
           </div>
         </div>

@@ -29,7 +29,7 @@ export const SERVICE_CITIES: string[] = [
   "Woodinville",
   "Puyallup",
   "Newcastle",
-  "East Renton Highlands",
+  "Renton Highlands",
 ];
 
 const OPENING_HOURS = [

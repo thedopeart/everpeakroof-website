@@ -407,12 +407,12 @@ export const cities: City[] = [
     mapQuery: "Newcastle+WA",
   },
   {
-    name: "East Renton Highlands",
-    slug: "east-renton-highlands",
+    name: "Renton Highlands",
+    slug: "renton-highlands",
     tier: 3,
     tagline: "Highlands living, ground-level service",
     description:
-      "East Renton Highlands is an unincorporated community east of Renton with a suburban, residential feel. Homes here are mostly 1980s-2000s construction on moderate-sized lots. Many roofs in the area are now 25-35 years old and starting to show wear from decades of PNW weather.",
+      "Renton Highlands is an unincorporated community east of Renton with a suburban, residential feel. Homes here are mostly 1980s-2000s construction on moderate-sized lots. Many roofs in the area are now 25-35 years old and starting to show wear from decades of PNW weather.",
     neighborhoods: [
       "Cascade", "Maplewood Heights", "Sierra Heights",
       "Honey Creek", "May Valley", "Coalfield",
