@@ -16,6 +16,12 @@ const PROJECTS = [
   { src: "/images/New Images/project-08.jpg", alt: "Finished roofing project" },
   { src: "/images/New Images/project-09.jpg", alt: "Everpeak roofing project detail" },
   { src: "/images/New Images/project-10.jpg", alt: "Completed roof in the PNW" },
+  { src: "/images/flat-roof-work-1.jpg", alt: "Flat roof installation" },
+  { src: "/images/flat-roof-work-2.jpg", alt: "Flat roof membrane work" },
+  { src: "/images/flat-roof-work-3.jpg", alt: "Commercial flat roof project" },
+  { src: "/images/flat-roof-work-4.jpg", alt: "Flat roof repair in progress" },
+  { src: "/images/flat-roof-work-5.jpg", alt: "Flat roof sealing work" },
+  { src: "/images/flat-roof-work-6.jpg", alt: "Completed flat roof project" },
 ];
 
 export default function Gallery() {
