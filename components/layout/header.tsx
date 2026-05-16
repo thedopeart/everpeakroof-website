@@ -33,9 +33,10 @@ const NAV = [
       { label: "Roof Pitch Calculator", href: "/tools/roof-pitch-calculator" },
     ],
   },
-  { label: "Blog",    href: "/blog" },
-  { label: "About",   href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Our Work", href: "/our-work" },
+  { label: "Blog",     href: "/blog" },
+  { label: "About",    href: "/about" },
+  { label: "Contact",  href: "/contact" },
 ];
 
 export default function Header() {
