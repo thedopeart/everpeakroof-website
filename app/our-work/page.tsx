@@ -32,9 +32,6 @@ export default function OurWorkPage() {
           >
             Our Work
           </h1>
-          <p className="text-[#374151] text-lg max-w-2xl">
-            A look at recent roofing projects across the Seattle metro. Every job gets the same attention to detail, whether it&apos;s a small repair or a full replacement.
-          </p>
         </div>
 
         <Gallery />
