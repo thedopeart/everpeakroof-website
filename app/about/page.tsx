@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ShieldCheck, Award, MapPin } from "lucide-react";
+import { ShieldCheck, Hammer, Users, CheckSquare } from "lucide-react";
 import JsonLd from "@/components/shared/json-ld";
 import { breadcrumbSchema, organizationSchema } from "@/lib/schema";
 
@@ -11,6 +11,29 @@ export const metadata: Metadata = {
     "Everpeak Roofing is a Seattle based roofing company delivering reliable roof inspections, repairs, and replacements built for the Pacific Northwest.",
   alternates: { canonical: "https://everpeakroof.com/about" },
 };
+
+const VALUES = [
+  {
+    icon: ShieldCheck,
+    title: "Integrity First",
+    desc: "Homeowners deserve honest recommendations, transparent pricing, and clear communication from the first inspection through project completion.",
+  },
+  {
+    icon: Hammer,
+    title: "Quality Workmanship",
+    desc: "Every roofing project is completed with attention to detail and industry best practices. We take pride in doing the job right and never cutting corners.",
+  },
+  {
+    icon: Users,
+    title: "Customer-Focused Service",
+    desc: "A roofing project can feel overwhelming. We strive to make the process simple by providing timely communication, professional guidance, and a smooth experience from start to finish.",
+  },
+  {
+    icon: CheckSquare,
+    title: "Reliability and Accountability",
+    desc: "When we make a commitment, we stand behind it. We treat every home with care and respect as if it were our own.",
+  },
+];
 
 export default function AboutPage() {
   const breadcrumbs = breadcrumbSchema([
@@ -27,31 +50,18 @@ export default function AboutPage() {
         {/* Header */}
         <div className="mb-14">
           <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-2">About Everpeak</p>
-          <h1 className="font-black text-[#1E3D30] leading-tight tracking-tight mb-5"
-            style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-            Seattle Roofing, Built for the PNW
+          <h1
+            className="font-black text-[#1E3D30] leading-tight tracking-tight mb-5"
+            style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
+          >
+            Protecting Pacific Northwest Homes with Quality, Integrity, and Reliability
           </h1>
           <div className="text-[#374151] text-lg leading-relaxed max-w-2xl flex flex-col gap-5">
             <p>
-              Growing up in a family involved in construction, I was introduced to the industry at an early age. Starting in middle school, I spent weekends and summers helping my uncle at his construction company, where I learned the value of hard work, craftsmanship, and treating customers the right way.
+              At Everpeak Roofing, we believe a roof is more than just shingles and flashing. It's what protects your family, your investment, and your peace of mind. That's why we're committed to delivering roofing solutions backed by honest communication, dependable service, and quality craftsmanship.
             </p>
             <p>
-              After high school, I continued working in construction before deciding to pursue higher education. During college, I worked for a roofing company where I started in the field installing shingles and learning the trade firsthand. After gaining hands-on experience, I transitioned into an estimator role, helping homeowners through the roof replacement process from inspections and estimates to project planning and customer communication.
-            </p>
-            <p>
-              Working both on the roof and directly with homeowners gave me a deeper understanding of what matters most in this industry: quality workmanship, honest communication, and treating customers with respect throughout the entire process.
-            </p>
-            <p>
-              After graduating with a double major in Accounting and Finance, I spent several years working in business, financial analysis, and client-focused roles that strengthened my professional and operational experience. But throughout that time, I always knew I wanted to build something of my own, a company centered around trust, professionalism, and doing right by homeowners.
-            </p>
-            <p>
-              That vision led to the creation of Everpeak Roofing.
-            </p>
-            <p>
-              Today, Everpeak Roofing is built on the same values I learned early on: honest service, dependable communication, quality workmanship, and treating every home with care and respect. Living and working in the Pacific Northwest, we understand the unique roofing challenges our climate brings, and we take pride in helping homeowners protect their homes year-round.
-            </p>
-            <p>
-              Our goal is simple: provide high-quality roofing solutions with transparent pricing and a customer experience homeowners can feel confident about from start to finish.
+              As a locally owned roofing company serving homeowners throughout the Seattle area, we understand the unique challenges that Pacific Northwest weather brings. From heavy rainfall and moss growth to wind-driven storms and aging roofing systems, our team provides solutions designed to withstand the region's demanding climate.
             </p>
           </div>
         </div>
@@ -68,46 +78,54 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#1E3D30]/40 to-transparent" />
         </div>
 
-        {/* Values grid */}
-        <div className="grid sm:grid-cols-2 gap-6 mb-14">
-          {[
-            {
-              icon: ShieldCheck,
-              title: "Licensed & Insured",
-              desc: "Washington State Contractor License #EVERPRL743KE. Fully insured on every job.",
-            },
-            {
-              icon: Award,
-              title: "No Pressure, No Upsells",
-              desc: "We show you what's there, tell you what it'll take to fix it, and give you a straight price. A repair is a repair. We won't push you into a replacement you don't need.",
-            },
-            {
-              icon: MapPin,
-              title: "Built for the PNW",
-              desc: "Seattle weather is specific: moss, constant rain, wind storms, older housing stock. We've seen every variation of it and know what holds up here.",
-            },
-          ].map((item) => {
-            const Icon = item.icon;
-            return (
-              <div key={item.title} className="bg-white rounded-2xl border border-[#E5DDD3] p-7">
-                <div className="w-10 h-10 rounded-xl bg-[#2D5A47]/10 flex items-center justify-center mb-4">
-                  <Icon size={19} className="text-[#2D5A47]" />
+        {/* Values */}
+        <div className="mb-14">
+          <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-2">Our Values</p>
+          <div className="grid sm:grid-cols-2 gap-6 mt-6">
+            {VALUES.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="bg-white rounded-2xl border border-[#E5DDD3] p-7">
+                  <div className="w-10 h-10 rounded-xl bg-[#2D5A47]/10 flex items-center justify-center mb-4">
+                    <Icon size={19} className="text-[#2D5A47]" />
+                  </div>
+                  <h3 className="font-bold text-[#1E3D30] mb-2">{item.title}</h3>
+                  <p className="text-sm text-[#374151] leading-relaxed">{item.desc}</p>
                 </div>
-                <h3 className="font-bold text-[#1E3D30] mb-2">{item.title}</h3>
-                <p className="text-sm text-[#374151] leading-relaxed">{item.desc}</p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
 
-        {/* License info */}
+        {/* Built on Experience */}
+        <div className="mb-14">
+          <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-2">Built on Experience</p>
+          <div className="text-[#374151] text-lg leading-relaxed max-w-2xl flex flex-col gap-5 mt-4">
+            <p>
+              Everpeak Roofing was founded by a roofing professional who gained experience both in the field and helping homeowners navigate the roof replacement process. That hands-on background, combined with a strong business and financial foundation, helped shape a company dedicated to professionalism, transparency, and long-term customer relationships.
+            </p>
+          </div>
+        </div>
+
+        {/* Mission */}
         <div className="bg-[#2D5A47] rounded-2xl p-8 text-white mb-10">
-          <h2 className="font-bold text-xl mb-2">Credentials</h2>
-          <div className="flex flex-col gap-2 text-white/70 text-sm">
-            <div><span className="text-white font-semibold">Business:</span> Everpeak LLC</div>
-            <div><span className="text-white font-semibold">License:</span> Washington State Contractor #EVERPRL743KE</div>
-            <div><span className="text-white font-semibold">Coverage:</span> Fully Insured</div>
-            <div><span className="text-white font-semibold">Service Area:</span> 20 cities, greater Seattle metro</div>
+          <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-2">Our Mission</p>
+          <p className="text-white/90 leading-relaxed mt-3">
+            Our mission is simple: provide high-quality roofing solutions that protect Pacific Northwest homes while delivering a customer experience built on trust, communication, and solid service.
+          </p>
+          <p className="text-white/70 leading-relaxed mt-4 text-sm">
+            Whether you need a roof replacement, repairs, or an inspection, our goal is to help you make informed decisions and feel confident throughout every step of the process.
+          </p>
+        </div>
+
+        {/* Credentials */}
+        <div className="bg-white rounded-2xl border border-[#E5DDD3] p-8 mb-10">
+          <h2 className="font-bold text-[#1E3D30] text-xl mb-4">Credentials</h2>
+          <div className="flex flex-col gap-2 text-sm text-[#374151]">
+            <div><span className="font-semibold text-[#1E3D30]">Business:</span> Everpeak LLC</div>
+            <div><span className="font-semibold text-[#1E3D30]">License:</span> Washington State Contractor #EVERPRL743KE</div>
+            <div><span className="font-semibold text-[#1E3D30]">Coverage:</span> Fully Insured</div>
+            <div><span className="font-semibold text-[#1E3D30]">Service Area:</span> 20 cities, greater Seattle metro</div>
           </div>
         </div>
 
@@ -119,6 +137,7 @@ export default function AboutPage() {
             Get a Free Estimate
           </Link>
         </div>
+
       </div>
     </div>
   );

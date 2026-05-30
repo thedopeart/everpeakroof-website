@@ -6,7 +6,6 @@ import ServicesPreview from "@/components/home/services-preview";
 import WhyUs           from "@/components/home/why-us";
 import HowItWorks      from "@/components/home/how-it-works";
 import ServiceAreas    from "@/components/home/service-areas";
-import Testimonials    from "@/components/home/testimonials";
 import CtaBanner       from "@/components/home/cta-banner";
 
 export const metadata: Metadata = {
@@ -26,7 +25,6 @@ export default function HomePage() {
       <WhyUs />
       <HowItWorks />
       <ServiceAreas />
-      <Testimonials />
       <CtaBanner />
     </>
   );

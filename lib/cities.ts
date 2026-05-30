@@ -1,3 +1,8 @@
+export interface CityFaq {
+  q: string;
+  a: string;
+}
+
 export interface City {
   name: string;
   slug: string;
@@ -9,6 +14,7 @@ export interface City {
   roofTypes: string[];
   buildingAge: string;
   mapQuery: string;
+  faq?: CityFaq[];
 }
 
 export const cities: City[] = [
@@ -41,20 +47,40 @@ export const cities: City[] = [
     tier: 1,
     tagline: "Eastside homes deserve Eastside quality",
     description:
-      "Bellevue has some of the highest-value homes on the Eastside, and roofing work here needs to match. From established neighborhoods in West Bellevue to newer developments near Crossroads, we handle repairs and replacements on everything from 1970s split-levels to custom builds.",
+      "Bellevue has some of the highest-value homes on the Eastside, and roofing work here needs to match. From established neighborhoods in West Bellevue to newer developments near Crossroads and Factoria, we handle repairs and replacements on everything from 1970s split-levels to custom builds worth over a million dollars.\n\nRoofing in Bellevue comes with Eastside-specific challenges. Homes in Somerset and Woodridge sit at elevation with exposure to wind corridors between Lake Washington and the Cascades. Properties near Bridle Trails and Lake Hills deal with constant shade from mature tree canopy, driving aggressive moss growth. And a large portion of Bellevue's 1970s-1990s housing stock is now hitting the age where original composition roofs start to fail.\n\nAs a Bellevue roofing company, we give homeowners straight answers and honest pricing. Whether you need a quick repair on a leaking flashing, a full roof replacement on a 30-year-old home, or an inspection before putting your house on the market, we'll come out, assess what's actually there, and give you a clear written quote with no pressure.",
     neighborhoods: [
       "West Bellevue", "Crossroads", "Factoria", "Eastgate", "Newport Hills",
       "Somerset", "Woodridge", "Bridle Trails", "Lake Hills", "Wilburton",
+      "Downtown Bellevue", "Tam O'Shanter", "Lakemont", "Phantom Lake",
     ],
     commonIssues: [
-      "Aging composition shingles on 1970s-1990s homes reaching end of life",
-      "Moss and algae on north-facing slopes under heavy tree cover",
-      "Storm damage from Eastside wind corridors between Lake Washington and the Cascades",
-      "Skylight leaks on older installations, common in 1980s-era homes",
+      "Aging composition shingles on 1970s-1990s homes reaching end of life — many Bellevue roofs installed in the 80s and 90s are now 25-35 years old",
+      "Moss and algae on north-facing slopes under heavy tree cover, especially in Bridle Trails and Woodridge",
+      "Storm damage from Eastside wind corridors between Lake Washington and the Cascades, lifting shingles and damaging ridge caps",
+      "Skylight leaks on older 1980s-era installations — a common and often overlooked source of water intrusion",
+      "Failed pipe boots and cracked flashing collars around vents and chimneys on aging roofs throughout East Bellevue",
     ],
     roofTypes: ["Composition shingle", "Architectural shingle", "Cedar shake", "Tile"],
     buildingAge: "Primarily 1970s-2000s construction, with newer luxury builds in West Bellevue and Somerset",
     mapQuery: "Bellevue+WA",
+    faq: [
+      {
+        q: "How much does roof repair cost in Bellevue, WA?",
+        a: "Most residential roof repairs in Bellevue run between $300 and $1,500 depending on the issue. A simple flashing repair or boot replacement is typically on the lower end. Larger repairs involving decking, valley replacements, or multiple leak sources will be higher. We provide written estimates before any work starts — no surprises.",
+      },
+      {
+        q: "What are the most common roofing problems in Bellevue?",
+        a: "The most common issues we see in Bellevue are aging composition shingles on 1970s-1990s homes, moss and algae growth on north-facing slopes under tree cover, skylight leaks on older 1980s-era installations, and storm damage from Eastside wind corridors. Many Bellevue homes are also hitting the 25-30 year mark where a full replacement makes more economic sense than continued repairs.",
+      },
+      {
+        q: "Do you serve all neighborhoods in Bellevue?",
+        a: "Yes. We work across all of Bellevue including West Bellevue, Crossroads, Factoria, Eastgate, Newport Hills, Somerset, Woodridge, Bridle Trails, Lake Hills, Wilburton, and Downtown Bellevue. If your neighborhood isn't listed here, call us — we almost certainly cover it.",
+      },
+      {
+        q: "How long does a roof replacement take in Bellevue?",
+        a: "Most residential roof replacements in Bellevue take 1 to 3 days depending on roof size, pitch, and complexity. We handle permitting when required, tear-off, decking repair where needed, and full installation. You'll get a realistic timeline in your written estimate.",
+      },
+    ],
   },
   {
     name: "Tacoma",
@@ -392,19 +418,38 @@ export const cities: City[] = [
     tier: 3,
     tagline: "Hillside homes, hilltop views",
     description:
-      "Newcastle sits on a ridge between Bellevue and Renton with views of Lake Washington, the Cascades, and Seattle. The hillside terrain means steeper roof pitches and more wind exposure. Homes here tend to be well-maintained, and owners care about quality workmanship.",
+      "Newcastle sits on a ridge between Bellevue and Renton with hillside views of Lake Washington, the Cascades, and Seattle. The elevated terrain means steeper roof pitches, more wind exposure, and a different set of roofing challenges compared to valley cities nearby. Homes here tend to be well-maintained executive-style properties, and owners expect quality workmanship to match.\n\nRoof repairs in Newcastle require more care than a typical job. Steep-pitch roofs on hillside lots add labor complexity, and the ridge position makes these homes more vulnerable during fall and winter windstorms off the Cascades. The wooded areas around Coal Creek on the east side keep moss active year-round. Most Newcastle homes were built between 1990 and 2015, so many are entering or past the window where the original roof starts showing its age.\n\nWe handle roofing repairs and replacements throughout Newcastle, WA. If you're seeing lifted shingles, granule loss, dark streaking from algae, or water staining on interior ceilings, those are signs worth addressing before a small issue becomes a bigger one.",
     neighborhoods: [
       "Newcastle Hills", "Olympus", "Lake Boren", "Coal Creek",
-      "Newcastle Golf Club area", "China Creek",
+      "Newcastle Golf Club area", "China Creek", "May Valley", "Lakemont",
     ],
     commonIssues: [
-      "Steep-pitch roofs on hillside homes making repairs and replacements more labor-intensive",
-      "Wind exposure from the elevated ridge position, especially during fall storms",
-      "Moss buildup in shaded areas around Coal Creek and the forested east side",
+      "Steep-pitch roofs on hillside homes adding labor complexity to repairs and replacements",
+      "Wind exposure from the elevated ridge position, especially during fall and winter Cascade storms",
+      "Moss and organic debris buildup in shaded areas around Coal Creek and the forested east side",
+      "Aging architectural shingle roofs on 1990s-2010s homes approaching or past the 25-30 year mark",
     ],
-    roofTypes: ["Architectural shingle", "Composition shingle"],
-    buildingAge: "Primarily 1990s-2010s construction, executive-style homes on hillside lots",
+    roofTypes: ["Architectural shingle", "Composition shingle", "Cedar shake"],
+    buildingAge: "Primarily 1990s-2010s construction, executive-style homes on hillside lots ranging from 2,500 to 5,000+ sq ft",
     mapQuery: "Newcastle+WA",
+    faq: [
+      {
+        q: "Do you do roof repairs in Newcastle, WA?",
+        a: "Yes. We handle roof repairs throughout Newcastle, including Newcastle Hills, Olympus, Lake Boren, Coal Creek, and the Newcastle Golf Club area. Whether it's a leak, lifted shingles, moss damage, or failed flashing, we'll come out and give you an honest assessment.",
+      },
+      {
+        q: "Can you work on steep-pitch roofs in Newcastle?",
+        a: "Absolutely. Newcastle homes often have steeper pitches due to the hillside terrain, and we're set up to work on them safely. Steeper roofs require more time and care, which is factored into our estimates upfront — no surprises on the final invoice.",
+      },
+      {
+        q: "What roofing materials work best for Newcastle homes?",
+        a: "Architectural shingles are the most common choice for Newcastle's 1990s-2010s construction and hold up well against wind and moisture. Some homeowners opt for Class 4 impact-resistant shingles, which can also reduce insurance premiums. We'll walk you through the options that make sense for your specific roof.",
+      },
+      {
+        q: "How do I know if my Newcastle roof needs repair or full replacement?",
+        a: "If your roof is under 15 years old and the damage is isolated to one area, a repair usually makes sense. If it's 20+ years old, has widespread granule loss, or is showing soft spots or decking damage, replacement is typically the better investment. We'll give you a straight answer during the free estimate — we won't push you toward the more expensive option if you don't need it.",
+      },
+    ],
   },
   {
     name: "Renton Highlands",

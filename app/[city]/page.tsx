@@ -9,7 +9,7 @@ import {
 import { cities } from "@/lib/cities";
 import { featuredServices } from "@/lib/services";
 import JsonLd from "@/components/shared/json-ld";
-import { breadcrumbSchema, cityServiceSchema } from "@/lib/schema";
+import { breadcrumbSchema, cityServiceSchema, faqPageSchema } from "@/lib/schema";
 
 const PHONE = "(425) 505-7142";
 const PHONE_HREF = "tel:+14255057142";
@@ -49,7 +49,7 @@ export default async function CityPage({ params }: Props) {
   const cityData = cities.find((c) => c.slug === citySlug);
   if (!cityData) notFound();
 
-  const { name, tagline, description, neighborhoods, commonIssues, roofTypes, buildingAge, mapQuery } = cityData;
+  const { name, tagline, description, neighborhoods, commonIssues, roofTypes, buildingAge, mapQuery, faq } = cityData;
   const cityIndex = cities.findIndex((c) => c.slug === citySlug);
   const heroImage = HERO_IMAGES[cityIndex % HERO_IMAGES.length];
   const otherCities = cities.filter((c) => c.slug !== citySlug).slice(0, 8);
@@ -85,6 +85,9 @@ export default async function CityPage({ params }: Props) {
       <JsonLd data={cityLd} />
       <JsonLd data={cityServiceLd} />
       <JsonLd data={breadcrumbs} />
+      {faq && faq.length > 0 && (
+        <JsonLd data={faqPageSchema(faq.map((f) => ({ question: f.q, answer: f.a })))} />
+      )}
 
       {/* ── Hero ──────────────────────────────────────────── */}
       <section className="relative h-[420px] md:h-[480px] flex items-end overflow-hidden">
@@ -123,7 +126,11 @@ export default async function CityPage({ params }: Props) {
         {/* Intro */}
         <div className="grid md:grid-cols-3 gap-10 mb-16">
           <div className="md:col-span-2">
-            <p className="text-[#374151] text-lg leading-relaxed mb-6">{description}</p>
+            <div className="text-[#374151] text-lg leading-relaxed mb-6 flex flex-col gap-4">
+              {description.split("\n\n").map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
             <div className="flex flex-wrap gap-3 mb-6">
               {roofTypes.map((rt) => (
                 <span key={rt} className="px-3 py-1.5 bg-[#2D5A47]/8 border border-[#2D5A47]/15 text-[#2D5A47] text-xs font-bold rounded-full">
@@ -329,6 +336,23 @@ export default async function CityPage({ params }: Props) {
             </a>
           </div>
         </section>
+
+        {/* ── FAQ ─────────────────────────────────────────── */}
+        {faq && faq.length > 0 && (
+          <section className="mb-16">
+            <h2 className="font-black text-[#1E3D30] text-2xl tracking-tight mb-6">
+              Frequently Asked Questions
+            </h2>
+            <div className="flex flex-col gap-4">
+              {faq.map((item, i) => (
+                <div key={i} className="bg-white rounded-xl border border-[#E5DDD3] p-6">
+                  <h3 className="font-bold text-[#1E3D30] text-base mb-2">{item.q}</h3>
+                  <p className="text-sm text-[#374151] leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* ── Other Cities ────────────────────────────────── */}
         <section>
