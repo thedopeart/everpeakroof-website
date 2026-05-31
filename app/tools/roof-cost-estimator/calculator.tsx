@@ -13,17 +13,24 @@ const PITCH_MULTIPLIER: Record<Pitch, number> = {
   steep: 1.4,
 };
 
-// Flat labor surcharge per sq ft for working at elevation.
-// 1 story: no surcharge. 2 stories: +$50/sqft. 3 stories: +$75/sqft.
-const STORY_SURCHARGE: Record<1 | 2 | 3, number> = {
-  1: 0,
-  2: 50,
-  3: 75,
+// Material cost per sqft of roof area (doesn't change with story height).
+const MATERIAL_RATE: Record<Material, number> = {
+  asphalt3: 3.0,
+  architectural: 4.5,
 };
 
-const MATERIAL_RATE: Record<Material, number> = {
-  asphalt3: 5.5,
-  architectural: 7.5,
+// Labor cost per sqft of roof area at 1-story (base).
+const LABOR_RATE: Record<Material, number> = {
+  asphalt3: 2.5,
+  architectural: 3.0,
+};
+
+// Height surcharge applied to labor only — not materials.
+// Industry standard: +15% labor for 2-story, +30% for 3-story.
+const STORY_LABOR_MULTIPLIER: Record<1 | 2 | 3, number> = {
+  1: 1.0,
+  2: 1.15,
+  3: 1.30,
 };
 
 const MATERIAL_LABEL: Record<Material, string> = {
@@ -62,22 +69,28 @@ export default function RoofCostCalculator() {
     const safeSqft = Number.isFinite(homeSqft) && homeSqft > 0 ? homeSqft : 0;
 
     // Roof always covers the home's full footprint regardless of story count.
-    // Additional stories add a flat labor surcharge for working at elevation.
     const roofArea = safeSqft * PITCH_MULTIPLIER[pitch];
 
-    const baseRate = MATERIAL_RATE[material];
-    const storySurcharge = STORY_SURCHARGE[stories];
-    const effectiveRate = baseRate + storySurcharge;
-    const jobFactor = JOB_FACTOR[jobType];
+    const materialRate = MATERIAL_RATE[material];
+    const laborRate    = LABOR_RATE[material];
+    const storyMult    = STORY_LABOR_MULTIPLIER[stories];
+    // Height surcharge applies to labor only — materials cost the same either way.
+    const adjustedLaborRate = laborRate * storyMult;
+    const effectiveRate     = materialRate + adjustedLaborRate;
+    const jobFactor         = JOB_FACTOR[jobType];
 
     const midpoint = roofArea * effectiveRate * jobFactor;
-    const low = midpoint * 0.85;
+    const low  = midpoint * 0.85;
     const high = midpoint * 1.2;
+
+    const laborSurchargeRate = adjustedLaborRate - laborRate; // the extra $/sqft due to height
 
     return {
       roofArea,
-      baseRate,
-      storySurcharge,
+      materialRate,
+      laborRate,
+      adjustedLaborRate,
+      laborSurchargeRate,
       effectiveRate,
       jobFactor,
       low,
@@ -251,23 +264,29 @@ export default function RoofCostCalculator() {
                     </dd>
                   </div>
                   <div className="flex justify-between gap-4">
-                    <dt className="text-[#374151]">Base rate per sq ft</dt>
+                    <dt className="text-[#374151]">Material rate</dt>
                     <dd className="font-bold text-[#1E3D30]">
-                      ${result.baseRate.toFixed(2)}
+                      ${result.materialRate.toFixed(2)}/sq ft
+                    </dd>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-[#374151]">Labor rate</dt>
+                    <dd className="font-bold text-[#1E3D30]">
+                      ${result.adjustedLaborRate.toFixed(2)}/sq ft
                     </dd>
                   </div>
                   {stories > 1 && (
                     <div className="flex justify-between gap-4">
-                      <dt className="text-[#374151]">{stories}-story elevation surcharge</dt>
+                      <dt className="text-[#374151]">{stories}-story labor surcharge</dt>
                       <dd className="font-bold text-[#D4883E]">
-                        +${result.storySurcharge}/sq ft
+                        +${result.laborSurchargeRate.toFixed(2)}/sq ft
                       </dd>
                     </div>
                   )}
                   <div className="flex justify-between gap-4 pt-2 border-t border-[#E5DDD3]">
-                    <dt className="text-[#374151]">Effective rate per sq ft</dt>
+                    <dt className="text-[#374151]">Combined rate</dt>
                     <dd className="font-bold text-[#1E3D30]">
-                      ${result.effectiveRate.toFixed(2)}
+                      ${result.effectiveRate.toFixed(2)}/sq ft
                     </dd>
                   </div>
                   <div className="flex justify-between gap-4">
