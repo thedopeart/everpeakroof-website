@@ -28,15 +28,6 @@ export default function Footer() {
               <Clock size={16} className="text-[#D4883E] shrink-0" />
               7 Days a Week
             </div>
-            <a
-              href="https://www.bbb.org/us/wa/renton/profile/roofing-contractors/everpeak-roofing-llc-1296-1000197298"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors"
-            >
-              <span className="inline-flex items-center justify-center w-7 h-7 rounded bg-[#003F87] text-white text-[10px] font-black leading-none shrink-0">BBB</span>
-              Accredited Business
-            </a>
           </div>
           <a
             href={PHONE_HREF}
