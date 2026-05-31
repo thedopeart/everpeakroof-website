@@ -4,7 +4,6 @@ import StatsBar        from "@/components/home/stats-bar";
 import TrustBadges     from "@/components/home/trust-badges";
 import ServicesPreview from "@/components/home/services-preview";
 import WhyUs           from "@/components/home/why-us";
-import RecentWork      from "@/components/home/recent-work";
 import HowItWorks      from "@/components/home/how-it-works";
 import FaqSection      from "@/components/home/faq-section";
 import ServiceAreas    from "@/components/home/service-areas";
@@ -96,7 +95,6 @@ export default function HomePage() {
       <TrustBadges />
       <ServicesPreview />
       <WhyUs />
-      <RecentWork />
       <HowItWorks />
       <FaqSection />
       <ServiceAreas />
