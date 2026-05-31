@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/services";
 import JsonLd from "@/components/shared/json-ld";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, itemListSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Roofing Services | Seattle Repair, Replacement & More",
@@ -19,9 +19,20 @@ export default function ServicesPage() {
     { name: "Services", url: "https://everpeakroof.com/services" },
   ]);
 
+  const servicesList = itemListSchema(
+    "Roofing Services",
+    "https://everpeakroof.com/services",
+    services.map((svc, i) => ({
+      name: svc.name,
+      url: `https://everpeakroof.com/services/${svc.slug}`,
+      position: i + 1,
+    }))
+  );
+
   return (
     <div className="min-h-screen bg-[#FAF3EB] pt-32 pb-20">
       <JsonLd data={breadcrumbs} />
+      <JsonLd data={servicesList} />
       <div className="max-w-6xl mx-auto px-5 md:px-8">
 
         <div className="mb-12">

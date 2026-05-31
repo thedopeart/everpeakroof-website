@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Clock, ArrowRight } from "lucide-react";
 import { getAllPosts } from "@/lib/posts";
+import JsonLd from "@/components/shared/json-ld";
+import { itemListSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Roofing Advice from the Puget Sound | Everpeak Blog",
@@ -22,8 +24,19 @@ function formatDate(iso: string): string {
 export default function BlogIndexPage() {
   const allPosts = getAllPosts();
 
+  const blogListSchema = itemListSchema(
+    "Roofing Blog",
+    "https://everpeakroof.com/blog",
+    allPosts.map((p, i) => ({
+      name: p.title,
+      url: `https://everpeakroof.com/blog/${p.slug}`,
+      position: i + 1,
+    }))
+  );
+
   return (
     <div className="min-h-screen bg-[#FAF3EB] pt-32 pb-20">
+      <JsonLd data={blogListSchema} />
       <div className="max-w-6xl mx-auto px-5 md:px-8">
 
         <div className="mb-12">

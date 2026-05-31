@@ -2,6 +2,20 @@ import type { Metadata } from "next";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import JsonLd from "@/components/shared/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
+
+const contactPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact Everpeak Roofing",
+  url: "https://everpeakroof.com/contact",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+1-425-505-7142",
+    contactType: "customer service",
+    areaServed: "Seattle metro",
+    availableLanguage: "English",
+  },
+};
 import ContactForm from "./contact-form";
 
 export const metadata: Metadata = {
@@ -24,6 +38,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[#FAF3EB] pt-32 pb-20">
       <JsonLd data={breadcrumbs} />
+      <JsonLd data={contactPageSchema} />
       <div className="max-w-6xl mx-auto px-5 md:px-8">
 
         {/* Header */}

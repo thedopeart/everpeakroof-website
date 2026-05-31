@@ -171,3 +171,136 @@ export function faqPageSchema(faqs: { question: string; answer: string }[]) {
     })),
   };
 }
+
+export function articleSchema(post: {
+  title: string;
+  description: string;
+  slug: string;
+  publishedAt: string;
+  modifiedAt?: string;
+  imageUrl?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    url: `${SITE_URL}/blog/${post.slug}`,
+    datePublished: post.publishedAt,
+    ...(post.modifiedAt ? { dateModified: post.modifiedAt } : {}),
+    ...(post.imageUrl ? { image: post.imageUrl } : {}),
+    author: {
+      "@type": "Organization",
+      name: BRAND_NAME,
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: BRAND_NAME,
+      url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: LOGO_URL,
+      },
+    },
+  };
+}
+
+export function aggregateRatingSchema(
+  rating: number,
+  reviewCount: number,
+  reviews: { author: string; rating: number; body: string; date: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "RoofingContractor",
+    "@id": `${SITE_URL}/#business`,
+    name: BRAND_NAME,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: rating,
+      reviewCount: reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    review: reviews.map((r) => ({
+      "@type": "Review",
+      author: {
+        "@type": "Person",
+        name: r.author,
+      },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: r.rating,
+        bestRating: 5,
+        worstRating: 1,
+      },
+      reviewBody: r.body,
+      datePublished: r.date,
+    })),
+  };
+}
+
+export function howToSchema(
+  name: string,
+  description: string,
+  steps: { name: string; text: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: name,
+    description: description,
+    step: steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
+  };
+}
+
+export function itemListSchema(
+  name: string,
+  url: string,
+  items: { name: string; url: string; position: number }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: name,
+    url: url,
+    itemListElement: items.map((item) => ({
+      "@type": "ListItem",
+      position: item.position,
+      name: item.name,
+      url: item.url,
+    })),
+  };
+}
+
+export function softwareApplicationSchema(
+  name: string,
+  description: string,
+  url: string
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: name,
+    description: description,
+    url: url,
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Web",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    provider: {
+      "@type": "Organization",
+      name: BRAND_NAME,
+      url: SITE_URL,
+    },
+  };
+}

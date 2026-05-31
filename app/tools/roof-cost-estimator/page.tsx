@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import RoofCostCalculator from "./calculator";
+import JsonLd from "@/components/shared/json-ld";
+import { softwareApplicationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Roof Cost Estimator | Seattle Roof Pricing Tool | Everpeak Roofing",
@@ -11,8 +13,15 @@ export const metadata: Metadata = {
 };
 
 export default function RoofCostEstimatorPage() {
+  const appSchema = softwareApplicationSchema(
+    "Roof Cost Estimator",
+    "Free roof cost estimator for Seattle homeowners. Get a ballpark price on replacement, major, and minor roof work based on size, pitch, and material.",
+    "https://everpeakroof.com/tools/roof-cost-estimator"
+  );
+
   return (
     <div className="min-h-screen bg-[#FAF3EB] pt-32 pb-20">
+      <JsonLd data={appSchema} />
       <div className="max-w-6xl mx-auto px-5 md:px-8">
 
         {/* Breadcrumb */}

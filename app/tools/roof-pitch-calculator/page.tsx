@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import RoofPitchCalculator from "./calculator";
+import JsonLd from "@/components/shared/json-ld";
+import { softwareApplicationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Roof Pitch Calculator | Rise, Run, Angle, Grade | Everpeak Roofing",
@@ -11,8 +13,15 @@ export const metadata: Metadata = {
 };
 
 export default function RoofPitchCalculatorPage() {
+  const appSchema = softwareApplicationSchema(
+    "Roof Pitch Calculator",
+    "Free roof pitch calculator. Convert rise and run to angle and grade, or go the other way. Classifies pitch as low slope, conventional, or steep.",
+    "https://everpeakroof.com/tools/roof-pitch-calculator"
+  );
+
   return (
     <div className="min-h-screen bg-[#FAF3EB] pt-32 pb-20">
+      <JsonLd data={appSchema} />
       <div className="max-w-6xl mx-auto px-5 md:px-8">
 
         {/* Breadcrumb */}

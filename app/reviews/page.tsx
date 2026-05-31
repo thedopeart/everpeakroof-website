@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Star, ExternalLink, PenLine, Phone } from "lucide-react";
+import JsonLd from "@/components/shared/json-ld";
+import { aggregateRatingSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Reviews | Everpeak Roofing Seattle",
@@ -69,8 +71,21 @@ function StarRow() {
 }
 
 export default function ReviewsPage() {
+  const reviewSchemaData = aggregateRatingSchema(
+    5.0,
+    TESTIMONIALS.length,
+    TESTIMONIALS.map((t) => ({
+      author: `${t.name}, ${t.neighborhood}`,
+      rating: 5,
+      body: t.quote,
+      date: "2025-01-01",
+    }))
+  );
+
   return (
-    <div className="min-h-screen bg-[#FAF3EB] pt-32 pb-20">
+    <>
+      <JsonLd data={reviewSchemaData} />
+      <div className="min-h-screen bg-[#FAF3EB] pt-32 pb-20">
       <div className="max-w-5xl mx-auto px-5 md:px-8">
 
         {/* Header */}
@@ -205,5 +220,6 @@ export default function ReviewsPage() {
 
       </div>
     </div>
+    </>
   );
 }

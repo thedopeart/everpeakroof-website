@@ -6,6 +6,8 @@ import { ChevronRight, Clock, Calendar, User, ArrowRight, Phone, Lightbulb, Aler
 import { getAllPosts, getPost } from "@/lib/posts";
 import type { Block } from "@/lib/posts";
 import type { ReactNode } from "react";
+import JsonLd from "@/components/shared/json-ld";
+import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 
 const PHONE = "(425) 505-7142";
 const PHONE_HREF = "tel:+14255057142";
@@ -288,6 +290,20 @@ export default async function BlogPostPage({ params }: Props) {
   const related = getAllPosts().filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
+    <>
+      <JsonLd data={articleSchema({
+        title: post.title,
+        description: post.excerpt,
+        slug: post.slug,
+        publishedAt: post.publishedAt,
+        modifiedAt: post.updatedAt ?? undefined,
+        imageUrl: post.heroImage,
+      })} />
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", url: "https://everpeakroof.com" },
+        { name: "Blog", url: "https://everpeakroof.com/blog" },
+        { name: post.title, url: `https://everpeakroof.com/blog/${post.slug}` },
+      ])} />
     <div className="min-h-screen bg-white pt-28 pb-20">
 
       {/* Narrow header section */}
@@ -437,5 +453,6 @@ export default async function BlogPostPage({ params }: Props) {
         )}
       </div>
     </div>
+    </>
   );
 }
