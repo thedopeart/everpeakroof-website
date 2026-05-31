@@ -13,12 +13,12 @@ const PITCH_MULTIPLIER: Record<Pitch, number> = {
   steep: 1.4,
 };
 
-// Access/labor surcharge per story. More stories = harder to work on.
-// 1 story: base rate. 2 stories: +35%. 3 stories: +65%.
-const STORY_RATE_MULTIPLIER: Record<1 | 2 | 3, number> = {
-  1: 1.0,
-  2: 1.35,
-  3: 1.65,
+// Flat labor surcharge per sq ft for working at elevation.
+// 1 story: no surcharge. 2 stories: +$50/sqft. 3 stories: +$75/sqft.
+const STORY_SURCHARGE: Record<1 | 2 | 3, number> = {
+  1: 0,
+  2: 50,
+  3: 75,
 };
 
 const MATERIAL_RATE: Record<Material, number> = {
@@ -61,16 +61,13 @@ export default function RoofCostCalculator() {
   const result = useMemo(() => {
     const safeSqft = Number.isFinite(homeSqft) && homeSqft > 0 ? homeSqft : 0;
 
-    // Roof sits on the top floor — footprint equals home sq ft for a 1-story,
-    // roughly half for 2-story, etc. But more stories means harder access, so
-    // we apply a rate surcharge instead of shrinking the area. Net effect: cost
-    // correctly goes UP with more stories even though the footprint is smaller.
-    const footprint = safeSqft / stories;
-    const roofArea = footprint * PITCH_MULTIPLIER[pitch];
+    // Roof always covers the home's full footprint regardless of story count.
+    // Additional stories add a flat labor surcharge for working at elevation.
+    const roofArea = safeSqft * PITCH_MULTIPLIER[pitch];
 
     const baseRate = MATERIAL_RATE[material];
-    const storyMultiplier = STORY_RATE_MULTIPLIER[stories];
-    const effectiveRate = baseRate * storyMultiplier;
+    const storySurcharge = STORY_SURCHARGE[stories];
+    const effectiveRate = baseRate + storySurcharge;
     const jobFactor = JOB_FACTOR[jobType];
 
     const midpoint = roofArea * effectiveRate * jobFactor;
@@ -80,7 +77,7 @@ export default function RoofCostCalculator() {
     return {
       roofArea,
       baseRate,
-      storyMultiplier,
+      storySurcharge,
       effectiveRate,
       jobFactor,
       low,
@@ -261,9 +258,9 @@ export default function RoofCostCalculator() {
                   </div>
                   {stories > 1 && (
                     <div className="flex justify-between gap-4">
-                      <dt className="text-[#374151]">{stories}-story access surcharge</dt>
+                      <dt className="text-[#374151]">{stories}-story elevation surcharge</dt>
                       <dd className="font-bold text-[#D4883E]">
-                        +{Math.round((result.storyMultiplier - 1) * 100)}%
+                        +${result.storySurcharge}/sq ft
                       </dd>
                     </div>
                   )}
