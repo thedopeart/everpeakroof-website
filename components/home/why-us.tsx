@@ -50,7 +50,7 @@ export default function WhyUs() {
             We&apos;re Not the Cheapest.<br />
             <span className="text-[#D4883E]">We&apos;re the Most Reliable.</span>
           </h2>
-          <p className="mt-4 text-white/60 text-base leading-relaxed">
+          <p className="mt-4 text-white/80 text-base leading-relaxed">
             There&apos;s no shortage of roofers in the Puget Sound. Here&apos;s what makes the difference between a job you feel good about and one you regret.
           </p>
         </div>
@@ -72,7 +72,7 @@ export default function WhyUs() {
                 </div>
                 <div>
                   <h3 className="font-bold text-white mb-1.5">{r.title}</h3>
-                  <p className="text-sm text-white/65 leading-relaxed">{r.desc}</p>
+                  <p className="text-sm text-white/80 leading-relaxed">{r.desc}</p>
                 </div>
               </motion.div>
             );

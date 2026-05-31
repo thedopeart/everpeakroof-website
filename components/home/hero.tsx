@@ -17,6 +17,7 @@ const fade = (delay = 0) => ({
 });
 
 const TRUST_BADGES = [
+  { icon: Star,        label: "5.0 Rated on Google" },
   { icon: ShieldCheck, label: "Licensed & Insured" },
   { icon: Star,        label: "Free Estimates" },
   { icon: MapPin,      label: "20 Cities Served" },

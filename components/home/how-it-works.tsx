@@ -54,7 +54,7 @@ export default function HowItWorks() {
           >
             Four Steps. No Runaround.
           </h2>
-          <p className="mt-3 text-white/50 text-base max-w-md mx-auto">
+          <p className="mt-3 text-white/75 text-base max-w-md mx-auto">
             Here&apos;s exactly what happens when you call Everpeak.
           </p>
         </div>
@@ -75,10 +75,10 @@ export default function HowItWorks() {
                   <div className="w-12 h-12 rounded-xl bg-[#D4883E] flex items-center justify-center">
                     <Icon size={22} className="text-white" />
                   </div>
-                  <span className="text-4xl font-black text-[#D4883E]/20">{step.step}</span>
+                  <span className="text-4xl font-black text-[#D4883E]/40">{step.step}</span>
                 </div>
                 <h3 className="font-bold text-white text-base mb-2">{step.title}</h3>
-                <p className="text-white/55 text-sm leading-relaxed">{step.desc}</p>
+                <p className="text-white/80 text-sm leading-relaxed">{step.desc}</p>
               </motion.div>
             );
           })}

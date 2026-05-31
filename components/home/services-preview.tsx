@@ -150,6 +150,11 @@ export default function ServicesPreview() {
         </div>
 
         {/* Secondary 3 cards — no image, accent border */}
+        <div className="flex items-center gap-4 my-2">
+          <div className="flex-1 h-px bg-[#E5DDD3]" />
+          <span className="text-xs font-bold text-[#374151]/50 uppercase tracking-wider px-2">Additional Services</span>
+          <div className="flex-1 h-px bg-[#E5DDD3]" />
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {SECONDARY.map((svc, i) => {
             const Icon = svc.icon;

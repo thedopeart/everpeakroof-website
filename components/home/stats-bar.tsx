@@ -1,18 +1,20 @@
 "use client";
 
+import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 
 const STATS = [
-  { value: "20",    label: "Cities Served" },
-  { value: "Free",  label: "Estimates" },
-  { value: "7",     label: "Days a Week" },
+  { value: "20+",  label: "Cities Served" },
+  { value: "5.0★", label: "Avg Rating" },
+  { value: "10yr", label: "Workmanship Warranty" },
+  { value: "7",    label: "Days a Week" },
 ];
 
 export default function StatsBar() {
   return (
     <section className="bg-[#2D5A47]">
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-10">
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
           {STATS.map((stat, i) => (
             <motion.div
               key={stat.label}
