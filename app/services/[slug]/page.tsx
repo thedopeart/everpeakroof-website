@@ -26,6 +26,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${svc.name} in Seattle & the Puget Sound`,
     description: `${svc.longDesc.slice(0, 155)}...`,
     alternates: { canonical: `https://everpeakroof.com/services/${slug}` },
+    openGraph: {
+      url: `https://everpeakroof.com/services/${slug}`,
+      title: `${svc.name} in Seattle & the Puget Sound`,
+      description: `${svc.longDesc.slice(0, 155)}...`,
+    },
   };
 }
 

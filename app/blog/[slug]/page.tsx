@@ -259,12 +259,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPost(slug);
   if (!post) return {};
   return {
-    title: `${post.title} | Everpeak Roofing`,
-    description: post.excerpt,
+    title: post.title,
+    description: post.excerpt.length > 155 ? post.excerpt.slice(0, 152) + "..." : post.excerpt,
     alternates: { canonical: `https://everpeakroof.com/blog/${slug}` },
     openGraph: {
       title: post.title,
-      description: post.excerpt,
+      description: post.excerpt.length > 155 ? post.excerpt.slice(0, 152) + "..." : post.excerpt,
       type: "article",
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,

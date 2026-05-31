@@ -15,8 +15,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/services`,                  priority: 0.9, changeFrequency: "weekly"  as const },
     { url: `${BASE}/reviews`,                   priority: 0.6, changeFrequency: "monthly" as const },
     { url: `${BASE}/blog`,                      priority: 0.7, changeFrequency: "weekly"  as const },
+    { url: `${BASE}/tools`,                      priority: 0.7, changeFrequency: "monthly" as const },
     { url: `${BASE}/tools/roof-cost-estimator`, priority: 0.8, changeFrequency: "monthly" as const },
     { url: `${BASE}/tools/roof-pitch-calculator`, priority: 0.75, changeFrequency: "monthly" as const },
+    { url: `${BASE}/our-work`,                   priority: 0.7, changeFrequency: "monthly" as const },
+    { url: `${BASE}/instant-roof-quote`,          priority: 0.8, changeFrequency: "monthly" as const },
     { url: `${BASE}/privacy`,                   priority: 0.2, changeFrequency: "yearly"  as const },
     { url: `${BASE}/terms`,                     priority: 0.2, changeFrequency: "yearly"  as const },
   ];
