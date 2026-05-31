@@ -37,7 +37,7 @@ export default function Hero() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a3528]/90 via-[#2D5A47]/80 to-[#1a3528]/90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a3528]/70 via-[#2D5A47]/55 to-[#1a3528]/70" />
       </div>
 
       {/* Decorative roofline shape */}
