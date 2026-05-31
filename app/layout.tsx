@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, DM_Serif_Display } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
@@ -77,6 +78,11 @@ export default function RootLayout({
         <Footer />
       </body>
       {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
+      <Script
+        src="https://analytics.ahrefs.com/analytics.js"
+        data-key="+ws0hE3ziNOZiM1vZ+4T0g"
+        strategy="afterInteractive"
+      />
     </html>
   );
 }
