@@ -95,7 +95,7 @@ export default function Hero() {
           {/* Subhead */}
           <motion.p
             {...fade(0.3)}
-            className="text-white/65 text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
+            className="text-white font-semibold text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
           >
             Licensed, insured, and up on roofs across the Puget Sound.
             Free estimates, honest pricing. No pressure, no upsells.
@@ -125,7 +125,7 @@ export default function Hero() {
             className="flex flex-wrap gap-x-6 gap-y-3"
           >
             {TRUST_BADGES.map(({ icon: Icon, label }) => (
-              <div key={label} className="flex items-center gap-2 text-sm text-white/60">
+              <div key={label} className="flex items-center gap-2 text-sm text-white font-bold">
                 <Icon size={15} className="text-[#D4883E]" />
                 {label}
               </div>
