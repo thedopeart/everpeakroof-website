@@ -30,8 +30,8 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/roofer-installing.jpg"
-          alt="Roofer installing shingles on a Seattle home"
+          src="/images/cover-hero.jpg"
+          alt="Everpeak Roof — Seattle roofing contractors"
           fill
           className="object-cover"
           priority
