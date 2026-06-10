@@ -25,7 +25,7 @@ export const cities: City[] = [
     tier: 1,
     tagline: "Rain, moss, and a century of rooftops",
     description:
-      "Seattle roofs take a beating. Between 150+ days of rain per year, aggressive moss growth, and windstorms rolling off the Puget Sound, roofing here isn't like roofing anywhere else. We work across every Seattle neighborhood, from older Craftsman homes in Capitol Hill to newer builds in South Lake Union.",
+      "Seattle roofs take a beating. Between 150-plus days of rain a year, aggressive moss, and windstorms rolling off the Puget Sound, a roof here ages faster than almost anywhere else. We handle roof repair and roof replacement across every Seattle neighborhood, from century-old Craftsman homes in Capitol Hill and Ballard to newer builds in South Lake Union.\n\nMost of the calls we get fall into a few buckets. Older homes with original or second-generation composition roofs that are finally giving out and need a full reroof. Leaks around aging flashing, valleys, and chimney collars on pre-1960s houses. And moss, lots of it, especially on north-facing slopes shaded by big trees. We'll tell you honestly whether a targeted repair buys you a few more years or whether replacement is the smarter money.\n\nAs a local Seattle roofing company, we keep it simple. We come out, look at what's actually on your roof, and hand you a written estimate with clear pricing. No pressure, no scare tactics. We work on both residential and commercial roofs, and estimates are always free.",
     neighborhoods: [
       "Capitol Hill", "Ballard", "Fremont", "Wallingford", "Queen Anne",
       "West Seattle", "Beacon Hill", "Columbia City", "Greenwood", "Ravenna",
@@ -40,6 +40,24 @@ export const cities: City[] = [
     roofTypes: ["Composition shingle", "Cedar shake", "Architectural shingle", "Flat membrane (commercial)"],
     buildingAge: "Mix of 1900s Craftsman bungalows, mid-century ramblers, and modern infill construction",
     mapQuery: "Seattle+WA",
+    faq: [
+      {
+        q: "How much does roof repair cost in Seattle?",
+        a: "Most residential roof repairs in Seattle run between $300 and $1,500, depending on what's wrong. A simple flashing or pipe-boot fix sits on the low end. Bigger jobs with valley work, decking repair, or several leak points cost more. You get a written estimate before we start, so there are no surprises.",
+      },
+      {
+        q: "Do you offer emergency roof repair in Seattle?",
+        a: "Yes. If you've got an active leak, storm damage, or a tree limb through the roof, call us. We can usually get out quickly to tarp the area and stop the water, then schedule the permanent repair once things are dry.",
+      },
+      {
+        q: "Should I repair my Seattle roof or replace it?",
+        a: "If the roof is under about 15 years old and the damage is in one spot, a repair is usually the right call. If it's 20-plus years old, losing granules across the whole surface, or leaking in several places, a full replacement tends to be the better investment. We'll give you a straight answer at the free estimate and won't push you toward a new roof you don't need.",
+      },
+      {
+        q: "Which Seattle neighborhoods do you serve?",
+        a: "All of them. We work across Capitol Hill, Ballard, Fremont, Wallingford, Queen Anne, West Seattle, Beacon Hill, Columbia City, Greenwood, the U District, and the rest of the city. If your neighborhood isn't listed, call us, we almost certainly cover it.",
+      },
+    ],
   },
   {
     name: "Bellevue",
@@ -174,7 +192,7 @@ export const cities: City[] = [
     tier: 2,
     tagline: "South King County, covered",
     description:
-      "Renton connects the Eastside to south King County, and its roofing needs reflect that range. From the older homes in Renton Highlands to newer developments near The Landing, we see everything from failing 3-tab shingles to wind-damaged architectural roofs. Fast-growing area with steady demand.",
+      "Renton sits where the Eastside meets south King County, and the roofing work here covers the whole range. We handle roof repair and roof replacement from the older homes up in the Renton Highlands to the newer developments around The Landing and Fairwood. Plenty of the 1970s and 1980s 3-tab roofs in this area are well past their prime.\n\nThe Cedar River valley funnels wind through Renton, so storm damage is common: lifted shingles, cracked ridge caps, and the slow leaks that follow. Homes backing up to greenbelt deal with constant moss and debris too. If you've got an active leak, we do emergency roof repair in Renton and can usually get out fast to tarp it and stop the water before it spreads.\n\nWe're a local roofing company, not a national chain, so you get a straight answer and honest pricing. Residential or commercial, a small repair or a full replacement, we'll come out, assess the roof, and put together a written estimate at no cost.",
     neighborhoods: [
       "Renton Highlands", "Kennydale", "Cascade", "Benson Hill", "Fairwood",
       "Talbot Hill", "Skyway", "The Landing", "Earlington",
@@ -188,6 +206,24 @@ export const cities: City[] = [
     roofTypes: ["3-tab shingle", "Composition shingle", "Architectural shingle"],
     buildingAge: "1960s-1980s ramblers in Renton Highlands, newer 2000s+ construction near The Landing and Fairwood",
     mapQuery: "Renton+WA",
+    faq: [
+      {
+        q: "How much does roof repair cost in Renton, WA?",
+        a: "Most residential roof repairs in Renton land between $300 and $1,500, depending on the problem. Replacing a section of flashing or a pipe boot is on the lower end. Valley repairs, decking work, or several leak sources run higher. We put the price in writing before any work starts.",
+      },
+      {
+        q: "Do you offer emergency roof repair in Renton?",
+        a: "Yes. Wind off the Cedar River valley lifts shingles and starts leaks, and we handle those calls. If water's coming in, we can usually get out fast to tarp the roof and stop the damage, then come back for the full repair once it's dry.",
+      },
+      {
+        q: "Should I repair or replace my Renton roof?",
+        a: "A lot of Renton Highlands homes still have their original 1970s or 1980s 3-tab roofs, which are well past their lifespan. If yours is 20-plus years old with widespread wear, replacement usually makes more sense than chasing repairs. Newer roofs with isolated damage are worth repairing. We'll tell you honestly which camp you're in.",
+      },
+      {
+        q: "Do you serve all of Renton?",
+        a: "Yes. We cover Renton Highlands, Kennydale, Cascade, Benson Hill, Fairwood, Talbot Hill, Skyway, The Landing, and Earlington. Residential and commercial both. If you're nearby and not sure we reach you, just call.",
+      },
+    ],
   },
   {
     name: "Redmond",
