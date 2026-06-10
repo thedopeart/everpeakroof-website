@@ -5,7 +5,7 @@ import JsonLd from "@/components/shared/json-ld";
 import { aggregateRatingSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Reviews | Everpeak Roofing Seattle",
+  title: "Seattle Roofing Reviews",
   description:
     "Read what Seattle homeowners say about Everpeak Roofing. Honest feedback on repairs, replacements, and inspections across the Puget Sound.",
   alternates: { canonical: "https://everpeakroof.com/reviews" },

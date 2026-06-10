@@ -6,7 +6,7 @@ import JsonLd from "@/components/shared/json-ld";
 import { softwareApplicationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Roof Pitch Calculator | Rise, Run, Angle, Grade | Everpeak Roofing",
+  title: "Roof Pitch Calculator | Rise, Run, Angle & Grade",
   description:
     "Free roof pitch calculator. Convert rise and run to angle and grade, or go the other way. Classifies pitch as low slope, conventional, or steep.",
   alternates: { canonical: "https://everpeakroof.com/tools/roof-pitch-calculator" },

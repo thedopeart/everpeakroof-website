@@ -6,7 +6,7 @@ import JsonLd from "@/components/shared/json-ld";
 import { softwareApplicationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Roof Cost Estimator | Seattle Roof Pricing Tool | Everpeak Roofing",
+  title: "Roof Cost Estimator | Seattle Roof Pricing Tool",
   description:
     "Free roof cost estimator for Seattle homeowners. Get a ballpark price on replacement, major, and minor roof work based on size, pitch, and material.",
   alternates: { canonical: "https://everpeakroof.com/tools/roof-cost-estimator" },

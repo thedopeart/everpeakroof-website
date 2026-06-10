@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Everpeak Roofing",
+  title: "Privacy Policy",
   description:
     "How Everpeak Roofing collects, uses, and protects the information homeowners share through our website, phone calls, and contact forms.",
   alternates: { canonical: "https://everpeakroof.com/privacy" },

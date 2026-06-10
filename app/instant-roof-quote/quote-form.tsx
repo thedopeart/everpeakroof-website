@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { tier1Cities, tier2Cities } from "@/lib/cities";
 import { submitLead } from "@/app/actions/submit-lead";
+import { trackEvent } from "@/lib/analytics";
 
 const PHONE = "(425) 505-7142";
 const PHONE_HREF = "tel:+14255057142";
@@ -114,6 +115,14 @@ export default function QuoteForm() {
     });
 
     if (result.success) {
+      trackEvent("generate_lead", {
+        form: "instant-quote",
+        service: form.service || undefined,
+        property_type: form.propertyType || undefined,
+        city: form.city || undefined,
+        value: 1,
+        currency: "USD",
+      });
       setSubmitted(true);
     } else {
       setError(result.error ?? "Something went wrong.");

@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, DM_Serif_Display } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import JsonLd from "@/components/shared/json-ld";
+import AnalyticsEvents from "@/components/shared/analytics-events";
 import { localBusinessSchema } from "@/lib/schema";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "G-M6EY8LTNGF";
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID ?? "GTM-PLNHDTLG";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -71,8 +73,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${plusJakarta.variable} ${dmSerif.variable} h-full`}>
+      {GTM_ID && <GoogleTagManager gtmId={GTM_ID} />}
       <body className="min-h-full flex flex-col">
         <JsonLd data={localBusinessSchema()} />
+        <AnalyticsEvents />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

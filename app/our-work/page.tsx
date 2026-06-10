@@ -4,7 +4,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 import Gallery from "./gallery";
 
 export const metadata: Metadata = {
-  title: "Our Work | Everpeak Roofing Projects in Seattle",
+  title: "Our Work | Seattle Roofing Projects",
   description:
     "See recent roofing projects completed by Everpeak Roofing across the Seattle metro area. Roof repairs, replacements, and installations.",
   alternates: { canonical: "https://everpeakroof.com/our-work" },

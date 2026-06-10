@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { submitLead } from "@/app/actions/submit-lead";
+import { trackEvent } from "@/lib/analytics";
 import { CheckCircle2 } from "lucide-react";
 
 const inputClass =
@@ -26,6 +27,13 @@ export default function ContactForm() {
     const result = await submitLead("contact", data);
 
     if (result.success) {
+      trackEvent("generate_lead", {
+        form: "contact",
+        service: data.service || undefined,
+        city: data.zip || undefined,
+        value: 1,
+        currency: "USD",
+      });
       setSubmitted(true);
     } else {
       setError(result.error ?? "Something went wrong.");

@@ -6,7 +6,7 @@ import JsonLd from "@/components/shared/json-ld";
 import { breadcrumbSchema, organizationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "About Everpeak Roofing | Seattle Roofing Company",
+  title: "About Our Seattle Roofing Company",
   description:
     "Everpeak Roofing is a Seattle based roofing company delivering reliable roof inspections, repairs, and replacements built for the Pacific Northwest.",
   alternates: { canonical: "https://everpeakroof.com/about" },
