@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, DM_Serif_Display } from "next/font/google";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/layout/header";
@@ -9,7 +9,7 @@ import JsonLd from "@/components/shared/json-ld";
 import AnalyticsEvents from "@/components/shared/analytics-events";
 import { localBusinessSchema } from "@/lib/schema";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "G-M6EY8LTNGF";
+// GA4 (G-M6EY8LTNGF) now loads through GTM, not directly. See container GTM-PLNHDTLG.
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID ?? "GTM-PLNHDTLG";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -81,7 +81,6 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
-      {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
       <Script
         src="https://analytics.ahrefs.com/analytics.js"
         data-key="+ws0hE3ziNOZiM1vZ+4T0g"

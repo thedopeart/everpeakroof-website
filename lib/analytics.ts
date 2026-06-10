@@ -13,19 +13,11 @@ export function trackEvent(name: string, params: GtagParams = {}): void {
     if (v !== undefined && v !== null && v !== "") clean[k] = v;
   }
 
-  const w = window as unknown as {
-    gtag?: (command: string, eventName: string, params?: GtagParams) => void;
-    dataLayer?: GtagParams[];
-  };
+  const w = window as unknown as { dataLayer?: GtagParams[] };
 
-  // Push to the GTM dataLayer (GTM-PLNHDTLG) so the event can be used as a
-  // Custom Event trigger inside Tag Manager.
-  if (Array.isArray(w.dataLayer)) {
-    w.dataLayer.push({ event: name, ...clean });
-  }
-
-  // Also fire directly to gtag for the standalone GA4 tag, if present.
-  if (typeof w.gtag === "function") {
-    w.gtag("event", name, clean);
-  }
+  // GA4 runs through GTM (container GTM-PLNHDTLG). Push to the dataLayer so the
+  // event fires its Custom Event trigger → GA4 event tag. (We intentionally do
+  // NOT also call gtag directly, which would double-count via GTM's own gtag.)
+  w.dataLayer = w.dataLayer || [];
+  w.dataLayer.push({ event: name, ...clean });
 }
