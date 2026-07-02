@@ -1,13 +1,27 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "fs/promises";
+import { join } from "path";
 
 /* Shared Open Graph image template for Everpeak Roof.
-   1200x630, brand forest-green gradient with an orange roof mark.
+   1200x630, brand forest-green gradient with the real Everpeak logo.
    Uses system fonts only (no remote font fetch) for build reliability. */
 
 export const OG_SIZE = { width: 1200, height: 630 };
 export const OG_CONTENT_TYPE = "image/png";
 
 const PHONE = "(425) 505-7142";
+
+// Real white logo lockup (peak emblem + EVERPEAK ROOFING wordmark),
+// downscaled copy for OG use. Read once per server instance and cached.
+let logoDataUri: Promise<string> | null = null;
+function getLogo(): Promise<string> {
+  if (!logoDataUri) {
+    logoDataUri = readFile(
+      join(process.cwd(), "public/images/logo/everpeak-roofing-white-og.png")
+    ).then((buf) => `data:image/png;base64,${buf.toString("base64")}`);
+  }
+  return logoDataUri;
+}
 
 interface OgProps {
   eyebrow: string;
@@ -45,9 +59,10 @@ interface BlogOgProps {
 // Blog cover: category-tinted chip + big title + meta row, with an angled
 // "roofline" motif on the right in the category accent. One template, unique
 // per post via title/category/read-time.
-export function renderBlogOgImage({ category, title, readingTimeMin }: BlogOgProps): ImageResponse {
+export async function renderBlogOgImage({ category, title, readingTimeMin }: BlogOgProps): Promise<ImageResponse> {
   const accent = CATEGORY_ACCENTS[category] ?? "#D4883E";
   const titleSize = title.length > 58 ? 56 : title.length > 40 ? 64 : 72;
+  const logo = await getLogo();
 
   return new ImageResponse(
     (
@@ -104,29 +119,10 @@ export function renderBlogOgImage({ category, title, readingTimeMin }: BlogOgPro
           }}
         />
 
-        {/* Top row: wordmark + category chip */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            <div
-              style={{
-                display: "flex",
-                width: 56,
-                height: 56,
-                borderRadius: 14,
-                background: "#D4883E",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
-                <path d="M3 11.5 12 4l9 7.5" stroke="#1E3D30" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M5.5 10v9.5h13V10" stroke="#1E3D30" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <div style={{ display: "flex", fontSize: 26, fontWeight: 800, letterSpacing: "0.05em", color: "#FFFFFF" }}>
-              EVERPEAK ROOF
-            </div>
-          </div>
+        {/* Top row: real logo lockup + category chip */}
+        <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logo} width={287} height={135} alt="" style={{ marginTop: -18, marginLeft: -12 }} />
           <div
             style={{
               display: "flex",
@@ -162,10 +158,10 @@ export function renderBlogOgImage({ category, title, readingTimeMin }: BlogOgPro
         {/* Bottom meta row */}
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", width: 110, height: 6, borderRadius: 99, background: accent, marginBottom: 20 }} />
-          <div style={{ display: "flex", alignItems: "center", gap: 26, fontSize: 23, fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 28, fontSize: 23, fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
             <div style={{ display: "flex" }}>{readingTimeMin} min read</div>
             <div style={{ display: "flex", color: "rgba(255,255,255,0.45)" }}>everpeakroof.com/blog</div>
-            <div style={{ display: "flex", color: "#E8A85E" }}>{PHONE}</div>
+            <div style={{ display: "flex", color: "#E8A85E", fontSize: 34, fontWeight: 800 }}>{PHONE}</div>
           </div>
         </div>
       </div>
@@ -174,7 +170,8 @@ export function renderBlogOgImage({ category, title, readingTimeMin }: BlogOgPro
   );
 }
 
-export function renderOgImage({ eyebrow, title, subtitle }: OgProps): ImageResponse {
+export async function renderOgImage({ eyebrow, title, subtitle }: OgProps): Promise<ImageResponse> {
+  const logo = await getLogo();
   return new ImageResponse(
     (
       <div
@@ -202,36 +199,10 @@ export function renderOgImage({ eyebrow, title, subtitle }: OgProps): ImageRespo
           }}
         />
 
-        {/* Top row: wordmark */}
-        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-          {/* roof mark */}
-          <div
-            style={{
-              display: "flex",
-              width: 64,
-              height: 64,
-              borderRadius: 16,
-              background: "#D4883E",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <svg width="38" height="38" viewBox="0 0 24 24" fill="none">
-              <path d="M3 11.5 12 4l9 7.5" stroke="#1E3D30" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M5.5 10v9.5h13V10" stroke="#1E3D30" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              fontSize: 30,
-              fontWeight: 800,
-              letterSpacing: "0.04em",
-              color: "#FFFFFF",
-            }}
-          >
-            EVERPEAK ROOF
-          </div>
+        {/* Top row: real logo lockup */}
+        <div style={{ display: "flex", alignItems: "flex-start" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logo} width={287} height={135} alt="" style={{ marginTop: -20, marginLeft: -12 }} />
         </div>
 
         {/* Middle: eyebrow + title + subtitle */}
@@ -284,7 +255,7 @@ export function renderOgImage({ eyebrow, title, subtitle }: OgProps): ImageRespo
           <div style={{ display: "flex", width: 110, height: 6, borderRadius: 99, background: "#D4883E", marginBottom: 22 }} />
           <div style={{ display: "flex", alignItems: "center", gap: 28, fontSize: 24, fontWeight: 600, color: "rgba(255,255,255,0.85)" }}>
             <div style={{ display: "flex" }}>Licensed &amp; insured · WA #EVERPRL743KE</div>
-            <div style={{ display: "flex", color: "#E8A85E" }}>{PHONE}</div>
+            <div style={{ display: "flex", color: "#E8A85E", fontSize: 34, fontWeight: 800 }}>{PHONE}</div>
           </div>
         </div>
       </div>
