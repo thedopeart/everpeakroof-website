@@ -65,6 +65,17 @@ import solarPanels      from "./posts/new-roof-before-solar-panels";
 import homeBuyer        from "./posts/home-buyer-roof-checklist-wa";
 import leakLocations    from "./posts/common-roof-leak-locations";
 import insurancePremiums from "./posts/roof-materials-insurance-premiums";
+// Round 5 (GSC-driven: city repair posts, cedar shake pillar, lifespan/pitch pillars, cleaning, insurance inspection)
+import tacomaRepair     from "./posts/roof-repair-tacoma";
+import federalWayRepair from "./posts/roof-repair-federal-way";
+import kentRepair       from "./posts/roof-repair-kent";
+import redmondNewRoof   from "./posts/new-roof-redmond";
+import shakeDecision    from "./posts/cedar-shake-repair-restore-replace";
+import shakeConversion  from "./posts/cedar-shake-to-shingle-conversion";
+import roofLifespan     from "./posts/roof-lifespan-pacific-northwest";
+import pitchGuide       from "./posts/roof-pitch-guide";
+import cleaningCost     from "./posts/roof-cleaning-cost-puget-sound";
+import insuranceInspection from "./posts/roof-inspection-for-insurance-wa";
 
 const importedPosts: BlogPost[] = [
   kirklandRepair,
@@ -101,6 +112,16 @@ const importedPosts: BlogPost[] = [
   homeBuyer,
   leakLocations,
   insurancePremiums,
+  tacomaRepair,
+  federalWayRepair,
+  kentRepair,
+  redmondNewRoof,
+  shakeDecision,
+  shakeConversion,
+  roofLifespan,
+  pitchGuide,
+  cleaningCost,
+  insuranceInspection,
 ];
 
 const inlinePosts: BlogPost[] = [
