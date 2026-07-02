@@ -20,9 +20,9 @@ const post: BlogPost = {
     {
       type: "stat-row",
       stats: [
-        { value: "90%", label: "Share of Seattle leaks that come from the same handful of spots — knowing them saves a lot of guesswork" },
-        { value: "~$150", label: "Cost of replacing a failed pipe boot — one of the most common leak sources and one of the cheapest fixes" },
-        { value: "5× cost", label: "How much more expensive a November leak becomes if ignored until April — water damage compounds fast here" },
+        { value: "90%", label: "Share of Seattle leaks that come from the same handful of spots, knowing them saves a lot of guesswork" },
+        { value: "~$150", label: "Cost of replacing a failed pipe boot, one of the most common leak sources and one of the cheapest fixes" },
+        { value: "5× cost", label: "How much more expensive a November leak becomes if ignored until April, water damage compounds fast here" },
       ],
     },
     {
@@ -31,11 +31,11 @@ const post: BlogPost = {
     },
     {
       type: "paragraph",
-      text: "Grab a flashlight and get up there. You're looking for three things: daylight coming through the roof boards, dark staining on the underside of the sheathing, and soft spots in the wood. Follow any staining uphill toward the ridge — water always runs downhill, so the source is above whatever stain you're seeing. If you can trace the wet trail to a specific spot on the deck, mark it with tape or a nail pushed through so you can find it from the outside. If you don't have attic access, you're working from the roof surface and looking for the usual suspects.",
+      text: "Grab a flashlight and get up there. You're looking for three things: daylight coming through the roof boards, dark staining on the underside of the sheathing, and soft spots in the wood. Follow any staining uphill toward the ridge, water always runs downhill, so the source is above whatever stain you're seeing. If you can trace the wet trail to a specific spot on the deck, mark it with tape or a nail pushed through so you can find it from the outside. If you don't have attic access, you're working from the roof surface and looking for the usual suspects.",
     },
     {
       type: "heading",
-      text: "The usual suspects — 90% of leaks start here",
+      text: "The usual suspects, 90% of leaks start here",
     },
     {
       type: "paragraph",
@@ -49,13 +49,13 @@ const post: BlogPost = {
       type: "callout",
       variant: "tip",
       title: "The honest DIY line",
-      body: "If the leak traces back to a cracked pipe boot and you're comfortable working on a roof, that's a reasonable DIY fix. Buy the boot, pull the surrounding shingles, swap it out, lace the shingles back in. A tube of roofing sealant and an hour of your time. **If the leak involves step flashing, counter flashing, valley metal, or any sheathing damage — call a pro.** Flashing done wrong leaks worse than flashing left alone, and rotted sheathing means you're dealing with structural wood, not just a surface fix.",
+      body: "If the leak traces back to a cracked pipe boot and you're comfortable working on a roof, that's a reasonable DIY fix. Buy the boot, pull the surrounding shingles, swap it out, lace the shingles back in. A tube of roofing sealant and an hour of your time. **If the leak involves step flashing, counter flashing, valley metal, or any sheathing damage, call a pro.** Flashing done wrong leaks worse than flashing left alone, and rotted sheathing means you're dealing with structural wood, not just a surface fix.",
     },
     {
       type: "callout",
       variant: "warning",
       title: "Emergency vs. non-emergency",
-      body: "If water is actively dripping through your ceiling right now, contain it (bucket, towels, poke a small hole in the drywall bulge so it drains into the bucket instead of collapsing) and call for [emergency roof repair](/services/emergency-roof-repair). That's a same-day situation. If you've got a dry, historical stain that hasn't grown in a while, you've got time — schedule a [roof inspection](/services/roof-inspection) and let someone trace it properly. Don't forget about it either.",
+      body: "If water is actively dripping through your ceiling right now, contain it (bucket, towels, poke a small hole in the drywall bulge so it drains into the bucket instead of collapsing) and call for [emergency roof repair](/services/emergency-roof-repair). That's a same-day situation. If you've got a dry, historical stain that hasn't grown in a while, you've got time, schedule a [roof inspection](/services/roof-inspection) and let someone trace it properly. Don't forget about it either.",
     },
     {
       type: "paragraph",

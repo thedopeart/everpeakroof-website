@@ -20,7 +20,7 @@ const post: BlogPost = {
     {
       type: "stat-row",
       stats: [
-        { value: "5–15%", label: "Typical premium discount for Class 4 impact-resistant shingles in Washington" },
+        { value: "5 to 15%", label: "Typical premium discount for Class 4 impact-resistant shingles in Washington" },
         { value: "~$200", label: "Annual savings on a $2,000 policy with a 10% discount" },
         { value: "25 yrs", label: "Expected lifespan for quality impact-resistant shingles" },
       ],
@@ -31,13 +31,13 @@ const post: BlogPost = {
     },
     {
       type: "paragraph",
-      text: "If you're planning a [roof replacement](/services/roof-replacement), this is worth knowing upfront. Impact-resistant shingles carry a UL 2218 rating, and they come in two classes that matter for insurance. Class 3 shingles can handle a 1.75-inch steel ball drop test. Class 4 can take a 2-inch ball. The difference matters because some Washington insurers offer 5 to 15% premium discounts for impact-resistant roofs, and Class 4 gets the bigger number.",
+      text: "If you're planning a [roof replacement](/services/roof-replacement), this is worth knowing upfront. Impact-resistant shingles carry a **UL 2218 rating**, and they come in two classes that matter for insurance. Class 3 shingles can handle a 1.75-inch steel ball drop test. Class 4 can take a 2-inch ball. The difference matters because some Washington insurers offer **5 to 15% premium discounts** for impact-resistant roofs, and Class 4 gets the bigger number.",
     },
     {
       type: "callout",
       variant: "tip",
       title: "The math on Class 4 shingles",
-      body: "On a $2,000/year policy, a 10% discount saves $200 annually. Over a 25-year roof life, that's $5,000 in savings. The upgrade cost at installation is minimal since the labor is the same whether you pick standard or impact-resistant. Brands like Owens Corning (Duration FLEX) and CertainTeed (Landmark IR) are what we typically install when homeowners want the insurance benefit.",
+      body: "On a $2,000/year policy, a 10% discount saves **$200 annually**. Over a 25-year roof life, that's **$5,000 in savings**. The upgrade cost at installation is minimal since the labor is the same whether you pick standard or impact-resistant. Brands like Owens Corning (Duration FLEX) and CertainTeed (Landmark IR) are what we typically install when homeowners want the insurance benefit.",
     },
     {
       type: "heading",
@@ -45,7 +45,7 @@ const post: BlogPost = {
     },
     {
       type: "paragraph",
-      text: "Metal roofs generally earn lower insurance premiums because of their fire resistance and high wind ratings. A standing seam metal roof can handle 140+ mph winds and won't catch fire from an ember. The catch is that not every carrier treats metal the same way. Some give a flat discount. Some only factor it into their overall risk score. Worth asking your agent specifically before you commit, especially if you're weighing it against impact-resistant shingles. Our [material comparison guide](/blog/best-roofing-materials-pnw) covers the other trade-offs.",
+      text: "Metal roofs generally earn lower insurance premiums because of their **fire resistance and high wind ratings**. A standing seam metal roof can handle 140+ mph winds and won't catch fire from an ember. The catch is that not every carrier treats metal the same way. Some give a flat discount. Some only factor it into their overall risk score. Worth asking your agent specifically before you commit, especially if you're weighing it against impact-resistant shingles. Our [material comparison guide](/blog/best-roofing-materials-pnw) covers the other trade-offs.",
     },
     {
       type: "heading",
@@ -53,7 +53,7 @@ const post: BlogPost = {
     },
     {
       type: "paragraph",
-      text: "Cedar shake roofs look great on PNW craftsman homes. They also tend to cost more to insure. The fire risk is the main reason. Cedar is combustible, and in wildland-urban interface (WUI) zones around parts of King County and east toward Issaquah and North Bend, some carriers won't write new policies on homes with untreated cedar roofs at all.",
+      text: "Cedar shake roofs look great on PNW craftsman homes. They also tend to **cost more to insure**. The fire risk is the main reason. Cedar is combustible, and in wildland-urban interface (WUI) zones around parts of King County and east toward [Issaquah](/issaquah) and North Bend, some carriers won't write new policies on homes with untreated cedar roofs at all.",
     },
     {
       type: "callout",
@@ -71,13 +71,17 @@ const post: BlogPost = {
     },
     {
       type: "paragraph",
-      text: "This is where the ACV vs. RCV distinction hits hard. Newer roofs with quality materials qualify for Replacement Cost Value (RCV) policies. That means if something happens, the insurer pays what it actually costs to replace the roof today. Older roofs get stuck with Actual Cash Value (ACV) coverage, which pays the depreciated amount. On a 20-year-old roof, that depreciation can cut your payout by 40 to 60%. Check out our guide on [insurance and roof replacement](/blog/insurance-cover-roof-replacement) to understand what you're likely to get.",
+      text: "This is where the **ACV vs. RCV distinction** hits hard. Newer roofs with quality materials qualify for Replacement Cost Value (RCV) policies. That means if something happens, the insurer pays what it actually costs to replace the roof today.",
+    },
+    {
+      type: "paragraph",
+      text: "Older roofs get stuck with Actual Cash Value (ACV) coverage, which pays the depreciated amount. On a 20-year-old roof, that depreciation can **cut your payout by 40 to 60%**. If you do end up filing after storm damage, our [insurance restoration](/services/insurance-restoration) team handles the documentation. Check out our guide on [insurance and roof replacement](/blog/insurance-cover-roof-replacement) to understand what you're likely to get.",
     },
     {
       type: "table",
       headers: ["Roof Type", "Fire Rating", "Premium Effect"],
       rows: [
-        { cells: [{ text: "Class 4 Impact Shingles" }, { text: "Class 4 Impact" }, { text: "5–15% discount", badge: "green" }] },
+        { cells: [{ text: "Class 4 Impact Shingles" }, { text: "Class 4 Impact" }, { text: "5 to 15% discount", badge: "green" }] },
         { cells: [{ text: "Standing Seam Metal" }, { text: "Class A Fire" }, { text: "Usually lower", badge: "green" }] },
         { cells: [{ text: "Architectural Shingles" }, { text: "Class A Fire" }, { text: "Baseline", badge: "gray" }] },
         { cells: [{ text: "Cedar Shake" }, { text: "Class B/C" }, { text: "Higher cost", badge: "amber" }] },
@@ -90,7 +94,7 @@ const post: BlogPost = {
     },
     {
       type: "paragraph",
-      text: "Choosing between standard [architectural shingles](/blog/architectural-shingles-vs-3-tab) and Class 4 impact-resistant shingles on a typical Seattle home? The material upgrade adds roughly $1,500 to $2,500 to a full replacement. A discount of $150 to $300 per year pays that back in 8 to 12 years, and the roof lasts 25 to 30. Everything after the payback period is pure savings.",
+      text: "Choosing between standard [architectural shingles](/blog/architectural-shingles-vs-3-tab) and Class 4 impact-resistant shingles on a typical Seattle home? The material upgrade adds **roughly $1,500 to $2,500** to a full replacement. A discount of $150 to $300 per year pays that back in **8 to 12 years**, and the roof lasts 25 to 30. Everything after the payback period is pure savings.",
     },
     {
       type: "paragraph",

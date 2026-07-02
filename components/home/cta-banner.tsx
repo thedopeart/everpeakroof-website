@@ -26,7 +26,7 @@ export default function CtaBanner() {
         >
           Roof problem? Let&apos;s take a look.
         </h2>
-        <p className="text-white/60 text-lg mb-10 max-w-lg mx-auto">
+        <p className="text-white/60 text-lg mb-10 max-w-2xl mx-auto">
           Most estimates are scheduled within a day or two. We answer the phone 7 days a week.
         </p>
 

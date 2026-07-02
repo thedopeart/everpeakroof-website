@@ -20,8 +20,8 @@ const post: BlogPost = {
     {
       type: "stat-row",
       stats: [
-        { value: "$300–$800", label: "Typical cost of a small professional roof repair — often less than one ER visit for a fall" },
-        { value: "$3,000+", label: "Average ER visit cost for a fall injury — before factoring in lost work time or rehab" },
+        { value: "$300 to $800", label: "Typical cost of a small professional roof repair, often less than one ER visit for a fall" },
+        { value: "$3,000+", label: "Average ER visit cost for a fall injury, before factoring in lost work time or rehab" },
         { value: "2×", label: "How much a botched DIY repair often costs to fix properly, compared to calling a pro from the start" },
       ],
     },
@@ -33,7 +33,7 @@ const post: BlogPost = {
       type: "callout",
       variant: "tip",
       title: "Ground-level tasks that are genuinely DIY-friendly",
-      body: "**Clear debris from gutters** — if you can reach them from a ladder without stepping onto the roof, go for it. Clean gutters prevent water backup and fascia rot. **Apply moss killer from the ground** — granular zinc sulfate products work well. Toss them onto the roof from below or spread them along the ridge if you can reach it from a ladder. **Caulk a small crack on a low vent or pipe** — a hairline crack in a dryer vent sealant is a quick fix that buys time. **Visual inspection from the ground** — binoculars work surprisingly well for spotting missing shingles, lifted flashing, and moss buildup.",
+      body: "**Clear debris from gutters**, if you can reach them from a ladder without stepping onto the roof, go for it. Clean gutters prevent water backup and fascia rot. **Apply moss killer from the ground**, granular zinc sulfate products work well. Toss them onto the roof from below or spread them along the ridge if you can reach it from a ladder. **Caulk a small crack on a low vent or pipe**, a hairline crack in a dryer vent sealant is a quick fix that buys time. **Visual inspection from the ground**, binoculars work surprisingly well for spotting missing shingles, lifted flashing, and moss buildup.",
     },
     {
       type: "heading",
@@ -43,7 +43,7 @@ const post: BlogPost = {
       type: "callout",
       variant: "warning",
       title: "Stop here. These are pro-only tasks.",
-      body: "**Anything that requires walking on the roof.** Roofing is one of the most dangerous occupations in the country, and those are people who do it every day with proper gear. PNW roofs are wet and mossy eight months of the year — even surfaces that look dry often have a slick film of algae underneath. **Flashing work.** Step flashing, counter flashing, valley metal. Flashing done wrong doesn't just fail to fix the problem — it actively makes things worse by trapping water behind surfaces. **Anything involving removing shingles.** Once you pull shingles off, you're exposing the underlayment and deck to weather. **Any active leak.** Water travels along rafters before it drips, so the entry point is often feet away from the ceiling stain. **Anything above single-story height.** Two-story roof work means 20+ feet off the ground.",
+      body: "**Anything that requires walking on the roof.** Roofing is one of the most dangerous occupations in the country, and those are people who do it every day with proper gear. PNW roofs are wet and mossy eight months of the year, even surfaces that look dry often have a slick film of algae underneath. **Flashing work.** Step flashing, counter flashing, valley metal. Flashing done wrong doesn't just fail to fix the problem, it actively makes things worse by trapping water behind surfaces. **Anything involving removing shingles.** Once you pull shingles off, you're exposing the underlayment and deck to weather. **Any active leak.** Water travels along rafters before it drips, so the entry point is often feet away from the ceiling stain. **Anything above single-story height.** Two-story roof work means 20+ feet off the ground.",
     },
     {
       type: "heading",

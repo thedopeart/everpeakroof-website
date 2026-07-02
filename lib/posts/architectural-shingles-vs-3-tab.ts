@@ -15,13 +15,13 @@ const post: BlogPost = {
   blocks: [
     {
       type: "paragraph",
-      text: "Almost every homeowner we quote asks some version of this question. They've seen the 3-tab option come in $2,000 cheaper and want to know if it's a real downgrade or just a way for roofers to pad the estimate. Here's the straight answer: for almost every single-family home in Seattle right now, architectural shingles are the right call. 3-tab still has a place — just a much smaller one than it used to.",
+      text: "Almost every homeowner we quote asks some version of this question. They've seen the 3-tab option come in $2,000 cheaper and want to know if it's a real downgrade or just a way for roofers to pad the estimate. Here's the straight answer: for almost every single-family home in Seattle right now, architectural shingles are the right call. 3-tab still has a place, just a much smaller one than it used to.",
     },
     {
       type: "stat-row",
       stats: [
         { value: "~$3k", label: "Typical cost difference between 3-tab and architectural on an average Seattle home" },
-        { value: "15–20 yrs", label: "Average 3-tab lifespan in the PNW — vs. 25–30 for architectural" },
+        { value: "15 to 20 yrs", label: "Average 3-tab lifespan in the PNW, vs. 25 to 30 for architectural" },
         { value: "130 mph", label: "Wind rating for top architectural shingles vs. ~60 mph for 3-tab" },
       ],
     },
@@ -41,17 +41,17 @@ const post: BlogPost = {
       type: "table",
       headers: ["Factor", "3-Tab", "Architectural"],
       rows: [
-        { cells: [{ text: "Installed cost (per sq ft)" }, { text: "$5.50–$7.00" }, { text: "$7.00–$9.00" }] },
-        { cells: [{ text: "Wind rating" }, { text: "~60 mph", badge: "red" }, { text: "110–130 mph", badge: "green" }] },
-        { cells: [{ text: "Warranty" }, { text: "25-yr limited" }, { text: "30–50-yr limited" }] },
-        { cells: [{ text: "PNW lifespan" }, { text: "15–20 years", badge: "amber" }, { text: "25–30 years", badge: "green" }] },
-        { cells: [{ text: "Appearance" }, { text: "Flat, uniform — reads as budget from the street" }, { text: "Shadow lines, real depth and dimension" }] },
-        { cells: [{ text: "Granule loss rate" }, { text: "Faster — thinner base loses granules earlier" }, { text: "Slower — thicker layered construction holds up" }] },
+        { cells: [{ text: "Installed cost (per sq ft)" }, { text: "$5.50 to $7.00" }, { text: "$7.00 to $9.00" }] },
+        { cells: [{ text: "Wind rating" }, { text: "~60 mph", badge: "red" }, { text: "110 to 130 mph", badge: "green" }] },
+        { cells: [{ text: "Warranty" }, { text: "25-yr limited" }, { text: "30 to 50-yr limited" }] },
+        { cells: [{ text: "PNW lifespan" }, { text: "15 to 20 years", badge: "amber" }, { text: "25 to 30 years", badge: "green" }] },
+        { cells: [{ text: "Appearance" }, { text: "Flat, uniform, reads as budget from the street" }, { text: "Shadow lines, real depth and dimension" }] },
+        { cells: [{ text: "Granule loss rate" }, { text: "Faster, thinner base loses granules earlier" }, { text: "Slower, thicker layered construction holds up" }] },
       ],
     },
     {
       type: "heading",
-      text: "Wind rating — this one matters in Seattle",
+      text: "Wind rating, this one matters in Seattle",
     },
     {
       type: "paragraph",
@@ -65,7 +65,7 @@ const post: BlogPost = {
       type: "callout",
       variant: "tip",
       title: "A few real situations where 3-tab is the right call",
-      body: "**Rental properties** where you're optimizing for cost per year — if you own a duplex in White Center and need a functional roof for the next 15 years before selling, 3-tab does the job. **Very tight budgets** where the alternative is no roof at all — a working roof beats a leaking roof every time. **Very small structures** like a detached garage where the shingle choice barely moves the total cost. **Matching an existing 3-tab roof** on a partial replacement. Outside of those, go architectural.",
+      body: "**Rental properties** where you're optimizing for cost per year, if you own a duplex in White Center and need a functional roof for the next 15 years before selling, 3-tab does the job. **Very tight budgets** where the alternative is no roof at all, a working roof beats a leaking roof every time. **Very small structures** like a detached garage where the shingle choice barely moves the total cost. **Matching an existing 3-tab roof** on a partial replacement. Outside of those, go architectural.",
     },
     {
       type: "heading",
@@ -83,7 +83,7 @@ const post: BlogPost = {
     },
     {
       type: "paragraph",
-      text: "In Seattle, the three main manufacturers are GAF, CertainTeed, and Owens Corning. All make both 3-tab and architectural lines, and all perform well here. **GAF Timberline HDZ** is probably the most-installed architectural shingle in our market — 130 mph wind rating with the right nail pattern, solid warranty, reliable middle-of-the-road choice. **CertainTeed Landmark** is the direct competitor with a slightly different look and similar performance. **Owens Corning Duration** uses a patented nail zone (SureNail) that makes installs slightly more forgiving on steep or complex rooflines. All three are good — what matters more is the installer. A bad install fails regardless of what brand is on the box.",
+      text: "In Seattle, the three main manufacturers are GAF, CertainTeed, and Owens Corning. All make both 3-tab and architectural lines, and all perform well here. **GAF Timberline HDZ** is probably the most-installed architectural shingle in our market, 130 mph wind rating with the right nail pattern, solid warranty, reliable middle-of-the-road choice. **CertainTeed Landmark** is the direct competitor with a slightly different look and similar performance. **Owens Corning Duration** uses a patented nail zone (SureNail) that makes installs slightly more forgiving on steep or complex rooflines. All three are good, what matters more is the installer. A bad install fails regardless of what brand is on the box.",
     },
     {
       type: "paragraph",

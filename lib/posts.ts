@@ -112,6 +112,7 @@ const inlinePosts: BlogPost[] = [
     category: "Maintenance",
     author: "Everpeak Roofing",
     publishedAt: "2026-03-20",
+    updatedAt: "2026-07-01",
     readingTimeMin: 5,
     heroImage: "/images/craftsman-tile.jpg",
     heroImageAlt: "Moss growing on the north slope of a Seattle craftsman roof",
@@ -124,7 +125,7 @@ Why does it happen here so badly? Three reasons. One, we're wet pretty much eigh
 
 So what actually works? A few things, in order of how well they hold up.
 
-First, get the roof cleaned. Not pressure washed. A pressure washer will strip the granules off your shingles faster than the moss ever would, and you'll shave years off the roof life in one afternoon. Soft washing is the right call. It's a low-pressure application that uses a cleaning solution to kill the moss at the root instead of blasting it off. Once it dies, it rinses away naturally over the next couple of weeks.
+First, get the roof cleaned. Not pressure washed. A pressure washer will strip the granules off your shingles faster than the moss ever would, and you'll shave years off the roof life in one afternoon. [Soft washing](/services/soft-washing) is the right call. It's a low-pressure application that uses a cleaning solution to kill the moss at the root instead of blasting it off. Once it dies, it rinses away naturally over the next couple of weeks.
 
 Second, install zinc or copper strips along the ridge. When it rains, trace amounts of metal wash down the roof and keep new moss from taking hold. It's not magic, and it doesn't kill what's already there, but it's a cheap preventative that buys you years.
 
@@ -132,7 +133,7 @@ Third, keep the roof clear of debris. Fir needles and leaves trap moisture and g
 
 A word on DIY. We get it, moss removal looks simple. Climb up, scrape it off, done. The issue is that scraping damages shingles, and walking around a wet mossy roof is one of the easier ways to end up in the ER. If you do want to handle it yourself, use a moss killer spray in the fall, let it do the work, and hose it off from the ground in spring. Don't get up there with a stiff brush.
 
-Honestly, the best thing you can do is not wait. Moss is one of those problems where a $400 cleaning at year five saves you a $15,000 replacement at year twelve. We see it every season. If your roof has any green on it at all, it's worth getting someone up there to take a look.`,
+Honestly, the best thing you can do is not wait. Moss is one of those problems where a $400 cleaning at year five saves you a $15,000 replacement at year twelve. We see it every season. If your roof has any green on it at all, it's worth [getting someone up there](/contact) to take a look.`,
   },
   {
     slug: "repair-or-replace-seattle-roof",

@@ -20,9 +20,9 @@ const post: BlogPost = {
     {
       type: "stat-row",
       stats: [
-        { value: "3–4/wk", label: "Pipe boot flashings our crews replace every week across all active jobs — the single most common repair" },
-        { value: "$150–$300", label: "Typical cost to replace a failed pipe boot — cheap if caught early, expensive once deck damage sets in" },
-        { value: "8–12 yrs", label: "How long rubber pipe boot seals last before cracking — well before the surrounding shingles wear out" },
+        { value: "3 to 4/wk", label: "Pipe boot flashings our crews replace every week across all active jobs, the single most common repair" },
+        { value: "$150 to $300", label: "Typical cost to replace a failed pipe boot, cheap if caught early, expensive once deck damage sets in" },
+        { value: "8 to 12 yrs", label: "How long rubber pipe boot seals last before cracking, well before the surrounding shingles wear out" },
       ],
     },
     {
@@ -33,13 +33,13 @@ const post: BlogPost = {
       type: "table",
       headers: ["Leak Source", "Interior Sign", "Exterior Sign", "Repair Cost"],
       rows: [
-        { cells: [{ text: "1. Pipe boot flashings" }, { text: "Stain near bathroom or kitchen" }, { text: "Cracked rubber collar visible" }, { text: "$250–$450" }] },
-        { cells: [{ text: "2. Chimney flashing" }, { text: "Wall or ceiling stain near chimney" }, { text: "Metal separated from mortar" }, { text: "$600–$1,500" }] },
-        { cells: [{ text: "3. Roof valleys" }, { text: "Stain along interior corner below valley" }, { text: "Dark metal, debris dams" }, { text: "$500–$1,200" }] },
-        { cells: [{ text: "4. Skylight curbs" }, { text: "Staining around frame — source and stain match" }, { text: "Cracked sealant, lifted corners" }, { text: "$400–$3,000" }] },
-        { cells: [{ text: "5. Wall-to-roof transitions" }, { text: "Interior wall staining below roof line" }, { text: "Bubbling paint, soft siding" }, { text: "$400–$800+" }] },
-        { cells: [{ text: "6. Ridge caps" }, { text: "Staining along ceiling peak" }, { text: "Lifted or missing caps, backed-out nails" }, { text: "$200–$500" }] },
-        { cells: [{ text: "7. Nail pops" }, { text: "Small scattered ceiling stains" }, { text: "Bumps or exposed nail heads" }, { text: "$150–$300" }] },
+        { cells: [{ text: "1. Pipe boot flashings" }, { text: "Stain near bathroom or kitchen" }, { text: "Cracked rubber collar visible" }, { text: "$250 to $450" }] },
+        { cells: [{ text: "2. Chimney flashing" }, { text: "Wall or ceiling stain near chimney" }, { text: "Metal separated from mortar" }, { text: "$600 to $1,500" }] },
+        { cells: [{ text: "3. Roof valleys" }, { text: "Stain along interior corner below valley" }, { text: "Dark metal, debris dams" }, { text: "$500 to $1,200" }] },
+        { cells: [{ text: "4. Skylight curbs" }, { text: "Staining around frame, source and stain match" }, { text: "Cracked sealant, lifted corners" }, { text: "$400 to $3,000" }] },
+        { cells: [{ text: "5. Wall-to-roof transitions" }, { text: "Interior wall staining below roof line" }, { text: "Bubbling paint, soft siding" }, { text: "$400 to $800+" }] },
+        { cells: [{ text: "6. Ridge caps" }, { text: "Staining along ceiling peak" }, { text: "Lifted or missing caps, backed-out nails" }, { text: "$200 to $500" }] },
+        { cells: [{ text: "7. Nail pops" }, { text: "Small scattered ceiling stains" }, { text: "Bumps or exposed nail heads" }, { text: "$150 to $300" }] },
       ],
     },
     {
@@ -54,7 +54,7 @@ const post: BlogPost = {
       type: "callout",
       variant: "warning",
       title: "Seattle's climate makes small failures urgent",
-      body: "A cracked pipe boot in Phoenix might go two years before causing interior damage. That same crack here will have water coming through within weeks. We get eight or nine months of constant moisture — our climate doesn't give small failures time to stay small. If you've spotted something, don't wait.",
+      body: "A cracked pipe boot in Phoenix might go two years before causing interior damage. That same crack here will have water coming through within weeks. We get eight or nine months of constant moisture, our climate doesn't give small failures time to stay small. If you've spotted something, don't wait.",
     },
     {
       type: "paragraph",

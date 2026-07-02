@@ -41,7 +41,7 @@ export default function WhyUs() {
     <section className="section-pad bg-[#1E3D30]">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
 
-        <div className="max-w-xl mb-12">
+        <div className="max-w-3xl mb-12">
           <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-2">Why Everpeak</p>
           <h2
             className="text-white leading-tight"
@@ -65,15 +65,16 @@ export default function WhyUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ delay: i * 0.07, duration: 0.5 }}
-                className="flex gap-4 bg-white/8 border border-white/10 rounded-2xl p-6 hover:bg-white/12 transition-colors"
+                className="group relative flex gap-4 bg-white/[0.07] border border-white/10 rounded-2xl p-6 overflow-hidden hover:bg-white/[0.11] hover:border-[#D4883E]/30 hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#D4883E]/20 flex items-center justify-center shrink-0 mt-0.5">
-                  <Icon size={19} className="text-[#D4883E]" />
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#E8A85E] to-[#D4883E] flex items-center justify-center shrink-0 mt-0.5 shadow-[0_4px_12px_rgba(212,136,62,0.35)]">
+                  <Icon size={20} className="text-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white mb-1.5">{r.title}</h3>
-                  <p className="text-sm text-white/80 leading-relaxed">{r.desc}</p>
+                  <h3 className="font-bold text-white text-[15px] mb-1.5">{r.title}</h3>
+                  <p className="text-sm text-white/75 leading-relaxed">{r.desc}</p>
                 </div>
+                <div className="absolute left-0 bottom-0 h-0.5 w-0 group-hover:w-full bg-[#D4883E] transition-all duration-300" />
               </motion.div>
             );
           })}

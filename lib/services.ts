@@ -10,6 +10,7 @@ export interface Service {
   icon: string;
   featured: boolean;
   image?: string;
+  beforeAfter?: { image: string; alt: string; caption: string };
   longDesc: string;
   process: string[];
   includes: string[];
@@ -24,6 +25,7 @@ export const services: Service[] = [
     shortDesc: "Leak fixes, storm damage, flashing, shingle replacement. Fast turnaround.",
     icon: "Wrench",
     featured: true,
+    image: "/images/roof-repair-progress.jpg",
     longDesc:
       "Most roof problems don't need a full replacement. A cracked pipe boot, damaged flashing, or a handful of blown-off shingles can usually be fixed in a single visit. We figure out where the water is getting in, show you photos of the damage, and give you a straight price before we touch anything. If a repair makes sense, we'll do it right. If it doesn't, we'll tell you that too.",
     process: [
@@ -379,6 +381,7 @@ export const services: Service[] = [
     shortDesc: "Full claims assistance from storm inspection through payout.",
     icon: "FileCheck",
     featured: false,
+    image: "/images/worker-on-roof.jpg",
     longDesc:
       "Filing a roof insurance claim is confusing, and insurance companies aren't always eager to pay out. We handle the whole process: inspect the damage, document it properly, prepare Xactimate estimates that match what adjusters expect to see, and meet with your adjuster on-site. If your claim gets denied or underpaid, we can help challenge it with proper documentation. You shouldn't have to fight your insurance company alone.",
     process: [
@@ -440,6 +443,11 @@ export const services: Service[] = [
     icon: "Droplets",
     featured: true,
     image: "/images/roof-washing.jpg",
+    beforeAfter: {
+      image: "/images/soft-wash-before-after.jpg",
+      alt: "Roof before and after soft washing, moss and algae removed",
+      caption: "Before and after: low-pressure soft washing lifts moss and algae without stripping the shingles.",
+    },
     longDesc:
       "Your roof is constantly exposed to moisture, debris, and organic growth like moss and algae. Over time, this buildup can damage your shingles and shorten the life of your roof. At Everpeak Roofing, we use a safe, low-pressure soft wash system to remove moss, algae, and stains without causing damage. Our process not only cleans your roof but also helps prevent future growth, protecting your home and your investment.",
     process: [

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { cities } from "@/lib/cities";
+import { trackEvent } from "@/lib/analytics";
 
 export default function ServiceAreas() {
   return (
@@ -17,10 +18,10 @@ export default function ServiceAreas() {
             className="text-[#1E3D30] leading-tight mb-3"
             style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", fontFamily: "var(--font-display)" }}
           >
-            20 Cities Across<br />
+            21 Cities Across<br />
             <span className="text-[#2D5A47]">Greater Puget Sound</span>
           </h2>
-          <p className="text-[#374151] text-base max-w-md">
+          <p className="text-[#374151] text-base max-w-2xl">
             From Seattle proper to the Eastside, South Sound, and everything in between. Within 50 miles of downtown Seattle, we serve your area.
           </p>
         </div>
@@ -46,9 +47,21 @@ export default function ServiceAreas() {
           ))}
         </div>
 
-        <p className="mt-6 text-xs text-[#374151]/60 text-center">
-          Don&apos;t see your city? Call us. We likely serve your area.
-        </p>
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <Link
+            href="/service-areas"
+            onClick={() =>
+              trackEvent("cta_click", { cta: "service_area_map", location: "home_service_areas" })
+            }
+            className="inline-flex items-center gap-2 bg-[#2D5A47] hover:bg-[#1E3D30] text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-colors"
+          >
+            Explore the service area map
+            <ArrowRight size={15} />
+          </Link>
+          <p className="text-xs text-[#374151]/60 text-center sm:text-left">
+            Don&apos;t see your city? Call us. We likely serve your area.
+          </p>
+        </div>
       </div>
     </section>
   );

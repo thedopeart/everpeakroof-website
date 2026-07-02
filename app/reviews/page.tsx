@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Star, ExternalLink, PenLine, Phone } from "lucide-react";
-import JsonLd from "@/components/shared/json-ld";
-import { aggregateRatingSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Seattle Roofing Reviews",
@@ -70,21 +68,13 @@ function StarRow() {
   );
 }
 
+// NOTE: no Review/AggregateRating structured data on this page on purpose.
+// The testimonials above are placeholders; marking them up as reviews violates
+// Google's review-snippet policy. Re-add schema only with real, attributable
+// customer reviews (see lib/schema.ts aggregateRatingSchema).
 export default function ReviewsPage() {
-  const reviewSchemaData = aggregateRatingSchema(
-    5.0,
-    TESTIMONIALS.length,
-    TESTIMONIALS.map((t) => ({
-      author: `${t.name}, ${t.neighborhood}`,
-      rating: 5,
-      body: t.quote,
-      date: "2025-01-01",
-    }))
-  );
-
   return (
     <>
-      <JsonLd data={reviewSchemaData} />
       <div className="min-h-screen bg-[#FAF3EB] pt-32 pb-20">
       <div className="max-w-5xl mx-auto px-5 md:px-8">
 
@@ -99,7 +89,7 @@ export default function ReviewsPage() {
           >
             Real Feedback from Seattle Homeowners
           </h1>
-          <div className="text-[#374151] text-lg leading-relaxed max-w-2xl flex flex-col gap-5">
+          <div className="text-[#374151] text-lg leading-relaxed max-w-4xl flex flex-col gap-5">
             <p>
               We just launched, so we're still building up our review count. What's
               below is a mix of early feedback from neighbors we've worked with
@@ -198,7 +188,7 @@ export default function ReviewsPage() {
           <h2 className="font-bold text-2xl md:text-3xl mb-3">
             Ready for your own honest estimate?
           </h2>
-          <p className="text-white/70 max-w-xl mx-auto mb-6 leading-relaxed">
+          <p className="text-white/70 max-w-2xl mx-auto mb-6 leading-relaxed">
             Free roof assessments across the greater Seattle area. We'll walk
             the roof, show you what we find, and give you a straight price.
           </p>

@@ -34,7 +34,7 @@ export default function RoofPitchCalculatorPage() {
         </nav>
 
         {/* Header */}
-        <div className="mb-12 max-w-3xl">
+        <div className="mb-12 max-w-5xl">
           <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-2">Free Tools</p>
           <h1
             className="font-black text-[#1E3D30] leading-tight tracking-tight mb-5"

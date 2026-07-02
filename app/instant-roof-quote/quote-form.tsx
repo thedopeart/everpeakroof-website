@@ -144,7 +144,7 @@ export default function QuoteForm() {
           >
             Get Your Instant Roof Quote Request
           </h1>
-          <p className="text-[#374151] text-lg max-w-2xl">
+          <p className="text-[#374151] text-lg max-w-4xl">
             Tell us a bit about your roof and we&apos;ll call to schedule a real on-site
             inspection. No pressure, no hidden fees, no pricing guesswork over the phone.
           </p>
@@ -417,7 +417,7 @@ function StepTwo({
     <>
       <div>
         <h2 className="font-bold text-[#1E3D30] text-xl mb-1">Where is it?</h2>
-        <p className="text-sm text-[#374151]">We serve 20 cities across the Puget Sound.</p>
+        <p className="text-sm text-[#374151]">We serve 21 cities across the Puget Sound.</p>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4">

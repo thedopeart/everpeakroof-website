@@ -1,7 +1,7 @@
 import type { NextRequest } from "next/server";
 
 /**
- * Edge bot gate — blocks obvious non-browser automation and scripting clients
+ * Edge bot gate, blocks obvious non-browser automation and scripting clients
  * before they reach a route handler. This is the "Layer A" of bot defense; the
  * client-side analytics gate in app/layout.tsx is "Layer B" (it catches headless
  * browsers that spoof a real Chrome UA, which is what inflates GA4).
@@ -9,7 +9,7 @@ import type { NextRequest } from "next/server";
  * Deliberately does NOT block:
  *  - Search engines (Googlebot, Bingbot, DuckDuckBot, Applebot, YandexBot)
  *  - SEO crawlers we actively use (AhrefsBot, SemrushBot) for site audits
- *  - AI crawlers (GPTBot, ClaudeBot, CCBot, PerplexityBot) — we WANT AI citations
+ *  - AI crawlers (GPTBot, ClaudeBot, CCBot, PerplexityBot), we WANT AI citations
  *  - Social unfurlers (facebookexternalhit, Twitterbot, Slackbot, Discordbot)
  *
  * Only positively-matched automation/scripting UAs are blocked, so platform
@@ -20,6 +20,10 @@ const BLOCKED_UA =
 
 export function botBlocked(req: NextRequest): boolean {
   const ua = req.headers.get("user-agent") || "";
-  if (!ua) return false; // allow empty UA — avoids blocking platform internals
+  if (!ua) return false; // allow empty UA, avoids blocking platform internals
+  // Always let Google's own crawlers/verifiers through (Googlebot, AdsBot-Google,
+  // Google-Ads conversion-tag check, Google-InspectionTool) so Search Console and
+  // Google Ads tag verification can load the page + tag.
+  if (/google/i.test(ua)) return false;
   return BLOCKED_UA.test(ua);
 }

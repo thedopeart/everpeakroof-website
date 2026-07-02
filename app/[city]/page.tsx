@@ -6,9 +6,11 @@ import {
   MapPin, Phone, ChevronRight,
   CloudRain, ShieldCheck, Clock, Star,
 } from "lucide-react";
-import { cities } from "@/lib/cities";
+import { cities, nearbyCities } from "@/lib/cities";
 import { featuredServices } from "@/lib/services";
+import { metaDescription } from "@/lib/meta";
 import JsonLd from "@/components/shared/json-ld";
+import LeadFormSection from "@/components/shared/lead-form-section";
 import { breadcrumbSchema, cityServiceSchema, faqPageSchema } from "@/lib/schema";
 
 const PHONE = "(425) 505-7142";
@@ -37,14 +39,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!cityData) return {};
 
   const { name, description } = cityData;
+  const desc = metaDescription(description);
   return {
     title: `Roofing in ${name}, WA | Roof Repair & Replacement`,
-    description: `${description.slice(0, 155)}...`,
+    description: desc,
     alternates: { canonical: `https://everpeakroof.com/${citySlug}` },
     openGraph: {
       url: `https://everpeakroof.com/${citySlug}`,
       title: `Roofing in ${name}, WA | Roof Repair & Replacement`,
-      description: `${description.slice(0, 155)}...`,
+      description: desc,
     },
   };
 }
@@ -54,10 +57,10 @@ export default async function CityPage({ params }: Props) {
   const cityData = cities.find((c) => c.slug === citySlug);
   if (!cityData) notFound();
 
-  const { name, tagline, description, neighborhoods, commonIssues, roofTypes, buildingAge, mapQuery, faq } = cityData;
+  const { name, tagline, description, neighborhoods, commonIssues, roofTypes, buildingAge, faq } = cityData;
   const cityIndex = cities.findIndex((c) => c.slug === citySlug);
   const heroImage = HERO_IMAGES[cityIndex % HERO_IMAGES.length];
-  const otherCities = cities.filter((c) => c.slug !== citySlug).slice(0, 8);
+  const otherCities = nearbyCities(citySlug, 8);
 
   const cityLd = cityServiceSchema(name);
   const cityServiceLd = {
@@ -121,7 +124,7 @@ export default async function CityPage({ params }: Props) {
           >
             Roofing in {name}
           </h1>
-          <p className="text-white/70 text-base md:text-lg max-w-xl">{tagline}</p>
+          <p className="text-white/70 text-base md:text-lg max-w-3xl">{tagline}</p>
         </div>
       </section>
 
@@ -316,31 +319,14 @@ export default async function CityPage({ params }: Props) {
           </div>
         </section>
 
-        {/* ── CTA Banner ──────────────────────────────────── */}
-        <section className="bg-gradient-to-br from-[#1E3D30] via-[#2D5A47] to-[#1E3D30] rounded-2xl p-10 md:p-14 text-center mb-16">
-          <h2 className="font-black text-white text-2xl md:text-3xl tracking-tight mb-3">
-            Need a roofer in {name}?
-          </h2>
-          <p className="text-white/60 text-base mb-8 max-w-md mx-auto">
-            Free estimates, no obligation. We'll come out, look at your roof, and give you a straight answer.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-[#D4883E] hover:bg-[#B86E2A] text-white font-bold px-8 py-4 rounded-xl transition-colors shadow-[0_4px_16px_rgba(212,136,62,0.35)]"
-            >
-              Get a Free Estimate
-              <ChevronRight size={16} />
-            </Link>
-            <a
-              href={PHONE_HREF}
-              className="inline-flex items-center gap-2 text-white font-bold text-lg hover:text-[#E8A85E] transition-colors"
-            >
-              <Phone size={16} className="text-[#D4883E]" />
-              {PHONE}
-            </a>
-          </div>
-        </section>
+        {/* ── Lead Form ───────────────────────────────────── */}
+        <LeadFormSection
+          variant="card"
+          heading={`Get your free roofing estimate in ${name}`}
+          city={name}
+          showServiceSelect
+          source="city"
+        />
 
         {/* ── FAQ ─────────────────────────────────────────── */}
         {faq && faq.length > 0 && (

@@ -7,7 +7,7 @@ export default function UtilityBar() {
       <div className="max-w-7xl mx-auto px-5 md:px-8 h-9 flex items-center justify-between">
         <div className="flex items-center gap-1.5 text-[11px] text-white/50">
           <MapPin size={11} className="text-[#D4883E]/70" />
-          Serving 20 cities in the Puget Sound &nbsp;·&nbsp; WA Lic. #EVERPRL743KE
+          Serving 21 cities in the Puget Sound &nbsp;·&nbsp; WA Lic. #EVERPRL743KE
         </div>
         <Link
           href="/services/emergency-roof-repair"

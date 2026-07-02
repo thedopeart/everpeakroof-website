@@ -32,7 +32,7 @@ export default function Testimonials() {
     <section className="section-pad bg-white">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
 
-        <div className="max-w-xl mb-12">
+        <div className="max-w-3xl mb-12">
           <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-2">Customer Reviews</p>
           <h2
             className="text-[#1E3D30] leading-tight"

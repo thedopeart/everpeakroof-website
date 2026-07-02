@@ -21,7 +21,7 @@ import ContactForm from "./contact-form";
 export const metadata: Metadata = {
   title: "Contact | Free Roofing Estimate",
   description:
-    "Get a free roofing estimate from Everpeak Roof. Serving Seattle, Bellevue, Tacoma, and 15+ Puget Sound cities. Call or fill out the form. We respond fast.",
+    "Get a free roofing estimate from Everpeak Roof. Serving Seattle, Bellevue, Tacoma, and 21 Puget Sound cities. Call or fill out the form. We respond fast.",
   alternates: { canonical: "https://everpeakroof.com/contact" },
 };
 
@@ -48,7 +48,7 @@ export default function ContactPage() {
             style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
             Get in Touch
           </h1>
-          <p className="text-[#374151] text-lg max-w-lg">
+          <p className="text-[#374151] text-lg max-w-3xl">
             Most estimates are scheduled within a day or two. We answer the phone 7 days a week.
           </p>
         </div>

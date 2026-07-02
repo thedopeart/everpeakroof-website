@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/about`,                     priority: 0.7, changeFrequency: "monthly" as const },
     { url: `${BASE}/contact`,                   priority: 0.9, changeFrequency: "monthly" as const },
     { url: `${BASE}/services`,                  priority: 0.9, changeFrequency: "weekly"  as const },
+    { url: `${BASE}/service-areas`,             priority: 0.85, changeFrequency: "monthly" as const },
     { url: `${BASE}/reviews`,                   priority: 0.6, changeFrequency: "monthly" as const },
     { url: `${BASE}/blog`,                      priority: 0.7, changeFrequency: "weekly"  as const },
     { url: `${BASE}/tools`,                      priority: 0.7, changeFrequency: "monthly" as const },
@@ -36,14 +37,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
   }));
 
+  // Blog posts carry real dates; use them instead of the build timestamp so
+  // Google gets an honest freshness signal.
   const blogPages = getAllPosts().map((p) => ({
     url: `${BASE}/blog/${p.slug}`,
     priority: 0.7,
     changeFrequency: "monthly" as const,
+    lastModified: new Date(p.updatedAt ?? p.publishedAt),
   }));
 
-  return [...staticPages, ...servicePages, ...cityPages, ...blogPages].map((p) => ({
-    ...p,
-    lastModified: now,
-  }));
+  return [
+    ...[...staticPages, ...servicePages, ...cityPages].map((p) => ({
+      ...p,
+      lastModified: now,
+    })),
+    ...blogPages,
+  ];
 }

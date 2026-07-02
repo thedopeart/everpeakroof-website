@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Photoshop source files (too large for GitHub, not needed by the site)
+*.psb
+*.psd

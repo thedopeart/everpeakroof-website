@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | Everpeak Roof",
   },
   description:
-    "Licensed roofing contractor serving Seattle, Bellevue, Tacoma, and 17+ Puget Sound cities. Roof repair, replacement, emergency service, and free estimates.",
+    "Licensed roofing contractor serving Seattle, Bellevue, Tacoma, and 21 Puget Sound cities. Roof repair, replacement, emergency service, and free estimates.",
   keywords: [
     "roofing seattle",
     "roof repair seattle",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Everpeak Roof | Seattle Roofing",
-    description: "Roof repair, replacement, and emergency service across 20 Puget Sound cities.",
+    description: "Roof repair, replacement, and emergency service across 21 Puget Sound cities.",
   },
   robots: {
     index: true,
@@ -72,13 +72,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${plusJakarta.variable} ${dmSerif.variable} h-full`}>
-      {/* Layer B — client-side analytics gate. Sets window.__noTrack=1 for
+      {/* Layer B, client-side analytics gate. Sets window.__noTrack=1 for
           automated/headless clients. GTM (which loads GA4 + conversion tags) is
           only initialized when the flag is unset, so headless bots spoofing a
           real Chrome UA never register a GA4 session. beforeInteractive ensures
           the flag is set before the afterInteractive GTM init below. */}
       <Script id="notrack-gate" strategy="beforeInteractive">
-        {`window.__noTrack=(function(){try{var n=navigator,w=window,u=(n.userAgent||'').toLowerCase();if(n.webdriver)return 1;if(/headless|phantom|puppeteer|playwright|selenium|electron|bot|crawl|spider|scrap|slurp|lighthouse|pagespeed|gtmetrix|pingdom|uptimerobot|statuscake|monitor\\b|prerender|dataprovider|python|curl|wget|node-fetch|axios|okhttp|java\\//.test(u))return 1;if(w.outerWidth===0&&w.outerHeight===0)return 1;return 0;}catch(e){return 0;}})();`}
+        {`window.__noTrack=(function(){try{var n=navigator,w=window,u=(n.userAgent||'').toLowerCase();if(u.indexOf('google')!==-1)return 0;if(n.webdriver)return 1;if(/headless|phantom|puppeteer|playwright|selenium|electron|bot|crawl|spider|scrap|slurp|lighthouse|pagespeed|gtmetrix|pingdom|uptimerobot|statuscake|monitor\\b|prerender|dataprovider|python|curl|wget|node-fetch|axios|okhttp|java\\//.test(u))return 1;if(w.outerWidth===0&&w.outerHeight===0)return 1;return 0;}catch(e){return 0;}})();`}
       </Script>
       {GTM_ID && (
         <Script id="gtm-init" strategy="afterInteractive">

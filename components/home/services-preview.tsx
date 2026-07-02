@@ -91,56 +91,56 @@ export default function ServicesPreview() {
           </div>
           <Link
             href="/services"
-            className="flex items-center gap-1.5 text-sm font-bold text-[#2D5A47] hover:text-[#D4883E] transition-colors shrink-0"
+            className="group inline-flex items-center gap-1.5 text-sm font-bold text-[#2D5A47] hover:text-[#D4883E] transition-colors shrink-0"
           >
-            All services <ArrowRight size={15} />
+            All services <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
-        {/* Primary 6 cards with images */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
+        {/* Primary 6 cards with images + floating icon badge */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
           {SERVICES.map((svc, i) => {
             const Icon = svc.icon;
             return (
               <motion.div
                 key={svc.slug}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
-                transition={{ delay: i * 0.07, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ delay: i * 0.06, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               >
                 <Link
                   href={`/services/${svc.slug}`}
-                  className="group flex flex-col h-full bg-white rounded-2xl border border-[#E5DDD3] overflow-hidden shadow-[0_1px_4px_rgba(45,90,71,0.06)] hover:shadow-[0_8px_28px_rgba(45,90,71,0.12)] hover:-translate-y-1 transition-all duration-200"
+                  className="group flex flex-col h-full bg-white rounded-2xl border border-[#E5DDD3] overflow-hidden shadow-[0_2px_8px_rgba(45,90,71,0.05)] hover:shadow-[0_18px_40px_rgba(45,90,71,0.15)] hover:-translate-y-1.5 hover:border-[#2D5A47]/25 transition-all duration-300"
                 >
-                  <div className="relative h-44 overflow-hidden">
+                  <div className="relative h-48 overflow-hidden">
                     <Image
                       src={svc.image}
-                      alt={`${svc.name} service`}
+                      alt={`${svc.name} service in the Seattle area`}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#13271d]/75 via-[#1E3D30]/15 to-transparent" />
                     {svc.urgent && (
-                      <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-[#B86E2A] text-white text-xs font-bold px-2.5 py-1 rounded-full">
+                      <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-[#B86E2A] text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-lg">
                         <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                         7-Day Emergency
                       </div>
                     )}
                   </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 bg-[#2D5A47]/10">
-                        <Icon size={17} className="text-[#2D5A47]" />
-                      </div>
-                      <h3 className="font-bold text-[#1E3D30] text-lg group-hover:text-[#2D5A47] transition-colors">
-                        {svc.name}
-                      </h3>
+                  <div className="relative p-6 pt-9 flex flex-col flex-1">
+                    {/* floating icon badge, overlaps up onto the image */}
+                    <div className="absolute -top-6 left-6 w-12 h-12 rounded-xl bg-gradient-to-br from-[#E8A85E] to-[#D4883E] flex items-center justify-center shadow-[0_8px_20px_rgba(212,136,62,0.45)] ring-4 ring-white group-hover:scale-110 transition-transform duration-300">
+                      <Icon size={22} className="text-white" />
                     </div>
+                    <h3 className="font-black text-[#1E3D30] text-lg mb-2 group-hover:text-[#2D5A47] transition-colors">
+                      {svc.name}
+                    </h3>
                     <p className="text-[#374151] text-sm leading-relaxed flex-1">{svc.desc}</p>
-                    <div className="mt-4 flex items-center gap-1 text-sm font-bold text-[#D4883E] opacity-0 group-hover:opacity-100 transition-opacity">
-                      Learn more <ArrowRight size={13} />
+                    <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-[#D4883E]">
+                      Learn more
+                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
                 </Link>
@@ -149,12 +149,14 @@ export default function ServicesPreview() {
           })}
         </div>
 
-        {/* Secondary 3 cards — no image, accent border */}
-        <div className="flex items-center gap-4 my-2">
+        {/* Divider */}
+        <div className="flex items-center gap-4 my-8">
           <div className="flex-1 h-px bg-[#E5DDD3]" />
-          <span className="text-xs font-bold text-[#374151]/50 uppercase tracking-wider px-2">Additional Services</span>
+          <span className="text-xs font-bold text-[#6B7280] uppercase tracking-wider px-2">Additional Services</span>
           <div className="flex-1 h-px bg-[#E5DDD3]" />
         </div>
+
+        {/* Secondary 3 cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {SECONDARY.map((svc, i) => {
             const Icon = svc.icon;
@@ -168,20 +170,22 @@ export default function ServicesPreview() {
               >
                 <Link
                   href={`/services/${svc.slug}`}
-                  className="group flex items-start gap-4 h-full bg-white rounded-2xl border border-[#E5DDD3] p-6 shadow-[0_1px_4px_rgba(45,90,71,0.06)] hover:shadow-[0_6px_20px_rgba(45,90,71,0.10)] hover:border-[#2D5A47]/40 hover:-translate-y-0.5 transition-all duration-200"
+                  className="group relative flex items-start gap-4 h-full bg-white rounded-2xl border border-[#E5DDD3] p-6 overflow-hidden shadow-[0_2px_8px_rgba(45,90,71,0.05)] hover:shadow-[0_12px_28px_rgba(45,90,71,0.11)] hover:border-[#2D5A47]/25 hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-[#D4883E]/10 mt-0.5">
-                    <Icon size={18} className="text-[#D4883E]" />
+                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#2D5A47] to-[#1E3D30] flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(30,61,48,0.22)]">
+                    <Icon size={19} className="text-white" />
                   </div>
                   <div>
                     <h3 className="font-bold text-[#1E3D30] mb-1.5 group-hover:text-[#2D5A47] transition-colors">
                       {svc.name}
                     </h3>
                     <p className="text-[#374151] text-sm leading-relaxed">{svc.desc}</p>
-                    <div className="mt-3 flex items-center gap-1 text-xs font-bold text-[#D4883E] opacity-0 group-hover:opacity-100 transition-opacity">
-                      Learn more <ArrowRight size={11} />
+                    <div className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-[#D4883E]">
+                      Learn more
+                      <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
+                  <div className="absolute left-0 bottom-0 h-0.5 w-0 group-hover:w-full bg-[#D4883E] transition-all duration-300" />
                 </Link>
               </motion.div>
             );

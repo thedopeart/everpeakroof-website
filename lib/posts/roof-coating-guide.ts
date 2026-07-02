@@ -15,14 +15,14 @@ const post: BlogPost = {
   blocks: [
     {
       type: "paragraph",
-      text: "Roof coatings get sold as a miracle fix. Spray it on, add 15 years, save thousands. The reality is more complicated. Coatings are a legitimate tool for extending the life of certain roofs, but they're not a replacement for actual roofing work, and they don't make sense in every situation. Here's the honest version.",
+      text: "Roof coatings get sold as a miracle fix. Spray it on, add 15 years, save thousands. The reality is more complicated. Coatings are a **legitimate tool for extending the life of certain roofs**, but they're not a replacement for actual roofing work, and they don't make sense in every situation. Here's the honest version.",
     },
     {
       type: "stat-row",
       stats: [
-        { value: "$2–$5", label: "Per sq ft for a commercial roof coating in Seattle — vs. $8–$14 for a full TPO or EPDM replacement" },
-        { value: "5–10 yrs", label: "Realistic added lifespan from a well-applied coating in the PNW — manufacturers claim more, field says otherwise" },
-        { value: "Jun–Sep", label: "Reliable dry-weather window for coating application in Seattle — trying in October is gambling on the forecast" },
+        { value: "$2 to $5", label: "Per sq ft for a commercial roof coating in Seattle, vs. $8 to $14 for a full TPO or EPDM replacement" },
+        { value: "5 to 10 yrs", label: "Realistic added lifespan from a well-applied coating in the PNW, manufacturers claim more, field says otherwise" },
+        { value: "Jun, Sep", label: "Reliable dry-weather window for coating application in Seattle, trying in October is gambling on the forecast" },
       ],
     },
     {
@@ -33,8 +33,8 @@ const post: BlogPost = {
       type: "table",
       headers: ["Coating Type", "PNW Suitability", "Standing Water", "Cost", "Best For"],
       rows: [
-        { cells: [{ text: "Silicone" }, { text: "Best", badge: "green" }, { text: "Handles it well", badge: "green" }, { text: "High end of range" }, { text: "Seattle commercial — our default choice" }] },
-        { cells: [{ text: "Acrylic" }, { text: "Poor", badge: "red" }, { text: "Degrades in ponding water", badge: "red" }, { text: "Cheapest" }, { text: "Dry climates only — avoid in PNW" }] },
+        { cells: [{ text: "Silicone" }, { text: "Best", badge: "green" }, { text: "Handles it well", badge: "green" }, { text: "High end of range" }, { text: "Seattle commercial, our default choice" }] },
+        { cells: [{ text: "Acrylic" }, { text: "Poor", badge: "red" }, { text: "Degrades in ponding water", badge: "red" }, { text: "Cheapest" }, { text: "Dry climates only, avoid in PNW" }] },
         { cells: [{ text: "Elastomeric" }, { text: "Good" }, { text: "Moderate" }, { text: "Mid-range" }, { text: "Metal roofs that expand and contract" }] },
       ],
     },
@@ -44,13 +44,17 @@ const post: BlogPost = {
     },
     {
       type: "paragraph",
-      text: "Coatings make the most sense on flat or low-slope commercial roofs that still have 5 to 10 years of structural life left. The membrane or built-up roof is showing wear (chalking, minor cracking, granule loss), but the deck underneath is solid, the insulation is dry, and there aren't any active leaks. In that sweet spot, a coating can add 5 to 10 years of usable life for a fraction of the cost of a full tear-off and replacement. On a 10,000 square foot warehouse roof, the difference between coating ($30,000) and full TPO replacement ($100,000) is real money. Coatings also work well as part of a [maintenance program](/services/maintenance-program) — apply a coating at year 12 or 15, then plan the full replacement for year 20 or 25.",
+      text: "Coatings make the most sense on flat or low-slope commercial roofs that still have **5 to 10 years of structural life left**. The membrane or built-up roof is showing wear (chalking, minor cracking, granule loss), but the deck underneath is solid, the insulation is dry, and there aren't any active leaks. In that sweet spot, a coating can add years of usable life for a fraction of the cost of a full tear-off and replacement.",
+    },
+    {
+      type: "paragraph",
+      text: "On a 10,000 square foot warehouse roof, the difference between **coating ($30,000) and full TPO replacement ($100,000)** is real money. Coatings also work well as part of a [maintenance program](/services/maintenance-program), apply a coating at year 12 or 15, then plan the full replacement for year 20 or 25. If the membrane is past saving, a full [roof replacement](/services/roof-replacement) is the more honest spend.",
     },
     {
       type: "callout",
       variant: "warning",
       title: "When coatings are a waste of money",
-      body: "If the roof deck is rotting, the insulation is waterlogged, or the membrane has failed in multiple spots, no coating is going to save it. You're painting over a problem. The water is already inside the roof assembly, and a coating on top just traps it there. Steep-slope residential roofs (standard pitched shingle roofs) aren't good candidates either — coatings aren't designed for asphalt shingles. And if the expected remaining life is under three years, skip the coating and put the money toward the new roof.",
+      body: "If the **roof deck is rotting**, the insulation is waterlogged, or the membrane has failed in multiple spots, no coating is going to save it. You're painting over a problem. The water is already inside the roof assembly, and a coating on top just traps it there. Steep-slope residential roofs (standard pitched shingle roofs) aren't good candidates either, coatings aren't designed for asphalt shingles. And if the **expected remaining life is under three years**, skip the coating and put the money toward the new roof.",
     },
     {
       type: "heading",
@@ -58,13 +62,13 @@ const post: BlogPost = {
     },
     {
       type: "paragraph",
-      text: "Coatings need a dry surface to bond. Most products require 24 to 48 hours of dry weather before and after application. In Seattle, that window exists reliably from about mid-June through September. Try to apply a coating in October and you're gambling on the forecast. A good [roof inspection](/services/roof-inspection) in spring gives you time to plan the work for summer when conditions are right.",
+      text: "Coatings need a dry surface to bond. Most products require **24 to 48 hours of dry weather** before and after application. In Seattle, that window exists reliably from about **mid-June through September**. Try to apply a coating in October and you're gambling on the forecast. A good [roof inspection](/services/roof-inspection) in spring gives you time to plan the work for summer when conditions are right.",
     },
     {
       type: "callout",
       variant: "tip",
       title: "The honest verdict",
-      body: "Roof coatings are maintenance, not magic. They're a solid option for commercial and flat-roof buildings with aging but structurally sound membranes — they buy time, reduce costs in the short term, and make sense as part of a long-term roof management strategy. They're not a fix for damaged decking, failed insulation, or residential shingle roofs. And they're not a substitute for replacement when the roof has reached the end of its useful life.",
+      body: "Roof coatings are **maintenance, not magic**. They're a solid option for commercial and flat-roof buildings with aging but structurally sound membranes, they buy time, reduce costs in the short term, and make sense as part of a long-term roof management strategy. They're not a fix for damaged decking, failed insulation, or residential shingle roofs. And they're not a substitute for replacement when the roof has reached the end of its useful life.",
     },
     {
       type: "paragraph",

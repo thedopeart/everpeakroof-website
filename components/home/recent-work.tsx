@@ -86,14 +86,14 @@ export default function RecentWork() {
               {/* Bottom gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
-              {/* Job type pill — top left */}
+              {/* Job type pill, top left */}
               <div className="absolute top-3 left-3">
                 <span className="bg-[#1E3D30]/90 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
                   {project.type}
                 </span>
               </div>
 
-              {/* City — bottom left */}
+              {/* City, bottom left */}
               <div className="absolute bottom-3 left-4">
                 <p className="text-white text-sm font-medium drop-shadow">{project.city}</p>
               </div>

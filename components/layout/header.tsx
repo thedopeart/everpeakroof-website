@@ -33,6 +33,7 @@ const NAV = [
       { label: "Roof Pitch Calculator", href: "/tools/roof-pitch-calculator" },
     ],
   },
+  { label: "Service Areas", href: "/service-areas" },
   { label: "Our Work", href: "/our-work" },
   { label: "Blog",     href: "/blog" },
   { label: "About",    href: "/about" },
@@ -52,7 +53,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50">
-      {/* Utility bar — hidden when scrolled */}
+      {/* Utility bar, hidden when scrolled */}
       <div className={cn("transition-all duration-300 overflow-hidden", scrolled ? "max-h-0 opacity-0" : "max-h-12 opacity-100")}>
         <UtilityBar />
       </div>

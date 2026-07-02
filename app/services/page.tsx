@@ -9,7 +9,7 @@ import { breadcrumbSchema, itemListSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Roofing Services | Seattle Repair, Replacement & More",
   description:
-    "Full roofing services in Seattle and the Puget Sound — repair, replacement, emergency, inspections, shingles, commercial, and insurance claims.",
+    "Full roofing services in Seattle and the Puget Sound, repair, replacement, emergency, inspections, shingles, commercial, and insurance claims.",
   alternates: { canonical: "https://everpeakroof.com/services" },
 };
 
@@ -41,7 +41,7 @@ export default function ServicesPage() {
             style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
             Roofing Services
           </h1>
-          <p className="text-[#374151] text-lg max-w-xl">
+          <p className="text-[#374151] text-lg max-w-3xl">
             Every roofing service your home or building might need, from a single leak to a full replacement.
           </p>
         </div>

@@ -2,12 +2,13 @@ import type { BlogPost } from "../posts";
 
 const post: BlogPost = {
   slug: "best-roofing-materials-pnw",
-  title: "Best Roofing Materials for the Pacific Northwest (Ranked by a Local Roofer)",
+  title: "Best Roofing Materials for the Pacific Northwest, Ranked",
   excerpt:
     "We've installed every material type on Puget Sound homes. Here's an honest ranking based on how each one actually holds up against PNW rain, moss, and wind.",
   category: "Material Guide",
   author: "Everpeak Roofing",
   publishedAt: "2026-04-05",
+  updatedAt: "2026-07-01",
   readingTimeMin: 7,
   heroImage: "/images/shingle-closeup.jpg",
   heroImageAlt: "Close-up of architectural shingle texture and granule detail",
@@ -15,14 +16,14 @@ const post: BlogPost = {
   blocks: [
     {
       type: "paragraph",
-      text: "Picking a roofing material in the Pacific Northwest isn't the same decision as it is in Texas or Florida. Our problems are different. We don't get much hail. We don't get hurricanes. What we get is eight months of moisture, aggressive moss, 40 mph gusts off the Sound, and the occasional wet snow that sits on a roof for three days. The material you pick has to handle all of that for decades without constant babysitting. We've installed every type listed below on homes across Seattle, Bellevue, Kirkland, and south through Tacoma. Here's how they actually rank for this climate, with real 2026 installed pricing from our own quotes.",
+      text: "Picking a roofing material in the Pacific Northwest isn't the same decision as it is in Texas or Florida. Our problems are different. We don't get much hail. We don't get hurricanes. What we get is eight months of moisture, aggressive moss, 40 mph gusts off the Sound, and the occasional wet snow that sits on a roof for three days. The material you pick has to handle all of that for decades without constant babysitting. We've installed every type listed below on homes across Seattle, [Bellevue](/bellevue), Kirkland, and south through [Tacoma](/tacoma). Here's how they actually rank for this climate, with real 2026 installed pricing from our own quotes.",
     },
     {
       type: "stat-row",
       stats: [
-        { value: "80%", label: "Share of Seattle roofs we install using architectural shingles — the clear default for most homes" },
+        { value: "80%", label: "Share of Seattle roofs we install using architectural shingles, the clear default for most homes" },
         { value: "~2×", label: "Cost premium for standing seam metal over architectural shingles on the same roof" },
-        { value: "25–30 yrs", label: "Realistic lifespan of a well-maintained architectural shingle roof in the PNW climate" },
+        { value: "25 to 30 yrs", label: "Realistic lifespan of a well-maintained architectural shingle roof in the PNW climate" },
       ],
     },
     {
@@ -33,12 +34,12 @@ const post: BlogPost = {
       type: "table",
       headers: ["Material", "Installed Cost / sq ft", "PNW Lifespan", "Moss Resistance", "Verdict"],
       rows: [
-        { cells: [{ text: "Architectural shingles" }, { text: "$7–$9" }, { text: "25–30 yrs" }, { text: "Moderate" }, { text: "Best value", badge: "green" }] },
-        { cells: [{ text: "Standing seam metal" }, { text: "$12–$18" }, { text: "40–60 yrs" }, { text: "Better" }, { text: "Best overall", badge: "green" }] },
-        { cells: [{ text: "3-Tab shingles" }, { text: "$5–$7" }, { text: "15–20 yrs" }, { text: "Poor" }, { text: "Avoid for primary home", badge: "amber" }] },
-        { cells: [{ text: "Synthetic slate / composite" }, { text: "$10–$15" }, { text: "30–50 yrs" }, { text: "Good" }, { text: "High-end aesthetic", badge: "gray" }] },
-        { cells: [{ text: "Cedar shake" }, { text: "$10–$14" }, { text: "20–25 yrs" }, { text: "Poor — moss grips grain" }, { text: "High maintenance", badge: "amber" }] },
-        { cells: [{ text: "TPO / PVC membrane" }, { text: "$8–$12" }, { text: "20–30 yrs" }, { text: "Good" }, { text: "Flat roofs only", badge: "gray" }] },
+        { cells: [{ text: "Architectural shingles" }, { text: "$7 to $9" }, { text: "25 to 30 yrs" }, { text: "Moderate" }, { text: "Best value", badge: "green" }] },
+        { cells: [{ text: "Standing seam metal" }, { text: "$12 to $18" }, { text: "40 to 60 yrs" }, { text: "Better" }, { text: "Best overall", badge: "green" }] },
+        { cells: [{ text: "3-Tab shingles" }, { text: "$5 to $7" }, { text: "15 to 20 yrs" }, { text: "Poor" }, { text: "Avoid for primary home", badge: "amber" }] },
+        { cells: [{ text: "Synthetic slate / composite" }, { text: "$10 to $15" }, { text: "30 to 50 yrs" }, { text: "Good" }, { text: "High-end aesthetic", badge: "gray" }] },
+        { cells: [{ text: "Cedar shake" }, { text: "$10 to $14" }, { text: "20 to 25 yrs" }, { text: "Poor, moss grips grain" }, { text: "High maintenance", badge: "amber" }] },
+        { cells: [{ text: "TPO / PVC membrane" }, { text: "$8 to $12" }, { text: "20 to 30 yrs" }, { text: "Good" }, { text: "Flat roofs only", badge: "gray" }] },
       ],
     },
     {
@@ -47,7 +48,7 @@ const post: BlogPost = {
     },
     {
       type: "paragraph",
-      text: "**What it is:** A thicker, layered asphalt shingle with a dimensional look. GAF Timberline, Owens Corning Duration, and CertainTeed Landmark are the three lines we install most. **Cost installed:** $7 to $9 per square foot. A typical 2,000 sq ft Seattle roof runs $14,000 to $22,000 for a full tear-off and replacement. Our [2026 cost breakdown](/blog/seattle-roof-replacement-cost-2026) has more detail on what drives that range. **PNW performance:** Handles rain well. The layered design gives it better wind resistance than 3-tab (rated to 130 mph on most lines). Moss is the main enemy — regular cleaning keeps it in check. For a deeper look at why we almost always recommend architectural over the cheaper option, read our [architectural vs. 3-tab comparison](/blog/architectural-shingles-vs-3-tab).",
+      text: "**What it is:** A thicker, layered asphalt shingle with a dimensional look. GAF Timberline, Owens Corning Duration, and CertainTeed Landmark are the three lines we install most. **Cost installed:** $7 to $9 per square foot. A typical 2,000 sq ft Seattle roof runs $14,000 to $22,000 for a full tear-off and replacement. Our [2026 cost breakdown](/blog/seattle-roof-replacement-cost-2026) has more detail on what drives that range. **PNW performance:** Handles rain well. The layered design gives it better wind resistance than 3-tab (rated to 130 mph on most lines). Moss is the main enemy, regular cleaning keeps it in check. For a deeper look at why we almost always recommend architectural over the cheaper option, read our [architectural vs. 3-tab comparison](/blog/architectural-shingles-vs-3-tab).",
     },
     {
       type: "heading",
@@ -79,7 +80,7 @@ const post: BlogPost = {
     },
     {
       type: "paragraph",
-      text: "**What it is:** Split or sawn western red cedar, the classic PNW roofing material. **Cost installed:** $10 to $14 per square foot — more than shingles, less than metal, and maintenance costs add up. **Lifespan:** 20 to 25 years if maintained. Closer to 15 if it's not. Cedar needs periodic cleaning, treating, and recoating or it cups, splits, and rots. Moss loves cedar because the grain texture gives it something to grip. Fire rating is Class C unless treated, which is a real issue in wildfire-risk zones around Issaquah and east Sammamish. Cedar is declining for good reason. Most homeowners replacing an old cedar roof today switch to architectural shingles or synthetic shake.",
+      text: "**What it is:** Split or sawn western red cedar, the classic PNW roofing material. **Cost installed:** $10 to $14 per square foot, more than shingles, less than metal, and maintenance costs add up. **Lifespan:** 20 to 25 years if maintained. Closer to 15 if it's not. Cedar needs periodic cleaning, treating, and recoating or it cups, splits, and rots. Moss loves cedar because the grain texture gives it something to grip. Fire rating is Class C unless treated, which is a real issue in wildfire-risk zones around Issaquah and east Sammamish. Cedar is declining for good reason. Most homeowners replacing an old cedar roof today switch to architectural shingles or synthetic shake.",
     },
     {
       type: "heading",

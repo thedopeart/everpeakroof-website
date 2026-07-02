@@ -20,7 +20,7 @@ const TRUST_BADGES = [
   { icon: Star,        label: "5.0 Rated on Google" },
   { icon: ShieldCheck, label: "Licensed & Insured" },
   { icon: Star,        label: "Free Estimates" },
-  { icon: MapPin,      label: "20 Cities Served" },
+  { icon: MapPin,      label: "21 Cities Served" },
   { icon: Clock,       label: "7 Days a Week" },
 ];
 
@@ -32,7 +32,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/cover-hero.jpg"
-          alt="Everpeak Roof — Seattle roofing contractors"
+          alt="Everpeak Roof, Seattle roofing contractors"
           fill
           className="object-cover"
           priority
@@ -96,7 +96,7 @@ export default function Hero() {
           {/* Subhead */}
           <motion.p
             {...fade(0.3)}
-            className="text-white font-semibold text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
+            className="text-white font-semibold text-lg md:text-xl leading-relaxed mb-10 max-w-2xl"
           >
             Licensed, insured, and up on roofs across the Puget Sound.
             Free estimates, honest pricing. No pressure, no upsells.

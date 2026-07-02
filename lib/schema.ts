@@ -30,6 +30,7 @@ export const SERVICE_CITIES: string[] = [
   "Puyallup",
   "Newcastle",
   "Renton Highlands",
+  "Medina",
 ];
 
 const OPENING_HOURS = [

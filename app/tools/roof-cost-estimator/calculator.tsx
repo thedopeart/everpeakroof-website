@@ -25,7 +25,7 @@ const LABOR_RATE: Record<Material, number> = {
   architectural: 3.0,
 };
 
-// Height surcharge applied to labor only — not materials.
+// Height surcharge applied to labor only, not materials.
 // Industry standard: +15% labor for 2-story, +30% for 3-story.
 const STORY_LABOR_MULTIPLIER: Record<1 | 2 | 3, number> = {
   1: 1.0,
@@ -74,7 +74,7 @@ export default function RoofCostCalculator() {
     const materialRate = MATERIAL_RATE[material];
     const laborRate    = LABOR_RATE[material];
     const storyMult    = STORY_LABOR_MULTIPLIER[stories];
-    // Height surcharge applies to labor only — materials cost the same either way.
+    // Height surcharge applies to labor only, materials cost the same either way.
     const adjustedLaborRate = laborRate * storyMult;
     const effectiveRate     = materialRate + adjustedLaborRate;
     const jobFactor         = JOB_FACTOR[jobType];

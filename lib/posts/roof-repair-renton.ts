@@ -20,9 +20,9 @@ const post: BlogPost = {
     {
       type: "stat-row",
       stats: [
-        { value: "1960s–70s", label: "When a lot of Renton Highlands and Talbot Hill homes were built — 3-tab shingle territory now reaching failure" },
-        { value: "$450–$3,000+", label: "Repair cost range depending on scope — a simple boot replacement to a larger section with deck damage" },
-        { value: "Same day", label: "How fast our emergency crew can typically respond in Renton — we're close enough that drive time isn't a barrier" },
+        { value: "1960s, 70s", label: "When a lot of Renton Highlands and Talbot Hill homes were built, 3-tab shingle territory now reaching failure" },
+        { value: "$450 to $3,000+", label: "Repair cost range depending on scope, a simple boot replacement to a larger section with deck damage" },
+        { value: "Same day", label: "How fast our emergency crew can typically respond in Renton, we're close enough that drive time isn't a barrier" },
       ],
     },
     {
@@ -31,7 +31,7 @@ const post: BlogPost = {
     },
     {
       type: "paragraph",
-      text: "**Kennydale** on the hillside above Lake Washington is usually about wind. Those houses sit in the path of gusts coming off the water, and we see lifted ridge caps, peeled edges, and torn flashing on south and west exposures pretty regularly. The steep lots also make drainage tricky. **Renton Highlands** is a different animal — a lot of those homes went up in the late 60s and 70s, and we're still pulling original 3-tab shingles off some of them. Once a 3-tab roof hits 25 years in this climate, the asphalt gets brittle, the tabs curl, and a single storm can take out a row of shingles. Gutters full of black granules usually mean the roof is past saving. **Talbot Hill** has its own quirks: mostly 60s and 70s tract homes with low-slope sections over garages or additions that weren't done well in the first place. Standing water is the big enemy on those, and we see decking rot more often than you'd expect. **East Renton Plateau** is mostly newer (80s through 2000s), and those roofs are hitting the age where pipe boots and flashings start failing before the shingles do.",
+      text: "**Kennydale** on the hillside above Lake Washington is usually about wind. Those houses sit in the path of gusts coming off the water, and we see lifted ridge caps, peeled edges, and torn flashing on south and west exposures pretty regularly. The steep lots also make drainage tricky. **Renton Highlands** is a different animal, a lot of those homes went up in the late 60s and 70s, and we're still pulling original 3-tab shingles off some of them. Once a 3-tab roof hits 25 years in this climate, the asphalt gets brittle, the tabs curl, and a single storm can take out a row of shingles. Gutters full of black granules usually mean the roof is past saving. **Talbot Hill** has its own quirks: mostly 60s and 70s tract homes with low-slope sections over garages or additions that weren't done well in the first place. Standing water is the big enemy on those, and we see decking rot more often than you'd expect. **East Renton Plateau** is mostly newer (80s through 2000s), and those roofs are hitting the age where pipe boots and flashings start failing before the shingles do.",
     },
     {
       type: "heading",
@@ -59,7 +59,7 @@ const post: BlogPost = {
     },
     {
       type: "paragraph",
-      text: "Not every repair call ends in a repair. Sometimes we get up there and the roof is genuinely fine — you just had a one-off. We'll tell you that and charge nothing for the visit. Other times we find something the homeowner had no idea about, and we're glad we got called before it turned into a bigger problem. If you're dealing with a leak, storm damage, or just want someone honest to look at a roof that's making you nervous, our [full Renton service page](/renton) has more on the neighborhoods we cover, or [reach us directly](/contact).",
+      text: "Not every repair call ends in a repair. Sometimes we get up there and the roof is genuinely fine, you just had a one-off. We'll tell you that and charge nothing for the visit. Other times we find something the homeowner had no idea about, and we're glad we got called before it turned into a bigger problem. If you're dealing with a leak, storm damage, or just want someone honest to look at a roof that's making you nervous, our [full Renton service page](/renton) has more on the neighborhoods we cover, or [reach us directly](/contact).",
     },
   ],
 };

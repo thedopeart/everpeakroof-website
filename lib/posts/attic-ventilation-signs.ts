@@ -20,8 +20,8 @@ const post: BlogPost = {
     {
       type: "stat-row",
       stats: [
-        { value: "8 months", label: "Oct through May — how long Seattle attics stay cool and damp, trapping condensation against the deck" },
-        { value: "Oct–Mar", label: "Prime window for condensation damage — when warm house air meets cold roof sheathing nightly" },
+        { value: "8 months", label: "Oct through May, how long Seattle attics stay cool and damp, trapping condensation against the deck" },
+        { value: "Oct, Mar", label: "Prime window for condensation damage, when warm house air meets cold roof sheathing nightly" },
         { value: "~$2k", label: "Typical cost to add soffit baffles and a ridge vent on a home without proper intake/exhaust airflow" },
       ],
     },
@@ -39,7 +39,7 @@ const post: BlogPost = {
     },
     {
       type: "paragraph",
-      text: "Grab a flashlight and get into the attic on a dry afternoon. You don't need to be a roofer to spot these. **Dark staining on sheathing:** Healthy plywood is a consistent light tan. Dark patches — especially near the ridge — mean moisture damage. Run your hand across it. Damp means active condensation. **Frost in winter:** White frost on the underside of the roof boards in cold weather tells you the attic is holding moisture. When it melts, that water soaks into the plywood. Do that fifty times over a winter and you've got a problem. **Musty smell:** Mold growing on the wood. Visible black, green, or white patches mean you're past the early warning stage. **Wavy or buckled shingles:** The sheathing has swelled from moisture. The plywood expands and pushes shingles out of plane, letting water in even faster.",
+      text: "Grab a flashlight and get into the attic on a dry afternoon. You don't need to be a roofer to spot these. **Dark staining on sheathing:** Healthy plywood is a consistent light tan. Dark patches, especially near the ridge, mean moisture damage. Run your hand across it. Damp means active condensation. **Frost in winter:** White frost on the underside of the roof boards in cold weather tells you the attic is holding moisture. When it melts, that water soaks into the plywood. Do that fifty times over a winter and you've got a problem. **Musty smell:** Mold growing on the wood. Visible black, green, or white patches mean you're past the early warning stage. **Wavy or buckled shingles:** The sheathing has swelled from moisture. The plywood expands and pushes shingles out of plane, letting water in even faster.",
     },
     {
       type: "callout",
@@ -67,7 +67,7 @@ const post: BlogPost = {
       type: "callout",
       variant: "tip",
       title: "When to bring in a pro",
-      body: "If you're seeing mold, widespread dark staining, or soft spots in the sheathing, that's beyond a baffle install. You might need sheathing replacement, mold remediation, or a full ventilation retrofit. A [roof inspection](/services/roof-inspection) will tell you where you stand — we check ventilation on every inspection because it's that closely tied to roof life.",
+      body: "If you're seeing mold, widespread dark staining, or soft spots in the sheathing, that's beyond a baffle install. You might need sheathing replacement, mold remediation, or a full ventilation retrofit. A [roof inspection](/services/roof-inspection) will tell you where you stand, we check ventilation on every inspection because it's that closely tied to roof life.",
     },
     {
       type: "paragraph",

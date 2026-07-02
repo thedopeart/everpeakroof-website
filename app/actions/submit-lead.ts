@@ -6,7 +6,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const LEAD_EMAIL = process.env.LEAD_EMAIL ?? "info@everpeakroof.com";
 
-export type LeadSource = "contact" | "instant-quote";
+export type LeadSource = "contact" | "instant-quote" | "service" | "city";
 
 export interface LeadResult {
   success: boolean;
@@ -24,6 +24,8 @@ export async function submitLead(
   const subjectMap: Record<LeadSource, string> = {
     contact: `New Lead (Contact Form): ${name}`,
     "instant-quote": `New Lead (Instant Quote): ${name}`,
+    service: `New Lead (Service Page): ${name}`,
+    city: `New Lead (City Page): ${name}`,
   };
 
   // Build HTML body from all fields
@@ -42,7 +44,7 @@ export async function submitLead(
     <div style="font-family:system-ui,sans-serif;max-width:600px;">
       <div style="background:#1E3D30;color:white;padding:20px 24px;border-radius:12px 12px 0 0;">
         <h2 style="margin:0;font-size:18px;">New Lead from everpeakroof.com</h2>
-        <p style="margin:4px 0 0;opacity:0.7;font-size:13px;">Source: ${source === "instant-quote" ? "Instant Quote Form" : "Contact Form"}</p>
+        <p style="margin:4px 0 0;opacity:0.7;font-size:13px;">Source: ${source === "instant-quote" ? "Instant Quote Form" : source === "service" ? "Service Page Form" : source === "city" ? "City Page Form" : "Contact Form"}</p>
       </div>
       <div style="border:1px solid #E5DDD3;border-top:none;border-radius:0 0 12px 12px;padding:20px 0;">
         <table style="width:100%;border-collapse:collapse;font-size:14px;">

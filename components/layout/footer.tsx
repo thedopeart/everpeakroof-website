@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Shield, Award, Clock } from "lucide-react";
-import { featuredServices, services } from "@/lib/services";
-import { tier1Cities, tier2Cities } from "@/lib/cities";
+import { services } from "@/lib/services";
+import { cities } from "@/lib/cities";
 
 const PHONE = "(425) 505-7142";
 const PHONE_HREF = "tel:+14255057142";
@@ -53,7 +53,7 @@ export default function Footer() {
             />
           </div>
           <p className="text-sm text-white/75 leading-relaxed mb-5">
-            Seattle metro roofing. Repairs, replacements, inspections, and emergency work across 20 cities in the Puget Sound.
+            Seattle metro roofing. Repairs, replacements, inspections, and emergency work across 21 cities in the Puget Sound.
           </p>
           <div className="flex flex-col gap-2.5">
             <a href={PHONE_HREF} className="flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white transition-colors">
@@ -75,7 +75,7 @@ export default function Footer() {
         <div>
           <h3 className="font-bold text-sm uppercase tracking-wider text-white/40 mb-4">Services</h3>
           <ul className="flex flex-col gap-2">
-            {services.slice(0, 8).map((s) => (
+            {services.map((s) => (
               <li key={s.slug}>
                 <Link
                   href={`/services/${s.slug}`}
@@ -90,9 +90,20 @@ export default function Footer() {
 
         {/* Cities */}
         <div>
-          <h3 className="font-bold text-sm uppercase tracking-wider text-white/40 mb-4">Service Areas</h3>
-          <ul className="flex flex-col gap-2">
-            {[...tier1Cities, ...tier2Cities].map((c) => (
+          <h3 className="font-bold text-sm uppercase tracking-wider text-white/40 mb-4">
+            <Link href="/service-areas" className="hover:text-white transition-colors">Service Areas</Link>
+          </h3>
+          <div className="mb-2">
+            <Link
+              href="/service-areas"
+              className="text-sm font-semibold text-[#E8A85E] hover:text-white transition-colors"
+            >
+              View area map
+            </Link>
+          </div>
+          {/* All 21 city pages get a crawlable footer link; two columns keeps it compact */}
+          <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
+            {cities.map((c) => (
               <li key={c.slug}>
                 <Link
                   href={`/${c.slug}`}

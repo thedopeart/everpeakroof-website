@@ -8,6 +8,8 @@ import HowItWorks      from "@/components/home/how-it-works";
 import FaqSection      from "@/components/home/faq-section";
 import ServiceAreas    from "@/components/home/service-areas";
 import CtaBanner       from "@/components/home/cta-banner";
+import Certifications  from "@/components/home/certifications";
+import LeadFormSection from "@/components/shared/lead-form-section";
 import MobileCtaBar    from "@/components/home/mobile-cta-bar";
 import JsonLd          from "@/components/shared/json-ld";
 import { howToSchema, faqPageSchema } from "@/lib/schema";
@@ -15,7 +17,7 @@ import { howToSchema, faqPageSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Everpeak Roof | Seattle Roofing Repair & Replacement",
   description:
-    "Licensed roofing contractor serving Seattle, Bellevue, Tacoma, and 17+ Puget Sound cities. Roof repair, replacement, emergency service. Free estimates.",
+    "Licensed roofing contractor serving Seattle, Bellevue, Tacoma, and 21 Puget Sound cities. Roof repair, replacement, emergency service. Free estimates.",
   alternates: { canonical: "https://everpeakroof.com" },
 };
 
@@ -36,6 +38,11 @@ const FAQ_SCHEMA = faqPageSchema([
       "For active leaks or storm damage, we're available 7 days a week and can usually have someone on-site the same day or next morning. Emergency tarping is available for urgent situations.",
   },
   {
+    question: "How long does a roof replacement take?",
+    answer:
+      "Most residential replacements take two to four days depending on the size of the roof, the pitch, and the weather. We give you a realistic timeline with your written estimate and keep you posted if anything changes.",
+  },
+  {
     question: "What warranty do you provide?",
     answer:
       "We warranty our workmanship on every job. Materials come with manufacturer warranties that vary by product, typically 25 to 50 years for architectural shingles. We hand over all warranty docs when the job is done.",
@@ -53,7 +60,7 @@ const FAQ_SCHEMA = faqPageSchema([
   {
     question: "What areas do you serve?",
     answer:
-      "We cover 20 cities across the greater Puget Sound, from Seattle and the Eastside to South Sound. If your city isn't listed, call us. We likely serve your area.",
+      "We cover 21 cities across the greater Puget Sound, from Seattle and the Eastside to South Sound. If your city isn't listed, call us. We likely serve your area.",
   },
   {
     question: "Asphalt shingles or metal roof, which is better for Seattle?",
@@ -91,13 +98,20 @@ export default function HomePage() {
       <JsonLd data={HOW_IT_WORKS_SCHEMA} />
       <JsonLd data={FAQ_SCHEMA} />
       <Hero />
-      <StatsBar />
       <TrustBadges />
+      <StatsBar />
       <ServicesPreview />
       <WhyUs />
       <HowItWorks />
-      <FaqSection />
       <ServiceAreas />
+      <LeadFormSection
+        variant="band"
+        heading="Get your free roofing estimate"
+        showServiceSelect
+        source="contact"
+      />
+      <FaqSection />
+      <Certifications />
       <CtaBanner />
       <MobileCtaBar />
     </>

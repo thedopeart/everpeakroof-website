@@ -20,9 +20,9 @@ const post: BlogPost = {
     {
       type: "stat-row",
       stats: [
-        { value: "$6–$10", label: "Per sq ft installed for a mod bit roof system in the Seattle area — includes tear-off, base sheets, and flashings" },
-        { value: "15–20 yrs", label: "Realistic lifespan in the PNW climate — some manufacturers claim 25, but our field experience says otherwise" },
-        { value: "2x/yr", label: "Minimum maintenance visits needed to keep a mod bit roof healthy — clear drains every fall and spring" },
+        { value: "$6 to $10", label: "Per sq ft installed for a mod bit roof system in the Seattle area, includes tear-off, base sheets, and flashings" },
+        { value: "15 to 20 yrs", label: "Realistic lifespan in the PNW climate, some manufacturers claim 25, but our field experience says otherwise" },
+        { value: "2x/yr", label: "Minimum maintenance visits needed to keep a mod bit roof healthy, clear drains every fall and spring" },
       ],
     },
     {
@@ -33,12 +33,12 @@ const post: BlogPost = {
       type: "table",
       headers: ["Factor", "Modified Bitumen", "TPO", "PVC"],
       rows: [
-        { cells: [{ text: "Cost installed" }, { text: "$6–$10 / sq ft", badge: "green" }, { text: "$8–$12 / sq ft" }, { text: "$10–$16 / sq ft", badge: "amber" }] },
+        { cells: [{ text: "Cost installed" }, { text: "$6 to $10 / sq ft", badge: "green" }, { text: "$8 to $12 / sq ft" }, { text: "$10 to $16 / sq ft", badge: "amber" }] },
         { cells: [{ text: "Seam type" }, { text: "Torch-welded or adhered" }, { text: "Heat-welded", badge: "green" }, { text: "Heat-welded", badge: "green" }] },
-        { cells: [{ text: "Foot traffic tolerance" }, { text: "Best — thick and durable", badge: "green" }, { text: "Moderate" }, { text: "Moderate" }] },
+        { cells: [{ text: "Foot traffic tolerance" }, { text: "Best, thick and durable", badge: "green" }, { text: "Moderate" }, { text: "Moderate" }] },
         { cells: [{ text: "Energy efficiency" }, { text: "Dark surface absorbs heat" }, { text: "Reflective white surface", badge: "green" }, { text: "Reflective, chemical-resistant" }] },
-        { cells: [{ text: "PNW lifespan" }, { text: "15–20 yrs", badge: "amber" }, { text: "20–30 yrs", badge: "green" }, { text: "25–35 yrs", badge: "green" }] },
-        { cells: [{ text: "Patching ease" }, { text: "Easy — torch and matching material", badge: "green" }, { text: "Moderate — requires hot-air welder" }, { text: "Moderate" }] },
+        { cells: [{ text: "PNW lifespan" }, { text: "15 to 20 yrs", badge: "amber" }, { text: "20 to 30 yrs", badge: "green" }, { text: "25 to 35 yrs", badge: "green" }] },
+        { cells: [{ text: "Patching ease" }, { text: "Easy, torch and matching material", badge: "green" }, { text: "Moderate, requires hot-air welder" }, { text: "Moderate" }] },
       ],
     },
     {
@@ -57,7 +57,7 @@ const post: BlogPost = {
       type: "callout",
       variant: "tip",
       title: "Three things that keep a mod bit roof healthy",
-      body: "**Clear drains and scuppers at least twice a year** (fall and spring). Clogged drains cause ponding, and ponding accelerates every kind of failure. **Check for cracks at the seams.** Mod bit seams dry out and separate over 10 to 15 years. Catching a cracked seam early is a 30-minute patch. Ignoring it means water between the layers. **Patch blisters before they split open** — blisters give water an entry point once they rupture.",
+      body: "**Clear drains and scuppers at least twice a year** (fall and spring). Clogged drains cause ponding, and ponding accelerates every kind of failure. **Check for cracks at the seams.** Mod bit seams dry out and separate over 10 to 15 years. Catching a cracked seam early is a 30-minute patch. Ignoring it means water between the layers. **Patch blisters before they split open**, blisters give water an entry point once they rupture.",
     },
     {
       type: "heading",
@@ -70,8 +70,8 @@ const post: BlogPost = {
     {
       type: "callout",
       variant: "warning",
-      title: "Torch-down safety — don't skip this",
-      body: "Torch-applied mod bit means an open propane flame on your roof. Fires happen — not often, but enough that insurance companies have taken notice, and some municipalities have tightened restrictions. Self-adhered and cold-applied mod bit systems eliminate the fire risk entirely, and they've gotten good enough that we default to them for most jobs. The performance difference is minimal, and nobody has to worry about setting a building on fire during installation.",
+      title: "Torch-down safety, don't skip this",
+      body: "Torch-applied mod bit means an open propane flame on your roof. Fires happen, not often, but enough that insurance companies have taken notice, and some municipalities have tightened restrictions. Self-adhered and cold-applied mod bit systems eliminate the fire risk entirely, and they've gotten good enough that we default to them for most jobs. The performance difference is minimal, and nobody has to worry about setting a building on fire during installation.",
     },
     {
       type: "paragraph",
