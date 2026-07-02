@@ -250,7 +250,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,
       authors: [post.author],
-      images: [post.heroImage],
+      // og:image comes from the branded opengraph-image.tsx route (unique
+      // per post: category chip + title), not the on-page hero photo.
     },
   };
 }
