@@ -19,7 +19,7 @@ import { getAllPosts, getPost } from "@/lib/posts";
 import type { Block } from "@/lib/posts";
 import type { ReactNode } from "react";
 import JsonLd from "@/components/shared/json-ld";
-import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 import ReadingProgress from "@/components/blog/reading-progress";
 import BlogToc from "@/components/blog/blog-toc";
 
@@ -290,6 +290,7 @@ export default async function BlogPostPage({ params }: Props) {
         { name: "Blog", url: "https://everpeakroof.com/blog" },
         { name: post.title, url: `https://everpeakroof.com/blog/${post.slug}` },
       ])} />
+      {post.faq && post.faq.length > 0 && <JsonLd data={faqSchema(post.faq)} />}
 
       {/* ───────── HERO ───────── */}
       <section className="relative isolate overflow-hidden bg-[#1E3D30] min-h-[58vh] flex flex-col">
@@ -346,6 +347,27 @@ export default async function BlogPostPage({ params }: Props) {
             </p>
 
             {post.blocks ? renderBlocks(post.blocks) : post.body ? renderBody(post.body) : null}
+
+            {/* FAQ */}
+            {post.faq && post.faq.length > 0 && (
+              <section className="mt-14">
+                <h2
+                  id="faq"
+                  className="scroll-mt-28 text-[#1E3D30] text-2xl md:text-[1.7rem] font-bold mb-6 pb-3 border-b-2 border-[#E5DDD3]"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  <span className="text-[#D4883E] mr-2">#</span>Frequently asked questions
+                </h2>
+                <div className="space-y-4">
+                  {post.faq.map((f) => (
+                    <div key={f.q} className="bg-white rounded-2xl border border-[#E5DDD3] p-6 shadow-[0_1px_4px_rgba(45,90,71,0.05)]">
+                      <h3 className="font-bold text-[#1E3D30] mb-2">{f.q}</h3>
+                      <p className="text-[#1F2937] leading-[1.75]">{renderInline(f.a)}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* Tags */}
             {post.tags.length > 0 && (

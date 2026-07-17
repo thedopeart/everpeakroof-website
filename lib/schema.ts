@@ -121,6 +121,21 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
   };
 }
 
+export function faqSchema(faqs: { q: string; a: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.a,
+      },
+    })),
+  };
+}
+
 export function serviceSchema(svc: {
   name: string;
   description: string;

@@ -25,6 +25,8 @@ export interface BlogPost {
   heroImage: string;
   heroImageAlt: string;
   tags: string[];
+  /** Question-led posts carry FAQ pairs; rendered as an FAQ section + FAQPage JSON-LD */
+  faq?: { q: string; a: string }[];
 }
 
 // Imported post modules (one BlogPost per file) ----------------------------

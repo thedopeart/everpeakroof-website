@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# blog pipeline state (queue/topic json managed by luxury-wall-art/scripts blog engine)
+/data/blog-pipeline/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
