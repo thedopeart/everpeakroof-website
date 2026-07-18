@@ -6,6 +6,22 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          // HSTS: browsers skip the http->https redirect hop on every visit
+          // after the first (and preload-list browsers skip it entirely).
+          // This is the only site-side answer to PageSpeed's redirect flag.
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       // www serves a full duplicate of the site (200) unless redirected.
