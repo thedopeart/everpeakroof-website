@@ -15,9 +15,9 @@ import JsonLd          from "@/components/shared/json-ld";
 import { howToSchema, faqPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Everpeak Roof | Seattle Roofing Repair & Replacement",
+  title: "Everpeak Roofing | Seattle Roof Repair & Replacement",
   description:
-    "Licensed roofing contractor serving Seattle, Bellevue, Tacoma, and 21 Puget Sound cities. Roof repair, replacement, emergency service. Free estimates.",
+    "Everpeak Roofing is a licensed Seattle roofing contractor serving 21 Puget Sound cities. Roof repair, replacement, emergency service. Free written estimates.",
   alternates: { canonical: "https://everpeakroof.com" },
 };
 
@@ -70,7 +70,7 @@ const FAQ_SCHEMA = faqPageSchema([
 ]);
 
 const HOW_IT_WORKS_SCHEMA = howToSchema(
-  "How Everpeak Roof Works",
+  "How Everpeak Roofing Works",
   "Four steps from first call to finished job. Free inspection, written quote, professional installation, and a final walkthrough with warranty docs.",
   [
     {

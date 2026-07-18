@@ -2,7 +2,7 @@ import { renderOgImage, OG_SIZE, OG_CONTENT_TYPE } from "@/lib/og-template";
 
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
-export const alt = "Everpeak Roof, Seattle roofing repair and replacement";
+export const alt = "Everpeak Roofing, Seattle roofing repair and replacement";
 
 export default function Image() {
   return renderOgImage({

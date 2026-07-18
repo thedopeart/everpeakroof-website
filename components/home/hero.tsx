@@ -1,20 +1,9 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, ChevronRight, ShieldCheck, Star, MapPin, Clock } from "lucide-react";
-import { motion } from "framer-motion";
 
 const PHONE = "(425) 505-7142";
 const PHONE_HREF = "tel:+14255057142";
-
-const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
-
-const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 24 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, delay, ease: EASE },
-});
 
 const TRUST_BADGES = [
   { icon: Star,        label: "5.0 Rated on Google" },
@@ -32,7 +21,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/cover-hero.jpg"
-          alt="Everpeak Roof, Seattle roofing contractors"
+          alt="Everpeak Roofing, Seattle roofing contractors"
           fill
           className="object-cover"
           priority
@@ -72,17 +61,16 @@ export default function Hero() {
         <div className="max-w-3xl">
 
           {/* Label */}
-          <motion.div {...fade(0.1)} className="flex items-center gap-2 mb-6">
+          <div className="rise rise-1 flex items-center gap-2 mb-6">
             <span className="inline-flex items-center gap-1.5 bg-[#D4883E]/20 border border-[#D4883E]/30 text-[#E8A85E] text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
               <span className="w-1.5 h-1.5 rounded-full bg-[#D4883E] animate-pulse" />
               Seattle&apos;s Roofing Experts
             </span>
-          </motion.div>
+          </div>
 
           {/* Headline */}
-          <motion.h1
-            {...fade(0.2)}
-            className="text-white leading-[1.08] mb-6"
+          <h1
+            className="rise rise-2 text-white leading-[1.08] mb-6"
             style={{
               fontSize: "clamp(2.8rem, 6.5vw, 4.6rem)",
               fontFamily: "var(--font-display)",
@@ -91,19 +79,18 @@ export default function Hero() {
             Seattle&apos;s Roof Repair &amp;{" "}
             <span className="text-[#D4883E]">Replacement</span>{" "}
             Experts.
-          </motion.h1>
+          </h1>
 
           {/* Subhead */}
-          <motion.p
-            {...fade(0.3)}
-            className="text-white font-semibold text-lg md:text-xl leading-relaxed mb-10 max-w-2xl"
+          <p
+            className="rise rise-3 text-white font-semibold text-lg md:text-xl leading-relaxed mb-10 max-w-2xl"
           >
             Licensed, insured, and up on roofs across the Puget Sound.
             Free estimates, honest pricing. No pressure, no upsells.
-          </motion.p>
+          </p>
 
           {/* CTAs */}
-          <motion.div {...fade(0.4)} className="flex flex-col sm:flex-row gap-3 mb-14">
+          <div className="rise rise-4 flex flex-col sm:flex-row gap-3 mb-14">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 bg-[#D4883E] hover:bg-[#B86E2A] text-white font-bold text-base px-8 py-4 rounded-xl transition-all duration-200 shadow-[0_4px_20px_rgba(212,136,62,0.4)] hover:shadow-[0_6px_28px_rgba(212,136,62,0.55)] hover:-translate-y-0.5"
@@ -118,12 +105,11 @@ export default function Hero() {
               <Phone size={16} />
               {PHONE}
             </a>
-          </motion.div>
+          </div>
 
           {/* Trust badges */}
-          <motion.div
-            {...fade(0.55)}
-            className="flex flex-wrap gap-x-6 gap-y-3"
+          <div
+            className="rise rise-4 flex flex-wrap gap-x-6 gap-y-3"
           >
             {TRUST_BADGES.map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-center gap-2 text-sm text-white font-bold">
@@ -131,7 +117,7 @@ export default function Hero() {
                 {label}
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
 

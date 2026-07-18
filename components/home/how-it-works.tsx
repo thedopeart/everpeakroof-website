@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { CalendarCheck, ClipboardList, HardHat, BadgeCheck } from "lucide-react";
 
 const STEPS = [
@@ -43,7 +40,7 @@ export default function HowItWorks() {
       />
 
       <div className="relative max-w-7xl mx-auto px-5 md:px-8">
-        <div className="text-center mb-16">
+        <div className="reveal text-center mb-16">
           <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-2">From Call to Complete</p>
           <h2
             className="text-white leading-tight"
@@ -64,16 +61,12 @@ export default function HowItWorks() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
-            {STEPS.map((step, i) => {
+            {STEPS.map((step) => {
               const Icon = step.icon;
               return (
-                <motion.div
+                <div
                   key={step.step}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="relative flex flex-col items-center text-center"
+                  className="reveal relative flex flex-col items-center text-center"
                 >
                   {/* node */}
                   <div className="relative z-10 w-[4.5rem] h-[4.5rem] rounded-2xl bg-gradient-to-br from-[#E8A85E] to-[#D4883E] flex items-center justify-center ring-8 ring-[#2D5A47] shadow-[0_8px_20px_rgba(212,136,62,0.4)]">
@@ -84,7 +77,7 @@ export default function HowItWorks() {
                   </div>
                   <h3 className="mt-6 font-bold text-white text-lg">{step.title}</h3>
                   <p className="mt-2 text-white/75 text-sm leading-relaxed max-w-[17rem]">{step.desc}</p>
-                </motion.div>
+                </div>
               );
             })}
           </div>

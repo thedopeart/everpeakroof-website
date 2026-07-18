@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
+  title: { absolute: "Terms of Service" },
   description:
     "Terms of service covering use of the Everpeak Roofing website, estimate disclaimers, warranty information, and governing law for our Seattle roofing services.",
   alternates: { canonical: "https://everpeakroof.com/terms" },

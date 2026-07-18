@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ShieldCheck, FileText, Clock } from "lucide-react";
 
 const BADGES = [
@@ -25,16 +22,12 @@ export default function TrustBadges() {
   return (
     <section className="bg-[#FAF3EB] border-b border-[#E5DDD3]">
       <div className="max-w-6xl mx-auto px-5 md:px-8 py-9">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5">
-          {BADGES.map((badge, i) => {
+        <div className="reveal grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5">
+          {BADGES.map((badge) => {
             const Icon = badge.icon;
             return (
-              <motion.div
+              <div
                 key={badge.name}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                 className="group relative flex items-center gap-4 bg-white rounded-2xl border border-[#E5DDD3] px-6 py-5 overflow-hidden shadow-[0_2px_8px_rgba(45,90,71,0.05)] hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(45,90,71,0.13)] hover:border-[#2D5A47]/25 transition-all duration-300"
               >
                 {/* copper top accent (clipped to the rounded card) */}
@@ -51,7 +44,7 @@ export default function TrustBadges() {
                   <div className="font-black text-[#1E3D30] text-[15px] leading-tight">{badge.name}</div>
                   <div className="text-[13px] text-[#6B7280] mt-1 leading-snug">{badge.detail}</div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>

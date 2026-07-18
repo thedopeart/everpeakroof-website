@@ -78,6 +78,10 @@ import roofLifespan     from "./posts/roof-lifespan-pacific-northwest";
 import pitchGuide       from "./posts/roof-pitch-guide";
 import cleaningCost     from "./posts/roof-cleaning-cost-puget-sound";
 import insuranceInspection from "./posts/roof-inspection-for-insurance-wa";
+// Round 6 (GSC-driven: rescue tpo-roofing-guide angle handled in place; new queries ranking 13-25 without a post)
+import hiringWoodinville from "./posts/hiring-a-roofer-woodinville";
+import shakeCostWoodinvilleShoreline from "./posts/cedar-shake-repair-cost-woodinville-shoreline";
+import auburnReplacement from "./posts/auburn-roof-replacement-guide";
 
 const importedPosts: BlogPost[] = [
   kirklandRepair,
@@ -124,6 +128,9 @@ const importedPosts: BlogPost[] = [
   pitchGuide,
   cleaningCost,
   insuranceInspection,
+  hiringWoodinville,
+  shakeCostWoodinvilleShoreline,
+  auburnReplacement,
 ];
 
 const inlinePosts: BlogPost[] = [

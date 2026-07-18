@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 
 const REVIEWS = [
@@ -32,7 +29,7 @@ export default function Testimonials() {
     <section className="section-pad bg-white">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
 
-        <div className="max-w-3xl mb-12">
+        <div className="reveal max-w-3xl mb-12">
           <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-2">Customer Reviews</p>
           <h2
             className="text-[#1E3D30] leading-tight"
@@ -43,14 +40,10 @@ export default function Testimonials() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {REVIEWS.map((r, i) => (
-            <motion.div
+          {REVIEWS.map((r) => (
+            <div
               key={r.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="flex flex-col bg-[#FAF3EB] rounded-2xl p-7 border border-[#E5DDD3]"
+              className="reveal flex flex-col bg-[#FAF3EB] rounded-2xl p-7 border border-[#E5DDD3]"
             >
               {/* Stars */}
               <div className="flex gap-0.5 mb-4">
@@ -73,7 +66,7 @@ export default function Testimonials() {
                   </span>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 

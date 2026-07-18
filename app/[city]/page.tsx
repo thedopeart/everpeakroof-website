@@ -41,12 +41,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { name, description } = cityData;
   const desc = metaDescription(description);
   return {
-    title: `Roofing in ${name}, WA | Roof Repair & Replacement`,
+    title: `${name} Roof Repair & Replacement`,
     description: desc,
     alternates: { canonical: `https://everpeakroof.com/${citySlug}` },
     openGraph: {
       url: `https://everpeakroof.com/${citySlug}`,
-      title: `Roofing in ${name}, WA | Roof Repair & Replacement`,
+      title: `${name} Roof Repair & Replacement`,
       description: desc,
     },
   };

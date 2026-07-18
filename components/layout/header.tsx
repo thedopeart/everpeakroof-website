@@ -73,7 +73,7 @@ export default function Header() {
           <Link href="/" className="shrink-0">
             <Image
               src="/images/logo/everpeak-roofing-black.png"
-              alt="Everpeak Roof"
+              alt="Everpeak Roofing"
               width={160}
               height={48}
               className="h-14 w-auto"

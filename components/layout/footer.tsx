@@ -46,14 +46,14 @@ export default function Footer() {
           <div className="mb-4">
             <Image
               src="/images/logo/everpeak-roofing-white.png"
-              alt="Everpeak Roof"
+              alt="Everpeak Roofing"
               width={160}
               height={48}
               className="h-12 w-auto"
             />
           </div>
           <p className="text-sm text-white/75 leading-relaxed mb-5">
-            Seattle metro roofing. Repairs, replacements, inspections, and emergency work across 21 cities in the Puget Sound.
+            <Link href="/" className="font-semibold text-white/90 hover:text-white transition-colors">Everpeak Roofing</Link> is a Seattle metro roofing company. Repairs, replacements, inspections, and emergency work across 21 cities in the Puget Sound.
           </p>
           <div className="flex flex-col gap-2.5">
             <a href={PHONE_HREF} className="flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white transition-colors">

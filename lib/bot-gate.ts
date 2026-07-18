@@ -19,6 +19,8 @@ const BLOCKED_UA =
   /(headlesschrome|phantomjs|puppeteer|playwright|selenium|webdriver|electron\/|scrapy|python-requests|python-urllib|aiohttp|httpx\/|node-fetch|axios\/|go-http-client|libwww-perl|java\/[0-9]|jakarta|okhttp|curl\/|wget\/|httpunit|apachebench|\bzgrab\b|masscan|nuclei|nikto|sqlmap|semrushbot-ba|dotbot|mj12bot|blexbot|petalbot|dataforseo|megaindex|seekport|serpstatbot)/i;
 
 export function botBlocked(req: NextRequest): boolean {
+  // Never gate local dev; headless preview tooling needs to load the site.
+  if (process.env.NODE_ENV !== "production") return false;
   const ua = req.headers.get("user-agent") || "";
   if (!ua) return false; // allow empty UA, avoids blocking platform internals
   // Always let Google's own crawlers/verifiers through (Googlebot, AdsBot-Google,

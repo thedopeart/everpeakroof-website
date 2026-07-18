@@ -3,7 +3,7 @@ import { cities } from "@/lib/cities";
 
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
-export const alt = "Everpeak Roof city service area";
+export const alt = "Everpeak Roofing city service area";
 
 export default async function Image({
   params,

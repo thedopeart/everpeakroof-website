@@ -1,8 +1,5 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { ArrowRight, Wrench, Home, Zap, Search, Grid3x3, Building2, Droplets, FileCheck, Wrench as WrenchAlt } from "lucide-react";
 
 const SERVICES = [
@@ -78,7 +75,7 @@ export default function ServicesPreview() {
       <div className="max-w-7xl mx-auto px-5 md:px-8">
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+        <div className="reveal flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
           <div>
             <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-2">What We Do</p>
             <h2
@@ -99,16 +96,10 @@ export default function ServicesPreview() {
 
         {/* Primary 6 cards with images + floating icon badge */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-          {SERVICES.map((svc, i) => {
+          {SERVICES.map((svc) => {
             const Icon = svc.icon;
             return (
-              <motion.div
-                key={svc.slug}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ delay: i * 0.06, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              >
+              <div key={svc.slug} className="reveal">
                 <Link
                   href={`/services/${svc.slug}`}
                   className="group flex flex-col h-full bg-white rounded-2xl border border-[#E5DDD3] overflow-hidden shadow-[0_2px_8px_rgba(45,90,71,0.05)] hover:shadow-[0_18px_40px_rgba(45,90,71,0.15)] hover:-translate-y-1.5 hover:border-[#2D5A47]/25 transition-all duration-300"
@@ -144,7 +135,7 @@ export default function ServicesPreview() {
                     </div>
                   </div>
                 </Link>
-              </motion.div>
+              </div>
             );
           })}
         </div>
@@ -158,16 +149,10 @@ export default function ServicesPreview() {
 
         {/* Secondary 3 cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-          {SECONDARY.map((svc, i) => {
+          {SECONDARY.map((svc) => {
             const Icon = svc.icon;
             return (
-              <motion.div
-                key={svc.slug}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              >
+              <div key={svc.slug} className="reveal">
                 <Link
                   href={`/services/${svc.slug}`}
                   className="group relative flex items-start gap-4 h-full bg-white rounded-2xl border border-[#E5DDD3] p-6 overflow-hidden shadow-[0_2px_8px_rgba(45,90,71,0.05)] hover:shadow-[0_12px_28px_rgba(45,90,71,0.11)] hover:border-[#2D5A47]/25 hover:-translate-y-1 transition-all duration-300"
@@ -187,7 +172,7 @@ export default function ServicesPreview() {
                   </div>
                   <div className="absolute left-0 bottom-0 h-0.5 w-0 group-hover:w-full bg-[#D4883E] transition-all duration-300" />
                 </Link>
-              </motion.div>
+              </div>
             );
           })}
         </div>

@@ -2,12 +2,13 @@ import type { BlogPost } from "../posts";
 
 const post: BlogPost = {
   slug: "tpo-roofing-guide",
-  title: "TPO Roofing: The Complete Guide for Seattle Commercial Buildings",
+  title: "TPO Roof Cost & Lifespan: Seattle Commercial Guide",
   excerpt:
-    "TPO is the most popular membrane on commercial roofs in the Pacific Northwest right now. Here's what building owners need to know about installation, lifespan, cost, and maintenance in our climate.",
+    "TPO runs $8 to $12 per square foot installed and typically lasts 20 to 30 years in Seattle's climate. Here's how it compares to EPDM and PVC, and what actually shortens its life here.",
   category: "Commercial Guide",
   author: "Everpeak Roofing",
   publishedAt: "2026-03-12",
+  updatedAt: "2026-07-18",
   readingTimeMin: 6,
   heroImage: "/images/craftsman-roof-build.jpg",
   heroImageAlt: "Commercial roof installation in progress on a Seattle building",
@@ -15,7 +16,7 @@ const post: BlogPost = {
   blocks: [
     {
       type: "paragraph",
-      text: "TPO has quietly taken over the [commercial roofing](/services/commercial-roofing) market in Seattle. Walk across any flat-roofed office park, warehouse, or retail strip in the Puget Sound and odds are good you're standing on **thermoplastic polyolefin**. There's a reason for that, and it's not just price.",
+      text: "If you're comparing flat-roof options for a Seattle commercial building, TPO is worth putting at the top of the list. It runs $8 to $12 per square foot installed, holds up for a realistic 20 to 30 years here, and handles our wet climate better than EPDM's glued seams do. It's also the membrane we install most on [commercial roofing](/services/commercial-roofing) jobs across the Puget Sound. Walk across any flat-roofed office park, warehouse, or retail strip in the region and odds are good you're standing on **thermoplastic polyolefin**. Here's what actually matters if you're deciding between TPO, EPDM, and PVC for a [flat roof](/blog/flat-roof-vs-pitched) in this climate, and what shortens a TPO roof's life once it's on.",
     },
     {
       type: "stat-row",

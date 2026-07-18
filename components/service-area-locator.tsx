@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Search, Phone, ArrowRight, ChevronRight, X } from "lucide-react";
 import { cities, regions as REGIONS, regionOf, type City } from "@/lib/cities";
 import { trackEvent } from "@/lib/analytics";
@@ -197,14 +196,10 @@ export default function ServiceAreaLocator() {
           </div>
 
           {/* Detail card */}
-          <AnimatePresence mode="wait">
+          <>
             {selected ? (
-              <motion.div
+              <div
                 key={selected.slug}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.25 }}
                 className="rounded-2xl border border-[#E5DDD3] bg-white p-6 md:p-7"
               >
                 <div className="flex items-start justify-between gap-4 mb-3">
@@ -268,14 +263,10 @@ export default function ServiceAreaLocator() {
                     Call
                   </a>
                 </div>
-              </motion.div>
+              </div>
             ) : (
-              <motion.div
+              <div
                 key="overview"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.25 }}
                 className="rounded-2xl border border-[#E5DDD3] bg-gradient-to-br from-[#1E3D30] via-[#2D5A47] to-[#1E3D30] p-6 md:p-7 text-white"
               >
                 <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#E8A85E] mb-2">
@@ -307,9 +298,9 @@ export default function ServiceAreaLocator() {
                     {PHONE}
                   </a>
                 </div>
-              </motion.div>
+              </div>
             )}
-          </AnimatePresence>
+          </>
         </div>
       </div>
     </div>

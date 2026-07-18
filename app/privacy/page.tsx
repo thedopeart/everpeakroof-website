@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  // Absolute title (no brand suffix): /privacy was outranking the homepage
+  // for the branded query "everpeak roofing" in GSC. Keep brand out of this
+  // title so the homepage owns the brand SERP.
+  title: { absolute: "Privacy Policy" },
   description:
-    "How Everpeak Roofing collects, uses, and protects the information homeowners share through our website, phone calls, and contact forms.",
+    "How we collect, use, and protect the information homeowners share through our website, phone calls, and contact forms.",
   alternates: { canonical: "https://everpeakroof.com/privacy" },
 };
 

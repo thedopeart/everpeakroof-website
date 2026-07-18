@@ -3,7 +3,7 @@ import { getPost } from "@/lib/posts";
 
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
-export const alt = "Everpeak Roof blog post";
+export const alt = "Everpeak Roofing blog post";
 
 export default async function Image({
   params,

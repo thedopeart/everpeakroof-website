@@ -8,7 +8,7 @@ const post: BlogPost = {
   category: "Material Guide",
   author: "Everpeak Roofing",
   publishedAt: "2026-04-05",
-  updatedAt: "2026-07-01",
+  updatedAt: "2026-07-18",
   readingTimeMin: 7,
   heroImage: "/images/shingle-closeup.jpg",
   heroImageAlt: "Close-up of architectural shingle texture and granule detail",
@@ -16,7 +16,7 @@ const post: BlogPost = {
   blocks: [
     {
       type: "paragraph",
-      text: "Picking a roofing material in the Pacific Northwest isn't the same decision as it is in Texas or Florida. Our problems are different. We don't get much hail. We don't get hurricanes. What we get is eight months of moisture, aggressive moss, 40 mph gusts off the Sound, and the occasional wet snow that sits on a roof for three days. The material you pick has to handle all of that for decades without constant babysitting. We've installed every type listed below on homes across Seattle, [Bellevue](/bellevue), Kirkland, and south through [Tacoma](/tacoma). Here's how they actually rank for this climate, with real 2026 installed pricing from our own quotes.",
+      text: "Picking a roofing material in the Pacific Northwest isn't the same decision as it is in Texas or Florida. Our problems are different. We don't get much hail. We don't get hurricanes. What we get is eight months of moisture, aggressive moss, 40 mph gusts off the Sound, and the occasional wet snow that sits on a roof for three days. The material you pick has to handle all of that for decades without constant babysitting. We've installed every type listed below on homes across Seattle, [Bellevue](/bellevue), [Kirkland](/kirkland), and south through [Tacoma](/tacoma). Here's how they actually rank for this climate, with real 2026 installed pricing from our own quotes.",
     },
     {
       type: "stat-row",
@@ -41,6 +41,14 @@ const post: BlogPost = {
         { cells: [{ text: "Cedar shake" }, { text: "$10 to $14" }, { text: "20 to 25 yrs" }, { text: "Poor, moss grips grain" }, { text: "High maintenance", badge: "amber" }] },
         { cells: [{ text: "TPO / PVC membrane" }, { text: "$8 to $12" }, { text: "20 to 30 yrs" }, { text: "Good" }, { text: "Flat roofs only", badge: "gray" }] },
       ],
+    },
+    {
+      type: "heading",
+      text: "Moss resistance, ranked separately",
+    },
+    {
+      type: "paragraph",
+      text: "Cost and lifespan get most of the attention, but moss resistance deserves its own look because it drives so much of the maintenance cost over a roof's life here. Smooth, non-porous surfaces shed spores and stay drier, which is why metal and synthetic slate top this list even though they're not the cheapest option. Textured surfaces with more grain for moss to grip, cedar shake especially, sit at the bottom no matter how well they're installed. Ranked best to worst for moss resistance in Puget Sound conditions: standing seam metal, synthetic slate/composite, architectural shingles, TPO/PVC membrane (on the low-slope sections where it applies), 3-tab shingles, and cedar shake. None of these are moss-proof under heavy tree cover. All of them do better with occasional soft-wash cleaning and zinc strips at the ridge.",
     },
     {
       type: "heading",
@@ -99,6 +107,24 @@ const post: BlogPost = {
     {
       type: "paragraph",
       text: "Every house is different, and material choice depends on pitch, budget, aesthetics, and how long you're planning to stay. If you want to talk through what makes sense for your specific roof, [get in touch with us](/contact) and we'll walk you through the options. For homeowners weighing a full [roof replacement](/services/roof-replacement), we're happy to bring samples and quote multiple materials side by side.",
+    },
+  ],
+  faq: [
+    {
+      q: "What's the best roofing material for the Pacific Northwest?",
+      a: "Architectural shingles are the best value for most homes: $7 to $9 per square foot installed, 25 to 30 years of life, and solid moss and wind resistance when maintained. Standing seam metal is the best overall option if the budget allows, roughly double the cost but lasting 40 to 60 years.",
+    },
+    {
+      q: "Which roofing material resists moss the best?",
+      a: "Standing seam metal and synthetic slate resist moss best because their smooth surfaces don't give spores anywhere to grip. Architectural shingles do reasonably well with regular cleaning. Cedar shake resists moss the worst, since the wood grain holds moisture and gives moss a foothold.",
+    },
+    {
+      q: "How much does a roof replacement cost in Washington?",
+      a: "For a typical 2,000 square foot home, architectural shingles run $14,000 to $22,000 installed. Standing seam metal runs $24,000 to $36,000. Cedar shake and synthetic slate land in between, generally $20,000 to $35,000 depending on size and decking condition.",
+    },
+    {
+      q: "Do I need a different roofing material near Seattle, Bellevue, or Kirkland versus Tacoma?",
+      a: "Not really. The climate driving these decisions, rain volume, moss pressure, and wind off the Sound, is consistent across the Puget Sound. Tree cover on a specific lot matters more than which city you're in.",
     },
   ],
 };

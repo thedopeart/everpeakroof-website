@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { CheckCircle2, Clock, DollarSign, ThumbsUp, Wrench, FileCheck } from "lucide-react";
 
 const REASONS = [
@@ -41,7 +38,7 @@ export default function WhyUs() {
     <section className="section-pad bg-[#1E3D30]">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
 
-        <div className="max-w-3xl mb-12">
+        <div className="reveal max-w-3xl mb-12">
           <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-2">Why Everpeak</p>
           <h2
             className="text-white leading-tight"
@@ -56,15 +53,11 @@ export default function WhyUs() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {REASONS.map((r, i) => {
+          {REASONS.map((r) => {
             const Icon = r.icon;
             return (
-              <motion.div
+              <div
                 key={r.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ delay: i * 0.07, duration: 0.5 }}
                 className="group relative flex gap-4 bg-white/[0.07] border border-white/10 rounded-2xl p-6 overflow-hidden hover:bg-white/[0.11] hover:border-[#D4883E]/30 hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#E8A85E] to-[#D4883E] flex items-center justify-center shrink-0 mt-0.5 shadow-[0_4px_12px_rgba(212,136,62,0.35)]">
@@ -75,7 +68,7 @@ export default function WhyUs() {
                   <p className="text-sm text-white/75 leading-relaxed">{r.desc}</p>
                 </div>
                 <div className="absolute left-0 bottom-0 h-0.5 w-0 group-hover:w-full bg-[#D4883E] transition-all duration-300" />
-              </motion.div>
+              </div>
             );
           })}
         </div>

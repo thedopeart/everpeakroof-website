@@ -3,7 +3,7 @@ import { services } from "@/lib/services";
 
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
-export const alt = "Everpeak Roof service";
+export const alt = "Everpeak Roofing service";
 
 export default async function Image({
   params,

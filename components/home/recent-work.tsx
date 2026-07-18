@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const PROJECTS = [
   {
@@ -43,7 +40,7 @@ export default function RecentWork() {
       <div className="max-w-7xl mx-auto px-5 md:px-8">
 
         {/* Header */}
-        <div className="flex items-end justify-between gap-4 mb-10">
+        <div className="reveal flex items-end justify-between gap-4 mb-10">
           <div>
             <p className="text-[#D4883E] font-bold text-sm uppercase tracking-wider mb-2">
               Our Work
@@ -65,14 +62,10 @@ export default function RecentWork() {
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {PROJECTS.map((project, i) => (
-            <motion.div
+          {PROJECTS.map((project) => (
+            <div
               key={project.image}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ delay: i * 0.08, duration: 0.5 }}
-              className="rounded-2xl overflow-hidden relative aspect-[4/3]"
+              className="reveal rounded-2xl overflow-hidden relative aspect-[4/3]"
             >
               <Image
                 src={project.image}
@@ -97,7 +90,7 @@ export default function RecentWork() {
               <div className="absolute bottom-3 left-4">
                 <p className="text-white text-sm font-medium drop-shadow">{project.city}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
