@@ -68,11 +68,9 @@ body {
   .rise-3 { animation-delay: 0.3s; }
   .rise-4 { animation-delay: 0.4s; }
 
-  @supports (animation-timeline: view()) {
-    .reveal {
-      animation: ep-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 40%;
-    }
-  }
+  /* .reveal intentionally has no animation. Scroll-driven reveals
+     (animation-timeline: view()) rendered content at opacity 0 in
+     headless/screenshot rendering paths, which is exactly the class of
+     bug the framer-motion removal was meant to kill. Below-the-fold
+     content stays static and always visible. */
 }

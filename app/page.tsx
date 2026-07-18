@@ -5,6 +5,7 @@ import TrustBadges     from "@/components/home/trust-badges";
 import ServicesPreview from "@/components/home/services-preview";
 import WhyUs           from "@/components/home/why-us";
 import HowItWorks      from "@/components/home/how-it-works";
+import ToolsSpotlight  from "@/components/home/tools-spotlight";
 import FaqSection      from "@/components/home/faq-section";
 import ServiceAreas    from "@/components/home/service-areas";
 import CtaBanner       from "@/components/home/cta-banner";
@@ -103,6 +104,7 @@ export default function HomePage() {
       <ServicesPreview />
       <WhyUs />
       <HowItWorks />
+      <ToolsSpotlight />
       <ServiceAreas />
       <LeadFormSection
         variant="band"

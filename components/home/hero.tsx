@@ -8,7 +8,6 @@ const PHONE_HREF = "tel:+14255057142";
 const TRUST_BADGES = [
   { icon: Star,        label: "5.0 Rated on Google" },
   { icon: ShieldCheck, label: "Licensed & Insured" },
-  { icon: Star,        label: "Free Estimates" },
   { icon: MapPin,      label: "21 Cities Served" },
   { icon: Clock,       label: "7 Days a Week" },
 ];
